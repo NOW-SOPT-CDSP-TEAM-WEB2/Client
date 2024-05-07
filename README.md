@@ -97,27 +97,27 @@
 |-- 📁 node_modules
 |-- 📁 public
 |-- 📁 src
-			|-- 📁 assets
-			|-- 📁 components
-			|-- 📁 hooks
-			|-- 📁 pages
-			|      |--📁APage
-			|		   |     |--📁apis
-			|		   |     |--📁components
-			|		   |     |--📁constants
-			|		   |     |--📁utils
-			|		   |     |--📁types
-			|		   |     |-APage.tsx
-			|      |--📁BPage
-			|      |--📁CPage
-			|-- 📁 styles
-			|      - GlobalStyle.tsx
-			|      - theme.ts
-			|      - style.d.ts
-			|-- 📁 utils 
-			|-- App.tsx
-			|-- main.tsx
-			|-- Router.tsx
+      |-- 📁 assets
+      |-- 📁 components
+      |-- 📁 hooks
+      |-- 📁 pages
+      |      |--📁APage
+      |      |   |--📁apis
+      |      |     |--📁components
+      |      |     |--📁constants
+      |      |     |--📁utils
+      |      |     |--📁types
+      |      |     |-APage.tsx
+      |      |--📁BPage
+      |      |--📁CPage
+      |-- 📁 styles
+      |      - GlobalStyle.tsx
+      |      - theme.ts
+      |      - style.d.ts
+      |-- 📁 utils 
+      |-- App.tsx
+      |-- main.tsx
+      |-- Router.tsx
 |-- .eslintrc.json
 |-- .prettierrc
 |-- .stylelintrc
