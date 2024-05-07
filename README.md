@@ -1,30 +1,127 @@
-# React + TypeScript + Vite
+<main align="center">
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1> 🏡ミ✲☁ミ✲☁  Airbnb ミ✲☁ミ✲☁🏡</h1>
 
-Currently, two official plugins are available:
+<h3>NOW SOPT WEB 2조</h3>
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h2> 👥 Team </h2>
+<table>
+    <tr>
+      <td style="min-width: 150px;">
+            <a href="github.com/se0jinYoon">
+              <img src="https://avatars.githubusercontent.com/se0jinYoon" width="200" alt="깃허브계정-프로필사진">
+              <br />
+              <b>se0jinYoon</b>
+            </a>
+        </td>
+      <td style="min-width: 150px;">
+            <a href="https://github.com/Ivoryeee">
+              <img src="https://avatars.githubusercontent.com/Ivoryeee" width="200" alt="깃허브계정-프로필사진">
+              <br />
+              <b>Ivoryeee</b>
+            </a>
+        </td>
+      <td style="min-width: 150px;">
+            <a href="https://github.com/rtttr1">
+              <img src="https://avatars.githubusercontent.com/rtttr1" width="200" alt="깃허브계정-프로필사진">
+              <br />
+              <b>rtttr1</b>
+            </a>
+        </td>
+        <td style="min-width: 150px;">
+            <a href="https://github.com/jeeminyi">
+              <img src="https://avatars.githubusercontent.com/jeeminyi" width="200" alt="깃허브계정-프로필사진">
+              <br />
+              <b>jeeminyi</b>
+            </a>
+        </td>
+    </tr>
+    <tr align="center">
+       <td>
+            윤서진 <br/>
+      </td>
+       <td>
+            박상아 <br/>
+      </td>
+       <td>
+            김규홍 <br/>
+      </td>
+      <td>
+            이지민 <br/>
+      </td>
+    </tr>
+  	<tr align="center">
+       <td>
+            --- view --- <br/>
+      </td>
+       <td>
+            --- view --- <br/>
+      </td>
+      <td>
+            --- view --- <br/>
+      </td>
+      <td>
+            --- view --- <br/>
+      </td>
+    </tr>
+	<tr align="center">
+       <td>
+            --- api --- <br/>
+      </td>
+       <td>
+            --- api --- <br/>
+      </td>
+       <td>
+            --- api --- <br/>
+      </td>
+      <td>
+            --- api --- <br/>
+      </td>
+    </tr>
+</table>
 
-## Expanding the ESLint configuration
+<h2> ⭐️ 구현 스크린샷 </h2>
+<br/>
+<h2> 🛠 기술스택 </h2>
+<br/>
+<h2>  📄 컨벤션 및 브랜치 전략 </h2>
+<a href="">우리의 컨벤션이 담긴 노션링크</a>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<br/>
 
-- Configure the top-level `parserOptions` property like this:
+<h2> 📁 폴더 구조 </h2>
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+|-- 📁 node_modules
+|-- 📁 public
+|-- 📁 src
+			|-- 📁 assets
+			|-- 📁 components
+			|-- 📁 hooks
+			|-- 📁 pages
+			|      |--📁APage
+			|		   |     |--📁apis
+			|		   |     |--📁components
+			|		   |     |--📁constants
+			|		   |     |--📁utils
+			|		   |     |--📁types
+			|		   |     |-APage.tsx
+			|      |--📁BPage
+			|      |--📁CPage
+			|-- 📁 styles
+			|      - GlobalStyle.tsx
+			|      - theme.ts
+			|      - style.d.ts
+			|-- 📁 utils 
+			|-- App.tsx
+			|-- main.tsx
+			|-- Router.tsx
+|-- .eslintrc.json
+|-- .prettierrc
+|-- .stylelintrc
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+<br />
+</main>
