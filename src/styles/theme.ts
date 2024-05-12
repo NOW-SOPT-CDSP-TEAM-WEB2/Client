@@ -62,7 +62,7 @@ const fonts = {
     size: 1.8,
     weight: 600,
     height: '100',
-    letterSpacing: -3,
+    letterSpacing: -0.5,
   }),
   title01: FONT({
     family: 'Pretendard',
@@ -90,21 +90,21 @@ const fonts = {
     size: 1.3,
     weight: 600,
     height: '135',
-    letterSpacing: -1,
+    letterSpacing: 0,
   }),
   body01_middle: FONT({
     family: 'Pretendard',
     size: 1.3,
     weight: 500,
     height: '135',
-    letterSpacing: -1,
+    letterSpacing: 0,
   }),
   body01_light: FONT({
     family: 'Pretendard',
     size: 1.3,
     weight: 400,
     height: '135',
-    letterSpacing: -1,
+    letterSpacing: 0,
   }),
   body02_heavy: FONT({
     family: 'Pretendard',
@@ -118,7 +118,7 @@ const fonts = {
     size: 1.2,
     weight: 500,
     height: '160',
-    letterSpacing: 2,
+    letterSpacing: 0.5,
   }),
   body03_heavy: FONT({
     family: 'Pretendard',
