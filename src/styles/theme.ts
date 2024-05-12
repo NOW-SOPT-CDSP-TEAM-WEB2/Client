@@ -30,8 +30,8 @@ const FONT = ({ family, weight, size, height, letterSpacing }: Font): string => 
         font-family:${family};
         font-size:${size}rem;
         font-weight:${weight};
-        line-height:${height};
-        letter-spacing: ${letterSpacing}%;
+        line-height:${height}%;
+        letter-spacing: ${letterSpacing}px;
     `;
 };
 
@@ -40,28 +40,28 @@ const fonts = {
     family: 'Pretendard',
     size: 2.4,
     weight: 600,
-    height: 'noraml',
+    height: '100',
     letterSpacing: 0,
   }),
   heading02: FONT({
     family: 'Pretendard',
     size: 2.4,
     weight: 500,
-    height: 'noraml',
+    height: '100',
     letterSpacing: 0,
   }),
   heading03: FONT({
     family: 'Pretendard',
     size: 2,
     weight: 600,
-    height: 'noraml',
+    height: '100',
     letterSpacing: 0,
   }),
   heading04: FONT({
     family: 'Pretendard',
     size: 1.8,
     weight: 600,
-    height: 'noraml',
+    height: '100',
     letterSpacing: -3,
   }),
   title01: FONT({
