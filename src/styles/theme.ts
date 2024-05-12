@@ -15,7 +15,7 @@ const colors = {
   blue400: '#0053D5',
 };
 
-export type ColorTypes = typeof colors;
+export type ColorsTypes = typeof colors;
 
 interface Font {
   family: string;
