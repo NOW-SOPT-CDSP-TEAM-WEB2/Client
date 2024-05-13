@@ -34,7 +34,7 @@ const Content = styled.div`
   ${({ theme }) => theme.fonts.body03_heavy};
   cursor: pointer;
 
-  &:nth-child(3) {
+  &:nth-child(5) {
     color: ${({ theme }) => theme.colors.gray800};
     ${({ theme }) => theme.fonts.body03_middle};
   }

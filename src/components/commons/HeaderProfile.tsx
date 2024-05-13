@@ -5,7 +5,12 @@ import { HEADER_DROPDOWN_CONTENT } from '../../assets/constants/headerDropdown';
 import { HamburgerBlackIcon, InternetBlackIcon, ProfileImgIcon } from '../../assets/svgs';
 import useClickOutside from '../../hooks/useClickOutside';
 
-const HeaderProfile = () => {
+interface headerProfilePropsType {
+  padding: number;
+}
+
+const HeaderProfile = (props: headerProfilePropsType) => {
+  const { padding } = props;
   const dropDownRef = useRef(null);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const [clickOutsideActive, setClickOutsideActive] = useState(isDropDownOpen);
@@ -38,7 +43,7 @@ const HeaderProfile = () => {
           <ProfileImgIcon />
         </ProfileDropDownToggle>
       </ProfileWrapper>
-      <ProfileDropDownWrapper $isDropDownOpen={isDropDownOpen} ref={dropDownRef}>
+      <ProfileDropDownWrapper $isDropDownOpen={isDropDownOpen} $right={padding} ref={dropDownRef}>
         {HEADER_DROPDOWN_CONTENT.map((content, idx) => (
           <DropDownText key={idx + content.toString()}>{content.content}</DropDownText>
         ))}
@@ -83,10 +88,10 @@ const ProfileDropDownToggle = styled.div`
   border-radius: 99px;
 `;
 
-const ProfileDropDownWrapper = styled.div<{ $isDropDownOpen: boolean }>`
+const ProfileDropDownWrapper = styled.div<{ $isDropDownOpen: boolean; $right: number }>`
   position: absolute;
   top: 6rem;
-  right: 10rem;
+  right: ${({ $right }) => `${$right}rem`};
 
   display: ${({ $isDropDownOpen }) => ($isDropDownOpen ? 'flex' : 'none')};
   flex-direction: column;

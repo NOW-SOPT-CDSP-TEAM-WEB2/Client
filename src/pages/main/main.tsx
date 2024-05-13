@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
-import { DefaultHeader, HomeDefaultHeader, NavHeader, ProfileHeader } from '../../components/commons/Header';
+import { DefaultHeader, HomeDefaultHeader, NavHeader, WishHeader } from '../../components/commons/Header';
 
 const Main = () => {
   return (
     <TestContainer>
       {/* <DefaultHeader /> */}
-      {/* <ProfileHeader /> */}
-      {/* <HomeDefaultHeader /> */}
-      <NavHeader />
+      {/* <WishHeader /> */}
+      <HomeDefaultHeader />
+      {/* <NavHeader /> */}
     </TestContainer>
   );
 };
