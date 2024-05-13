@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
+import Header from '../../components/commons/Header';
+
 const Main = () => {
   return (
     <TestContainer>
-      <Test>안녕하세요</Test>
+      <Header />
     </TestContainer>
   );
 };
