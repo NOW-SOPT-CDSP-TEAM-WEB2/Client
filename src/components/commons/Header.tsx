@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import HeaderProfile from './HeaderProfile';
 import HomeHeaderContent from './HomeHeaderContent';
+import NavHeaderContent from './NavHeaderContent';
 import { LogoIcon } from '../../assets/svgs';
 
 // 로고만 있는 헤더
@@ -39,6 +40,18 @@ export const HomeDefaultHeader = () => {
   );
 };
 
+// 홈 헤더 스크롤 버전, 숙소 상세 헤더 (검색창 있는 버전)
+export const NavHeader = () => {
+  const navigate = useNavigate();
+  return (
+    <NavHeaderWrapper>
+      <LogoIc onClick={() => navigate('/')} />
+      <NavHeaderContent />
+      <HeaderProfile />
+    </NavHeaderWrapper>
+  );
+};
+
 const DefaultHeaderWrapper = styled.div`
   position: fixed;
   top: 0;
@@ -63,6 +76,20 @@ const ProfilHeaderWrapper = styled.div`
   width: 1366px;
   height: 6rem;
   padding: 1.7rem 10rem;
+
+  background-color: ${({ theme }) => theme.colors.white};
+`;
+
+const NavHeaderWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+  width: 1366px;
+  height: 6rem;
+  padding: 1.2rem 25.6rem;
 
   background-color: ${({ theme }) => theme.colors.white};
 `;
