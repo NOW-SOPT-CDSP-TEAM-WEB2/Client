@@ -1,15 +1,30 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import { HEADER_DROPDOWN_CONTENT } from '../../assets/constants/headerDropdown';
 import { HamburgerBlackIcon, InternetBlackIcon, ProfileImgIcon } from '../../assets/svgs';
+import useClickOutside from '../../hooks/useClickOutside';
 
 const HeaderProfile = () => {
+  const dropDownRef = useRef(null);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
+  const [clickOutsideActive, setClickOutsideActive] = useState(isDropDownOpen);
 
   const onClickDropDownToggle = () => {
     setIsDropDownOpen(!isDropDownOpen);
   };
+
+  const handleClickOutside = () => {
+    if (isDropDownOpen) {
+      setClickOutsideActive(true);
+    }
+    if (clickOutsideActive) {
+      setIsDropDownOpen(false);
+      setClickOutsideActive(false);
+    }
+  };
+
+  useClickOutside(dropDownRef, handleClickOutside);
 
   return (
     <>
@@ -23,7 +38,7 @@ const HeaderProfile = () => {
           <ProfileImgIcon />
         </ProfileDropDownToggle>
       </ProfileWrapper>
-      <ProfileDropDownWrapper $isDropDownOpen={isDropDownOpen}>
+      <ProfileDropDownWrapper $isDropDownOpen={isDropDownOpen} ref={dropDownRef}>
         {HEADER_DROPDOWN_CONTENT.map((content, idx) => (
           <DropDownText key={idx + content.toString()}>{content.content}</DropDownText>
         ))}
