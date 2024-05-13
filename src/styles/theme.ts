@@ -13,6 +13,7 @@ const colors = {
   gray800: '#6A6A6A',
   yellow200: '#F0EFE9',
   blue400: '#0053D5',
+  boxDrop: 'rgba(42, 42, 42, 0.15)',
 };
 
 export type ColorsTypes = typeof colors;
