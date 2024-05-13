@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-import { DefaultHeader } from '../../components/commons/Header';
+import { DefaultHeader, ProfileHeader } from '../../components/commons/Header';
 
 const Main = () => {
   return (
     <TestContainer>
-      <DefaultHeader />
+      <ProfileHeader />
     </TestContainer>
   );
 };
