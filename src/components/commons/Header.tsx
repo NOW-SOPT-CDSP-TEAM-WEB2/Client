@@ -1,9 +1,10 @@
+/* eslint-disable simple-import-sort/imports */
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { LogoIcon } from '../../assets/svgs';
-// eslint-disable-next-line import/order
 import HeaderProfile from './HeaderProfile';
+import HomeHeaderContent from './HomeHeaderContent';
+import { LogoIcon } from '../../assets/svgs';
 
 // 로고만 있는 헤더
 export const DefaultHeader = () => {
@@ -23,6 +24,18 @@ export const ProfileHeader = () => {
       <LogoIc onClick={() => navigate('/')} />
       <HeaderProfile />
     </ProfilHeaderWrapper>
+  );
+};
+
+// 홈 헤더 기본 버전
+export const HomeDefaultHeader = () => {
+  const navigate = useNavigate();
+  return (
+    <DefaultHeaderWrapper>
+      <LogoIc onClick={() => navigate('/')} />
+      <HomeHeaderContent />
+      <HeaderProfile />
+    </DefaultHeaderWrapper>
   );
 };
 
