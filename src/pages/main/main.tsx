@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { DefaultHeader, HomeDefaultHeader, NavHeader, WishHeader } from '../../components/commons/Header';
+import StayRule from '../stayDetail/components/StayRule';
 
 const Main = () => {
   return (
@@ -9,6 +10,7 @@ const Main = () => {
       {/* <WishHeader /> */}
       {/* <HomeDefaultHeader /> */}
       {/* <NavHeader /> */}
+      <StayRule />
     </TestContainer>
   );
 };
