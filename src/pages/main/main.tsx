@@ -5,9 +5,9 @@ import { DefaultHeader, HomeDefaultHeader, NavHeader, WishHeader } from '../../c
 const Main = () => {
   return (
     <TestContainer>
-      {/* <DefaultHeader /> */}
+      <DefaultHeader />
       {/* <WishHeader /> */}
-      <HomeDefaultHeader />
+      {/* <HomeDefaultHeader /> */}
       {/* <NavHeader /> */}
     </TestContainer>
   );

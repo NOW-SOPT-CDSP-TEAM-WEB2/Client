@@ -45,7 +45,7 @@ const HeaderProfile = (props: headerProfilePropsType) => {
       </ProfileWrapper>
       <ProfileDropDownWrapper $isDropDownOpen={isDropDownOpen} $right={padding} ref={dropDownRef}>
         {HEADER_DROPDOWN_CONTENT.map((content, idx) => (
-          <DropDownText key={idx + content.toString()}>{content.content}</DropDownText>
+          <DropDownText key={idx + content.content.toString()}>{content.content}</DropDownText>
         ))}
       </ProfileDropDownWrapper>
     </>
