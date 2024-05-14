@@ -146,4 +146,6 @@ const SnsIconWrapper = styled.div`
   gap: 1.2rem;
   align-items: center;
   justify-content: center;
+
+  cursor: pointer;
 `;
