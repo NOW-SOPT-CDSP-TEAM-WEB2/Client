@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 
+import { DefaultHeader, HomeDefaultHeader, NavHeader, WishHeader } from '../../components/commons/Header';
+
 const Main = () => {
   return (
     <TestContainer>
-      <Test>안녕하세요</Test>
+      <DefaultHeader />
+      {/* <WishHeader /> */}
+      {/* <HomeDefaultHeader /> */}
+      {/* <NavHeader /> */}
     </TestContainer>
   );
 };
@@ -11,13 +16,5 @@ const Main = () => {
 export default Main;
 
 const TestContainer = styled.div`
-  width: 100%;
-  height: 30rem;
-  padding: 5.9rem;
-`;
-
-const Test = styled.div`
-  height: 3rem;
-
-  background-color: ${({ theme }) => theme.colors.blue400};
+  width: 1366px;
 `;
