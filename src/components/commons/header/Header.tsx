@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import HeaderProfile from './HeaderProfile';
 import HomeHeaderContent from './HomeHeaderContent';
 import NavHeaderContent from './NavHeaderContent';
-import { LogoIcon } from '../../assets/svgs';
+import { LogoIcon } from '../../../assets/svgs';
 
 // 로고만 있는 헤더
 export const DefaultHeader = () => {
