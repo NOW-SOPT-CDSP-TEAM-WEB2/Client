@@ -11,4 +11,3 @@ export { default as NaverBlackIcon } from './ic_naver_black_14.svg?react';
 export { default as XBlackIcon } from './ic_x_black_14.svg?react';
 export { default as LogoIcon } from './logo.svg?react';
 export { default as ProfileImgIcon } from './profileImg.svg?react';
-
