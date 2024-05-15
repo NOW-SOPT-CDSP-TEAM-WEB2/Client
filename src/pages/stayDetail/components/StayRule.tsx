@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ClockIcon } from '../../../assets/svgs';
+import { ClockIcon, Divider, DogIcon, PartyIcon, PeopleIcon, SmokeIcon } from '../../../assets/svgs';
 
 const StayRule = () => {
   return (
@@ -22,44 +22,68 @@ const StayRule = () => {
           </RowWrapper>
         </CheckOutTime>
       </CheckInOutSection>
+      <DuringStay>
+        <Title2>숙박 중</Title2>
+        <ColumnWrapper>
+          <PeopleIcon />
+          {/* n명에 api 붙여야함 */}
+          <Text2>게스트 정원 2명</Text2>
+        </ColumnWrapper>
+        <DividerImg />
+        <ColumnWrapper>
+          <DogIcon />
+          <Text3>반려동물 동반 불가</Text3>
+        </ColumnWrapper>
+        <DividerImg />
+        <ColumnWrapper>
+          <PartyIcon />
+          <Text3>파티나 이벤트 금지</Text3>
+        </ColumnWrapper>
+        <DividerImg />
+        <ColumnWrapper>
+          <SmokeIcon />
+          <Text3>흡연 금지</Text3>
+        </ColumnWrapper>
+        <SeeMoreBtn>이용규칙 전체보기</SeeMoreBtn>
+      </DuringStay>
     </StayRuleWrapper>
   );
 };
 
 export default StayRule;
 
+//체크인 아웃
 const StayRuleWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  width: 498px;
-  height: 545px;
+  width: 49.8rem;
+  height: 54.5rem;
 `;
 
 const Title = styled.h1`
   margin-top: 40px;
 
   color: ${({ theme }) => theme.colors.black};
-  font-size: 18px;
-  ${({ theme }) => theme.fonts.heading01};
-  line-height: 18px;
+  ${({ theme }) => theme.fonts.heading04};
+  line-height: 1.8rem;
   text-align: left;
 `;
 
 const CheckInOutSection = styled.div`
   display: flex;
   flex-direction: row;
-  width: 498px;
-  height: 58px;
-  margin-top: 24px;
+  width: 49.8rem;
+  height: 5.8rem;
+  margin-top: 2.4rem;
 `;
 
 const CheckInTime = styled.span`
   display: flex;
   flex-direction: row;
-  width: 242px;
-  height: 58px;
+  width: 24.2rem;
+  height: 5.8rem;
   margin: 0;
-  padding: 13px 0;
+  padding: 1.3rem 0;
 
   border: 1px solid ${({ theme }) => theme.colors.gray400};
   border-radius: 6px;
@@ -69,11 +93,11 @@ const CheckOutTime = styled.span`
   right: 0;
   display: flex;
   flex-direction: row;
-  width: 242px;
-  height: 58px;
+  width: 24.2rem;
+  height: 5.8rem;
   margin: 0;
-  margin-left: 14px;
-  padding: 13px 0;
+  margin-left: 1.4rem;
+  padding: 1.3rem 0;
 
   border: 1px solid ${({ theme }) => theme.colors.gray400};
   border-radius: 6px;
@@ -81,27 +105,84 @@ const CheckOutTime = styled.span`
 
 const Text = styled.p`
   color: ${({ theme }) => theme.colors.black};
-  font-size: 12px;
   ${({ theme }) => theme.fonts.body02_heavy};
-  line-height: 16.8px;
+  line-height: 1.68rem;
 `;
 
 const Time = styled.p`
   color: ${({ theme }) => theme.colors.gray800};
-  font-size: 10px;
-  line-height: 4px;
+  line-height: 0.4rem;
   ${({ theme }) => theme.fonts.detail1_middle}
 `;
 
 const RowWrapper = styled.span`
   display: flex;
   flex-direction: column;
-  width: 174px;
-  height: 26px;
-  margin-left: 8px;
+  width: 17.4rem;
+  height: 2.6rem;
+  margin-left: 0.8rem;
+`;
+//숙박 중
+const DuringStay = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 49.8rem;
+  height: 35.4rem;
+  margin-top: 1.6rem;
+  padding-top: 2.4rem;
+  padding-bottom: 2rem;
+  padding-left: 1.4rem;
+
+  border: 1px solid ${({ theme }) => theme.colors.gray400};
+  border-radius: 6px;
 `;
 
+const Title2 = styled.h2`
+  margin-bottom: 2rem;
+  margin-left: 0.6rem;
+  ${({ theme }) => theme.fonts.title02_heavy};
+  color: ${({ theme }) => theme.colors.black};
+`;
+
+const ColumnWrapper = styled.span`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const Text2 = styled.p`
+  margin-left: 0.8rem;
+  ${({ theme }) => theme.fonts.body02_middle};
+  color: ${({ theme }) => theme.colors.black};
+`;
+
+const Text3 = styled.p`
+  margin-left: 0.8rem;
+  ${({ theme }) => theme.fonts.body02_middle};
+  color: ${({ theme }) => theme.colors.gray700};
+`;
+
+const SeeMoreBtn = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14.5rem;
+  height: 3.6rem;
+  margin-top: 2rem;
+  margin-left: 0.4rem;
+  ${({ theme }) => theme.fonts.body02_middle};
+  color: ${({ theme }) => theme.colors.black};
+
+  border: 1px solid ${({ theme }) => theme.colors.gray400};
+  border-radius: 6px;
+`;
+//아이콘 선언
 const ClockIc = styled(ClockIcon)`
-  margin-left: 14px;
+  margin-left: 1.4rem;
   padding: 0;
+`;
+//마진값 수정하고 이미지 받아서 바꿔야 함 + 맨 아래 divider 넣고 마무리
+const DividerImg = styled(Divider)`
+  margin: 1rem 0;
 `;
