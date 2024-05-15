@@ -1,51 +1,55 @@
 import styled from 'styled-components';
 
-import { ClockIcon, Divider, DogIcon, PartyIcon, PeopleIcon, SmokeIcon } from '../../../assets/svgs';
+import { ClockIcon, DogIcon, PartyIcon, PeopleIcon, SmokeIcon } from '../../../assets/svgs';
+import Divider from '../../../components/commons/Divider';
 
 const StayRule = () => {
   return (
     <StayRuleWrapper>
       <Title>숙소 이용규칙</Title>
       <CheckInOutSection>
-        <CheckInTime>
+        <TimeSection>
           <ClockIc />
           <RowWrapper>
             <Text>체크인 시간</Text>
             <Time>오후 3:00~오후 9:00</Time>
           </RowWrapper>
-        </CheckInTime>
-        <CheckOutTime>
+        </TimeSection>
+        <TimeSection>
           <ClockIc />
           <RowWrapper>
             <Text>체크아웃 시간</Text>
             <Time>오전 11:00 전까지</Time>
           </RowWrapper>
-        </CheckOutTime>
+        </TimeSection>
       </CheckInOutSection>
       <DuringStay>
         <Title2>숙박 중</Title2>
-        <ColumnWrapper>
-          <PeopleIcon />
-          {/* n명에 api 붙여야함 */}
-          <Text2>게스트 정원 2명</Text2>
-        </ColumnWrapper>
-        <DividerImg />
-        <ColumnWrapper>
-          <DogIcon />
-          <Text3>반려동물 동반 불가</Text3>
-        </ColumnWrapper>
-        <DividerImg />
-        <ColumnWrapper>
-          <PartyIcon />
-          <Text3>파티나 이벤트 금지</Text3>
-        </ColumnWrapper>
-        <DividerImg />
-        <ColumnWrapper>
-          <SmokeIcon />
-          <Text3>흡연 금지</Text3>
-        </ColumnWrapper>
+        <RuleList>
+          <ColumnWrapper>
+            <PeopleIcon />
+            {/* n명에 api 붙여야함 */}
+            <Text2>게스트 정원 2명</Text2>
+          </ColumnWrapper>
+          <Divider />
+          <ColumnWrapper>
+            <DogIcon />
+            <Text3>반려동물 동반 불가</Text3>
+          </ColumnWrapper>
+          <Divider />
+          <ColumnWrapper>
+            <PartyIcon />
+            <Text3>파티나 이벤트 금지</Text3>
+          </ColumnWrapper>
+          <Divider />
+          <ColumnWrapper>
+            <SmokeIcon />
+            <Text3>흡연 금지</Text3>
+          </ColumnWrapper>
+        </RuleList>
         <SeeMoreBtn>이용규칙 전체보기</SeeMoreBtn>
       </DuringStay>
+      <Divider />
     </StayRuleWrapper>
   );
 };
@@ -61,23 +65,22 @@ const StayRuleWrapper = styled.section`
 `;
 
 const Title = styled.h1`
-  margin-top: 40px;
+  margin-top: 4rem;
 
   color: ${({ theme }) => theme.colors.black};
   ${({ theme }) => theme.fonts.heading04};
-  line-height: 1.8rem;
   text-align: left;
 `;
 
 const CheckInOutSection = styled.div`
   display: flex;
-  flex-direction: row;
+  gap: 1.4rem;
   width: 49.8rem;
   height: 5.8rem;
   margin-top: 2.4rem;
 `;
 
-const CheckInTime = styled.span`
+const TimeSection = styled.span`
   display: flex;
   flex-direction: row;
   width: 24.2rem;
@@ -88,30 +91,22 @@ const CheckInTime = styled.span`
   border: 1px solid ${({ theme }) => theme.colors.gray400};
   border-radius: 6px;
 `;
-
-const CheckOutTime = styled.span`
-  right: 0;
-  display: flex;
-  flex-direction: row;
-  width: 24.2rem;
-  height: 5.8rem;
-  margin: 0;
-  margin-left: 1.4rem;
-  padding: 1.3rem 0;
-
-  border: 1px solid ${({ theme }) => theme.colors.gray400};
-  border-radius: 6px;
-`;
-
+// const RowWrapper = styled.span`
+//   display: flex;
+//   flex-direction: column;
+//   gap: 1.1rem;
+//   justify-content: flex-start;
+//   width: 17.4rem;
+//   height: 2.6rem;
+//   margin-left: 0.8rem;
+// `;
 const Text = styled.p`
   color: ${({ theme }) => theme.colors.black};
   ${({ theme }) => theme.fonts.body02_heavy};
-  line-height: 1.68rem;
 `;
 
 const Time = styled.p`
   color: ${({ theme }) => theme.colors.gray800};
-  line-height: 0.4rem;
   ${({ theme }) => theme.fonts.detail1_middle}
 `;
 
@@ -130,9 +125,8 @@ const DuringStay = styled.div`
   width: 49.8rem;
   height: 35.4rem;
   margin-top: 1.6rem;
-  padding-top: 2.4rem;
-  padding-bottom: 2rem;
-  padding-left: 1.4rem;
+  margin-bottom: 4rem;
+  padding: 2.4rem 1.8rem 2rem 1.4rem;
 
   border: 1px solid ${({ theme }) => theme.colors.gray400};
   border-radius: 6px;
@@ -143,6 +137,14 @@ const Title2 = styled.h2`
   margin-left: 0.6rem;
   ${({ theme }) => theme.fonts.title02_heavy};
   color: ${({ theme }) => theme.colors.black};
+`;
+
+const RuleList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 46.6rem;
+  height: 22.4rem;
 `;
 
 const ColumnWrapper = styled.span`
@@ -177,12 +179,9 @@ const SeeMoreBtn = styled.span`
   border: 1px solid ${({ theme }) => theme.colors.gray400};
   border-radius: 6px;
 `;
+
 //아이콘 선언
 const ClockIc = styled(ClockIcon)`
   margin-left: 1.4rem;
   padding: 0;
-`;
-//마진값 수정하고 이미지 받아서 바꿔야 함 + 맨 아래 divider 넣고 마무리
-const DividerImg = styled(Divider)`
-  margin: 1rem 0;
 `;
