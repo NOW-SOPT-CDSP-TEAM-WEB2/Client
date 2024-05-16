@@ -1,7 +1,8 @@
+/* eslint-disable import/order */
 import styled from 'styled-components';
 
 import { ClockIcon, DogIcon, PartyIcon, PeopleIcon, SmokeIcon } from '../../../assets/svgs';
-import Divider from '../../../components/commons/Divider';
+import Divider from './Divider';
 
 const StayRule = () => {
   return (
@@ -123,7 +124,6 @@ const DuringStay = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   width: 49.8rem;
-  height: 35.4rem;
   margin-top: 1.6rem;
   margin-bottom: 4rem;
   padding: 2.4rem 1.8rem 2rem 1.4rem;
@@ -169,10 +169,11 @@ const SeeMoreBtn = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 14.5rem;
+  width: 14.9rem;
   height: 3.6rem;
   margin-top: 2rem;
   margin-left: 0.4rem;
+  padding: 1.4rem 2.75rem;
   ${({ theme }) => theme.fonts.body02_middle};
   color: ${({ theme }) => theme.colors.black};
 

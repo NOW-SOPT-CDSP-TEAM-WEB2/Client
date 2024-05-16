@@ -1,7 +1,7 @@
+/* eslint-disable import/order */
 import styled from 'styled-components';
 
 import { BabyIcon, CarbonAlarmIcon, CarIcon, FireAlarmIcon, FireIcon, KitchenIcon, TvIcon } from '../../../assets/svgs';
-import Divider from '../../../components/commons/Divider';
 
 const StayFacility = () => {
   return (
@@ -49,7 +49,6 @@ const StayFacility = () => {
           <InfoBtn2>안전사항 자세히 보기</InfoBtn2>
         </InfoSection>
       </GapSection>
-      <Divider />
     </StayFacilityWrapper>
   );
 };
@@ -60,8 +59,10 @@ const StayFacilityWrapper = styled.section`
   display: flex;
   flex-direction: column;
   width: 49.8rem;
-  height: 32.5rem;
-  padding-top: 4rem;
+  padding: 4rem 0;
+  /* height: 32.5rem; */
+
+  border-bottom: 1px solid ${({ theme }) => theme.colors.gray400};
 `;
 
 const Title = styled.h1`
@@ -81,7 +82,7 @@ const GapSection = styled.div`
 const InfoSection = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: flex-start;
   width: 24.3rem;
   height: 20rem;
 `;
@@ -129,9 +130,8 @@ const InfoBtn1 = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 14.8rem;
-  height: 3.6rem;
   margin-top: 3rem;
+  padding: 1.4rem 1.6rem;
   ${({ theme }) => theme.fonts.body02_middle};
   border: 1px solid ${({ theme }) => theme.colors.gray400};
   border-radius: 6px;
@@ -141,9 +141,8 @@ const InfoBtn2 = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 14.8rem;
-  height: 3.6rem;
   margin-top: 6rem;
+  padding: 1.4rem 1.6rem;
   ${({ theme }) => theme.fonts.body02_middle};
   border: 1px solid ${({ theme }) => theme.colors.gray400};
   border-radius: 6px;
