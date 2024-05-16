@@ -1,15 +1,21 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { WishListThumIcon } from '../../assets/svgs';
 import { WishHeader } from '../../components/commons/Header';
 
 const WishList = () => {
+  const navigate = useNavigate();
+
+  const onClickWishList = () => {
+    navigate('/wishListDetail');
+  };
   return (
     <>
       <WishHeader />
       <WishListWrapper>
         <Title>위시리스트</Title>
-        <WishCardWrapper>
+        <WishCardWrapper onClick={onClickWishList}>
           <WishThumListIc />
           <WishDetail>
             <WishCategory>꼭 가보고 싶은 곳</WishCategory>
