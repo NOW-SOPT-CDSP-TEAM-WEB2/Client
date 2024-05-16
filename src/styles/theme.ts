@@ -14,6 +14,7 @@ const colors = {
   yellow200: '#F0EFE9',
   blue400: '#0053D5',
   boxDrop: 'rgba(42, 42, 42, 0.15)',
+  cardDrop: 'rgba(0, 0, 0, 0.05)',
 };
 
 export type ColorsTypes = typeof colors;
