@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { BackArrowIcon } from '../../../assets/svgs';
+import { BackArrowIcon } from '../../../../assets/svgs';
 
 const postReservationHeader = () => {
   return (
@@ -22,7 +22,7 @@ const PostHeader = styled.div`
   align-items: center;
   width: 1366px;
   height: 2.4rem;
-  padding: 4.4rem 10.05rem 4rem 23.9rem;
+  padding: 4.4rem 0 4rem 0;
 `;
 
 const PostTxt = styled.p`
