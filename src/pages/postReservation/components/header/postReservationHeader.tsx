@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { BackArrowIcon } from '../../../../assets/svgs';
+import { ArrowLeftBlackICon } from '../../../../assets/svgs';
+import { PostContent } from '../../constatnts/postResevationText.ts';
 
 const postReservationHeader = () => {
   return (
     <>
       <PostHeader>
-        <BackArrowIcon />
-        <PostTxt>예약 요청</PostTxt>
+        <ArrowLeftBlackICon />
+        <PostTxt>{PostContent.title}</PostTxt>
       </PostHeader>
     </>
   );
@@ -20,7 +21,6 @@ const PostHeader = styled.div`
   display: flex;
   gap: 0.9rem;
   align-items: center;
-  width: 1366px;
   height: 2.4rem;
   padding: 4.4rem 0 4rem 0;
 `;
