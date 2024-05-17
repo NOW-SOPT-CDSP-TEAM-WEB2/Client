@@ -1,14 +1,11 @@
 import styled from 'styled-components';
 
-import { DefaultHeader, HomeDefaultHeader, NavHeader, WishHeader } from '../../components/commons/Header';
+import Footer from '../../components/commons/footer/Footer';
 
 const Main = () => {
   return (
     <TestContainer>
-      <DefaultHeader />
-      {/* <WishHeader /> */}
-      {/* <HomeDefaultHeader /> */}
-      {/* <NavHeader /> */}
+      <Footer />
     </TestContainer>
   );
 };
@@ -16,5 +13,8 @@ const Main = () => {
 export default Main;
 
 const TestContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 1366px;
 `;
