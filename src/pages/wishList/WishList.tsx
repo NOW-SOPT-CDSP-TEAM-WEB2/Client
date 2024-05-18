@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { WishListThumIcon } from '../../assets/svgs';
+import Footer from '../../components/commons/footer/Footer';
 import { WishHeader } from '../../components/commons/Header';
 
 const WishList = () => {
@@ -23,6 +24,7 @@ const WishList = () => {
           </WishDetail>
         </WishCardWrapper>
       </WishListWrapper>
+      <Footer />
     </>
   );
 };
@@ -40,11 +42,6 @@ const WishListWrapper = styled.div`
   padding: 4.2rem 10rem;
 
   border-top: 1px solid ${({ theme }) => theme.colors.gray200};
-
-  @media (width <= 1166px) {
-    position: absolute;
-    left: 0;
-  }
 `;
 
 const Title = styled.h1`
@@ -59,6 +56,7 @@ const WishCardWrapper = styled.article`
   gap: 1.2rem;
   align-items: flex-start;
   justify-content: center;
+  margin-bottom: 22.5rem;
 `;
 
 const WishDetail = styled.div`
