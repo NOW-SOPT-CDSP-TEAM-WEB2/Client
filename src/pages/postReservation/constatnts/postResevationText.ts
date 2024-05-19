@@ -36,8 +36,9 @@ export const SendingMessageContent = {
 
 export const RefundPolicyContent = {
   title: '환불 정책',
-  content_bold: '6월 3일 전까지 무료로 취소하실 수 있습니다. ',
-  content_normal: '체크인 날짜인 6월 4일 전에 취소하면 부분 환불을 받으실 수 있습니다. ',
+  content_bold: ' 전까지 무료로 취소하실 수 있습니다. ',
+  content_normal1: '체크인 날짜인 ',
+  content_normal2: ' 전에 취소하면 부분 환불을 받으실 수 있습니다. ',
   content_underline: '자세히 알아보기',
   contentDetail_normal1: '아래 버튼을 선택하면 ',
   contentDetail_underline1:
