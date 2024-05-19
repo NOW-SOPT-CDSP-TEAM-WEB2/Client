@@ -1,14 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { ArrowLeftBlackICon } from '../../../../assets/svgs';
 import { PostContent } from '../../constatnts/postResevationText.ts';
 
 const postReservationHeader = () => {
+  const navigate = useNavigate();
+
+  const onClickBefore = () => {
+    navigate(-1);
+  };
+
   return (
     <>
       <PostHeader>
-        <ArrowLeftBlackICon />
+        <ArrowLeftBlackICon onClick={onClickBefore} />
         <PostTxt>{PostContent.title}</PostTxt>
       </PostHeader>
     </>
