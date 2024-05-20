@@ -1,6 +1,7 @@
 /* eslint-disable simple-import-sort/imports */
 import styled from 'styled-components';
 
+import HostDetail from './HostDetail';
 import Location from './Location';
 import Review from './Review';
 import Footer from '../../../components/commons/footer/Footer';
@@ -13,6 +14,7 @@ const StayDetail = () => {
       <StayDetailWrapper>
         <Review />
         <Location />
+        <HostDetail />
       </StayDetailWrapper>
       <Footer />
     </>

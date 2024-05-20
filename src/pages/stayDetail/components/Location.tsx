@@ -16,7 +16,6 @@ export default Location;
 
 const LocationWrapper = styled.section`
   width: 100%;
-  margin-bottom: 6rem;
   padding: 4rem 0;
 `;
 
