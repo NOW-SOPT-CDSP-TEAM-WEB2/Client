@@ -60,7 +60,6 @@ const StayFacilityWrapper = styled.section`
   flex-direction: column;
   width: 49.8rem;
   padding: 4rem 0;
-  /* height: 32.5rem; */
 
   border-bottom: 1px solid ${({ theme }) => theme.colors.gray400};
 `;
@@ -76,7 +75,7 @@ const Title = styled.h1`
 const GapSection = styled.div`
   display: flex;
   flex-direction: row;
-  margin-bottom: 4rem;
+  /* margin-bottom: 4rem; */
 `;
 
 const InfoSection = styled.div`
@@ -131,7 +130,7 @@ const InfoBtn1 = styled.span`
   align-items: center;
   justify-content: center;
   margin-top: 3rem;
-  padding: 1.4rem 1.6rem;
+  padding: 0.8rem 1.4rem 0.8rem 1.4rem;
   ${({ theme }) => theme.fonts.body02_middle};
   border: 1px solid ${({ theme }) => theme.colors.gray400};
   border-radius: 6px;
@@ -142,7 +141,7 @@ const InfoBtn2 = styled.span`
   align-items: center;
   justify-content: center;
   margin-top: 6rem;
-  padding: 1.4rem 1.6rem;
+  padding: 0.8rem 1.4rem 0.8rem 1.4rem;
   ${({ theme }) => theme.fonts.body02_middle};
   border: 1px solid ${({ theme }) => theme.colors.gray400};
   border-radius: 6px;

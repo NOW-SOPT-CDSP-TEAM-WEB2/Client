@@ -5,7 +5,7 @@ import { DiamondIcon, FlagIcon } from '../../../assets/svgs';
 const StayReserve = () => {
   return (
     <ReserveWrapper>
-      <ReserveBox></ReserveBox>
+      {/* <ReserveBox></ReserveBox> */}
       <ChanceBox>
         <DiamondIcon />
         <Title2>흔치 않은 기회</Title2>
@@ -26,17 +26,19 @@ const ReserveWrapper = styled.section`
   height: 188rem;
 `;
 
-const ReserveBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 28.4rem;
-  height: 40.3rem;
-  margin-top: 2.6rem;
-  padding: 2.4rem 2rem 2rem 1.6rem;
+// const ReserveBox = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   width: 28.4rem;
+//   height: 40.3rem;
+//   margin-top: 2.6rem;
+//   padding: 2.4rem 2rem 2rem 1.6rem;
 
-  border: 1px solid ${({ theme }) => theme.colors.gray400};
-  border-radius: 10px;
-`;
+//   box-shadow:
+
+//   border: 1px solid ${({ theme }) => theme.colors.gray400};
+//   border-radius: 10px;
+// `;
 
 const ChanceBox = styled.div`
   width: 28.4rem;

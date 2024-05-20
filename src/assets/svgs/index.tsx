@@ -13,6 +13,8 @@ export { default as FlagIcon } from './ic_flag_black_12.svg?react';
 export { default as HamburgerBlackIcon } from './ic_hamburger_black_12.svg?react';
 export { default as InternetBlackIcon } from './ic_internet_black_12.svg?react';
 export { default as KitchenIcon } from './ic_kitchen_black_18.svg?react';
+export { default as LeafLeftIcon } from './ic_leaf_left_black_32.svg?react';
+export { default as LeafRightIcon } from './ic_leaf_right_black_32.svg?react';
 export { default as PartyIcon } from './ic_party_non_gray_32.svg?react';
 export { default as PeopleIcon } from './ic_people_black_32.svg?react';
 export { default as SmokeIcon } from './ic_smoke_non_gray_32.svg?react';

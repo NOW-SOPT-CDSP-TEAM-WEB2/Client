@@ -2,6 +2,7 @@
 import styled from 'styled-components';
 
 import { ClockIcon, DogIcon, PartyIcon, PeopleIcon, SmokeIcon } from '../../../assets/svgs';
+import { STAY_INFO } from '../constants';
 import Divider from './Divider';
 
 const StayRule = () => {
@@ -30,7 +31,7 @@ const StayRule = () => {
           <ColumnWrapper>
             <PeopleIcon />
             {/* n명에 api 붙여야함 */}
-            <Text2>게스트 정원 2명</Text2>
+            <Text2>게스트 정원 {STAY_INFO.roomInfo.maxGuests}명</Text2>
           </ColumnWrapper>
           <Divider />
           <ColumnWrapper>
@@ -92,15 +93,7 @@ const TimeSection = styled.span`
   border: 1px solid ${({ theme }) => theme.colors.gray400};
   border-radius: 6px;
 `;
-// const RowWrapper = styled.span`
-//   display: flex;
-//   flex-direction: column;
-//   gap: 1.1rem;
-//   justify-content: flex-start;
-//   width: 17.4rem;
-//   height: 2.6rem;
-//   margin-left: 0.8rem;
-// `;
+
 const Text = styled.p`
   color: ${({ theme }) => theme.colors.black};
   ${({ theme }) => theme.fonts.body02_heavy};
