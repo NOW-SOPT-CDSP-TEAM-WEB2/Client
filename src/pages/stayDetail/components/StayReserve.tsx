@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 
 import { DiamondIcon, FlagIcon } from '../../../assets/svgs';
+import { STAY_INFO } from '../constants';
 
 const StayReserve = () => {
   return (
     <ReserveWrapper>
-      {/* <ReserveBox></ReserveBox> */}
+      <ReserveBox></ReserveBox>
       <ChanceBox>
         <DiamondIcon />
         <Title2>흔치 않은 기회</Title2>
-        <Text>n님의 숙소는 보통 예약이 가득 차있습니다.</Text>
+        <Text>{STAY_INFO.hostName}님의 숙소는 보통 예약이 가득 차있습니다.</Text>
       </ChanceBox>
       <ReportBtn>
         <FlagIcon />
@@ -23,22 +24,25 @@ export default StayReserve;
 
 const ReserveWrapper = styled.section`
   width: 28.4rem;
-  height: 188rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-top: 2.6rem;
 `;
 
-// const ReserveBox = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   width: 28.4rem;
-//   height: 40.3rem;
-//   margin-top: 2.6rem;
-//   padding: 2.4rem 2rem 2rem 1.6rem;
+const ReserveBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 28.4rem;
+  height: 40.3rem;
+  margin-top: 2.6rem;
+  padding: 2.4rem 2rem 2rem 1.6rem;
 
-//   box-shadow:
+  box-shadow:
 
-//   border: 1px solid ${({ theme }) => theme.colors.gray400};
-//   border-radius: 10px;
-// `;
+  border: 1px solid ${({ theme }) => theme.colors.gray400};
+  border-radius: 10px;
+`;
 
 const ChanceBox = styled.div`
   width: 28.4rem;
@@ -72,5 +76,6 @@ const ReportBtn = styled.div`
 const UnderLineText = styled.p`
   color: ${({ theme }) => theme.colors.black};
   ${({ theme }) => theme.fonts.body02_middle};
-  text-decoration: underline solid #222222;
+  border-bottom: 1px solid;
+  border-color: ${({ theme }) => theme.colors.gray400};
 `;

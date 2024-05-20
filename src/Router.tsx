@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Main from './pages/main/Main';
+import Main from './pages/main/main';
 import StayFacility from './pages/stayDetail/components/StayFacility';
 import StayInfo from './pages/stayDetail/components/StayInfo';
 import StayReserve from './pages/stayDetail/components/StayReserve';

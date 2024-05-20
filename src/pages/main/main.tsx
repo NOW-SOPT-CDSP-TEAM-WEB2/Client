@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 import Footer from '../../components/commons/footer/Footer';
-import { DefaultHeader, HomeDefaultHeader, NavHeader, WishHeader } from '../../components/commons/Header';
+// import { DefaultHeader, HomeDefaultHeader, NavHeader, WishHeader } from '../../components/commons/Header';
 import StayRule from '../stayDetail/components/StayRule';
 
 const Main = () => {
   return (
     <TestContainer>
       <Footer />
-      <DefaultHeader />
+      {/* <DefaultHeader /> */}
       {/* <WishHeader /> */}
       {/* <HomeDefaultHeader /> */}
       {/* <NavHeader /> */}
