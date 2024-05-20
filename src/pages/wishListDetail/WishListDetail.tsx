@@ -1,6 +1,8 @@
+/* eslint-disable simple-import-sort/imports */
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
+import StayLocationMap from './components/StayLocationMap';
 import { ArrowLeftBlackIcon, MeatballBlackIcon, ShareBlackIcon } from '../../assets/svgs';
 import Footer from '../../components/commons/footer/Footer';
 import { WishHeader } from '../../components/commons/Header';
@@ -28,6 +30,7 @@ const WishListDetail = () => {
         <CarouselTest />
         <WishMapContainer>
           <WishLocTitle>위시 위치</WishLocTitle>
+          <StayLocationMap />
         </WishMapContainer>
       </WishListDetailWrapper>
       <Footer />

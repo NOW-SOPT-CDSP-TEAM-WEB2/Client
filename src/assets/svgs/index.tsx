@@ -1,6 +1,7 @@
 /* eslint-disable import/no-unresolved */
 // 명명규칙은 xxxxIcon으로 통일
 //
+export { default as CirclePinIcon } from './btn_ic_circle_pin_amall.svg?react';
 export { default as CopyrightIcon } from './copyright.svg?react';
 export { default as ArrowLeftBlackIcon } from './ic_arrow_left_black_24.svg?react';
 export { default as BlogBlackIcon } from './ic_blog_black_14.svg?react';
