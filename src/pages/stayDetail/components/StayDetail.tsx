@@ -1,8 +1,10 @@
+/* eslint-disable simple-import-sort/imports */
 import styled from 'styled-components';
 
+import Location from './Location';
+import Review from './Review';
 import Footer from '../../../components/commons/footer/Footer';
 import { NavHeader } from '../../../components/commons/Header';
-import Review from './Review';
 
 const StayDetail = () => {
   return (
@@ -10,6 +12,7 @@ const StayDetail = () => {
       <NavHeader />
       <StayDetailWrapper>
         <Review />
+        <Location />
       </StayDetailWrapper>
       <Footer />
     </>

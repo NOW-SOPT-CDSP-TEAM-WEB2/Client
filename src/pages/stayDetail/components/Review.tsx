@@ -81,11 +81,11 @@ const StarDetailTextBottom = styled.span`
 const ReviewContainer = styled.div`
   width: 100%;
   margin-top: 3.2rem;
-  margin-bottom: 4rem;
 
   border-bottom: 1px solid ${({ theme }) => theme.colors.gray400};
 `;
 const MoreReviewBtn = styled.button`
+  margin-bottom: 4rem;
   padding: 1rem 1.6rem;
 
   color: ${({ theme }) => theme.colors.black};
