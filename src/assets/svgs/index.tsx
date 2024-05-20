@@ -1,23 +1,30 @@
 /* eslint-disable import/no-unresolved */
 // 명명규칙은 xxxxIcon으로 통일
+export { default as CopyrightIcon } from './copyright.svg?react';
 export { default as Divider } from './divider.svg?react';
 export { default as BabyIcon } from './ic_baby_non_gray_18.svg?react';
+export { default as BlogBlackIcon } from './ic_blog_black_14.svg?react';
 export { default as CarIcon } from './ic_car_black_18.svg?react';
 export { default as CarbonAlarmIcon } from './ic_carbon_alarm_non_gray_18.svg?react';
 export { default as ClockIcon } from './ic_clock_black_32.svg?react';
 export { default as DiamondIcon } from './ic_diamond_pink_32.svg?react';
 export { default as DogIcon } from './ic_dog_non_gray_32.svg?react';
+export { default as FacebookBlackIcon } from './ic_facebook_black_14.svg?react';
 export { default as FireAlarmIcon } from './ic_fire_alarm_non_gray_18.svg?react';
 export { default as FireIcon } from './ic_fire_black_18.svg?react';
 export { default as FlagIcon } from './ic_flag_black_12.svg?react';
 export { default as HamburgerBlackIcon } from './ic_hamburger_black_12.svg?react';
+export { default as InstaBalckIcon } from './ic_insta_black_14.svg?react';
 export { default as InternetBlackIcon } from './ic_internet_black_12.svg?react';
 export { default as KitchenIcon } from './ic_kitchen_black_18.svg?react';
 export { default as LeafLeftIcon } from './ic_leaf_left_black_32.svg?react';
 export { default as LeafRightIcon } from './ic_leaf_right_black_32.svg?react';
+export { default as NaverBlackIcon } from './ic_naver_black_14.svg?react';
 export { default as PartyIcon } from './ic_party_non_gray_32.svg?react';
 export { default as PeopleIcon } from './ic_people_black_32.svg?react';
 export { default as SmokeIcon } from './ic_smoke_non_gray_32.svg?react';
 export { default as TvIcon } from './ic_tv_non_gray_18.svg?react';
+export { default as XBlackIcon } from './ic_x_black_14.svg?react';
 export { default as LogoIcon } from './logo.svg?react';
 export { default as ProfileImgIcon } from './profileImg.svg?react';
+export { default as WishListThumIcon } from './wishListThumb.svg?react';
