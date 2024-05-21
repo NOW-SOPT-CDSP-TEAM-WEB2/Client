@@ -3,11 +3,9 @@ import { styled } from 'styled-components';
 
 const SuperHostCard = () => {
   return (
-    <>
-      <SuperHostContent>
-        <SupterHostTxt>슈퍼 호스트</SupterHostTxt>
-      </SuperHostContent>
-    </>
+    <SuperHostContent>
+      <SupterHostTxt>슈퍼 호스트</SupterHostTxt>
+    </SuperHostContent>
   );
 };
 

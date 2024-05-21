@@ -7,12 +7,12 @@ import { styled } from 'styled-components';
 
 import { NextArrow, PrevArrow } from './CustonArrows';
 
-type Props = {
-  isWishList: boolean;
+interface CarouselProps {
   roomImageList: string;
-};
+}
 
-const Carousel: React.FC<Props> = (props: Props) => {
+const Carousel: React.FC<Props> = (props: CarouselProps) => {
+  const { roomImageList } = props;
   const [slideState, setSlideState] = useState({
     activeSlide: 0,
     activeSlide2: 0,
@@ -61,17 +61,14 @@ const Carousel: React.FC<Props> = (props: Props) => {
   };
 
   return (
-    <>
-      <div
-        className="carousel-container"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}>
-        <Slider {...settings} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-          {props.roomImageList &&
-            props.roomImageList.map((src, index) => <CarouselImg key={index} src={src} alt={`Cat ${index + 1}`} />)}
-        </Slider>
-      </div>
-    </>
+    <div
+      className="carousel-container"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}>
+      <Slider {...settings} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+        {roomImageList && roomImageList.map((src, index) => <CarouselImg key={index} src={src} />)}
+      </Slider>
+    </div>
   );
 };
 

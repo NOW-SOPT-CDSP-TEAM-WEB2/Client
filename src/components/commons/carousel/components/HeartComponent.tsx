@@ -3,13 +3,15 @@ import { styled } from 'styled-components';
 
 import { HeartPink24Icon } from '../../../../assets/svgs';
 
-const HeartComponent = () => {
+interface HeartComponentProps {
+  isWishList: boolean;
+}
+const HeartComponent = (props: HeartComponentProps) => {
+  const isWishList = props;
   return (
-    <>
-      <HeartComponentWrapper>
-        <HeartPink24Icon />
-      </HeartComponentWrapper>
-    </>
+    <HeartComponentWrapper>
+      <HeartPink24Icon />
+    </HeartComponentWrapper>
   );
 };
 

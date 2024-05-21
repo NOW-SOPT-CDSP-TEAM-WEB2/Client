@@ -3,39 +3,37 @@ import styled from 'styled-components';
 
 import { StarIcon } from '../../../../assets/svgs';
 
-type Props = {
+interface CarouselTextProps {
   roomlocation: string;
   currentDistance: string;
   roomRating: number;
   recommendedDates: string;
   guestReview: string;
   roomPrice: number;
-};
+}
 
-const CarouselText = (props: Props) => {
+const CarouselText = (props: CarouselTextProps) => {
+  const { roomlocation, currentDistance, roomRating, recommendedDates, guestReview, roomPrice } = props;
   return (
-    <>
-      <CarouselTextWrapper>
-        <TextTitleWrapper>
-          <TextTitle>{props.roomlocation}</TextTitle>
-          <TextRate>
-            {' '}
-            <StarIcon />
-            {props.roomRating}
-          </TextRate>
-        </TextTitleWrapper>
-        <TextContent>{props.currentDistance}</TextContent>
-        <TextContentWrapper>
-          <TextContent>예약 추천 </TextContent>
-          <TextContentBold>{props.recommendedDates} </TextContentBold>
-        </TextContentWrapper>
-        <TextContentWrapper>
-          <TextContent>게스트 리뷰 </TextContent>
-          <TextContentBold>{props.guestReview} </TextContentBold>
-        </TextContentWrapper>
-        <TextPriceContent>₩{props.roomPrice.toLocaleString()} /박</TextPriceContent>
-      </CarouselTextWrapper>
-    </>
+    <CarouselTextWrapper>
+      <TextTitleWrapper>
+        <TextTitle>{roomlocation}</TextTitle>
+        <TextRate>
+          <StarIcon />
+          {roomRating}
+        </TextRate>
+      </TextTitleWrapper>
+      <TextContent>{currentDistance}</TextContent>
+      <TextContentWrapper>
+        <TextContent>예약 추천 </TextContent>
+        <TextContentBold>{recommendedDates} </TextContentBold>
+      </TextContentWrapper>
+      <TextContentWrapper>
+        <TextContent>게스트 리뷰 </TextContent>
+        <TextContentBold>{guestReview} </TextContentBold>
+      </TextContentWrapper>
+      <TextPriceContent>₩{roomPrice.toLocaleString()} /박</TextPriceContent>
+    </CarouselTextWrapper>
   );
 };
 
