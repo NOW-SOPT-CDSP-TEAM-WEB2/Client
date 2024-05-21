@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import Footer from '../../components/commons/footer/Footer';
-
 const Main = () => {
   return (
     <TestContainer>

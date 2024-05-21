@@ -12,7 +12,9 @@ export const DefaultHeader = () => {
   const navigate = useNavigate();
   return (
     <HeaderWrapper $paddingTop={1.7} $paddingRight={0} $paddingBottom={1.7} $paddingLeft={2}>
-      <LogoIc onClick={() => navigate('/')} />
+      <LogoDiv onClick={() => navigate('/')}>
+        <LogoIcon />
+      </LogoDiv>
     </HeaderWrapper>
   );
 };
@@ -22,7 +24,9 @@ export const WishHeader = () => {
   const navigate = useNavigate();
   return (
     <HeaderWrapper $paddingTop={1.7} $paddingRight={10} $paddingBottom={1.7} $paddingLeft={10}>
-      <LogoIc onClick={() => navigate('/')} />
+      <LogoDiv onClick={() => navigate('/')}>
+        <LogoIcon />
+      </LogoDiv>
       <HeaderProfile padding={10} />
     </HeaderWrapper>
   );
@@ -33,7 +37,9 @@ export const HomeDefaultHeader = () => {
   const navigate = useNavigate();
   return (
     <HeaderWrapper $paddingTop={1.2} $paddingRight={6} $paddingBottom={1.2} $paddingLeft={6}>
-      <LogoIc onClick={() => navigate('/')} />
+      <LogoDiv onClick={() => navigate('/')}>
+        <LogoIcon />
+      </LogoDiv>
       <HomeHeaderContent />
       <HeaderProfile padding={6} />
     </HeaderWrapper>
@@ -45,7 +51,9 @@ export const NavHeader = () => {
   const navigate = useNavigate();
   return (
     <HeaderWrapper $paddingTop={1.2} $paddingRight={25.6} $paddingBottom={1.2} $paddingLeft={25.6}>
-      <LogoIc onClick={() => navigate('/')} />
+      <LogoDiv onClick={() => navigate('/')}>
+        <LogoIcon />
+      </LogoDiv>
       <NavHeaderContent />
       <HeaderProfile padding={25.6} />
     </HeaderWrapper>
@@ -73,6 +81,6 @@ const HeaderWrapper = styled.div<{
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
-const LogoIc = styled(LogoIcon)`
+const LogoDiv = styled.div`
   cursor: pointer;
 `;
