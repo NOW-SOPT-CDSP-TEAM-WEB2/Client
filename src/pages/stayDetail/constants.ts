@@ -1,4 +1,7 @@
 export const STAY_INFO = {
+  roomPrice: 130882,
+  latitude: 34.0522,
+  longitude: -118.2437,
   roomId: 1,
   roomName: `휴식과 기록 'studio supe'`,
   roomImageList: [
@@ -25,7 +28,4 @@ export const STAY_INFO = {
             \n
             주인댁 반려견 방이를 산책시키거나 농번기에는 직접 수확해 식사를 할 수 있습니다.\n
             촬영 서비스를 통해 초상을 남길 수 있습니다.`,
-  roomPrice: '₩130,882 /박',
-  latitude: 34.0522,
-  longitude: -118.2437,
 };

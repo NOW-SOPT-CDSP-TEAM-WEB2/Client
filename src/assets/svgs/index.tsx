@@ -2,6 +2,7 @@
 // 명명규칙은 xxxxIcon으로 통일
 export { default as CopyrightIcon } from './copyright.svg?react';
 export { default as Divider } from './divider.svg?react';
+export { default as ArrowBelowIcon } from './ic_arrow_below_black_18.svg?react';
 export { default as ArrowRightIcon } from './ic_arrow_right_black_14.svg?react';
 export { default as BabyIcon } from './ic_baby_non_gray_18.svg?react';
 export { default as BadgeIcon } from './ic_badge_line_black_24.svg?react';

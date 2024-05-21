@@ -48,6 +48,7 @@ const StayInfo = () => {
         </RateWrapper>
         <HostInfoWrapper>
           <ProfileSpan>
+            {/* 정렬 맞추기 */}
             <ProfileImgIc />
             <MedalIc />
           </ProfileSpan>
