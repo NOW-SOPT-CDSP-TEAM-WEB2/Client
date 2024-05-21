@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 import Footer from '../../components/commons/footer/Footer';
+import CarouselWrapperComponent from './../../components/commons/carousel/CarouselWrapperComponent';
 
 const Main = () => {
   return (
     <TestContainer>
+      <CarouselWrapperComponent />
       <Footer />
     </TestContainer>
   );

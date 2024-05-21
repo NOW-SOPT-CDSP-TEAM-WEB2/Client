@@ -2,11 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Carousel from './carouselComponent/Carousel';
-import HeartComponent from './carouselComponent/HeartComponent';
-import SuperHostCard from './carouselComponent/SuperHostCard';
-import CarouselText from './CarouselText';
+import CarouselText from './components/CarouselText';
+import HeartComponent from './components/HeartComponent';
+import SuperHostCard from './components/SuperHostCard';
 import { API_TEST_CAROUSEL } from './constants/apiTest.ts';
-
 const CarouselWrapperComponent = () => {
   return (
     <>

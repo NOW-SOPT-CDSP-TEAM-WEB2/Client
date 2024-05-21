@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { StarIcon } from '../../../assets/svgs';
+import { StarIcon } from '../../../../assets/svgs';
 
 type Props = {
   roomlocation: string;
