@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Main from './pages/main/main';
 import StayCalendar from './pages/stayDetail/components/StayCalendar';
 import StayFacility from './pages/stayDetail/components/StayFacility';
+import StayHeader from './pages/stayDetail/components/StayHeader';
 import StayInfo from './pages/stayDetail/components/StayInfo';
 import StayReserve from './pages/stayDetail/components/StayReserve';
 import StayRule from './pages/stayDetail/components/StayRule';
@@ -17,7 +18,8 @@ const Router = () => {
         <Route path="/StayFacility" element={<StayFacility />} />
         <Route path="/StayReserve" element={<StayReserve />} />
         <Route path="/StayInfo" element={<StayInfo />} />
-        <Route path="/stayCalendar" element={<StayCalendar />} />
+        <Route path="/StayCalendar" element={<StayCalendar />} />
+        <Route path="/StayHeader" element={<StayHeader />} />
       </Routes>
     </BrowserRouter>
   );
