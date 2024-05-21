@@ -1,8 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const HomeHeaderContent = () => {
+type scroll = {
+  isScroll: boolean;
+};
+const HomeHeaderContent = ({ isScroll }: scroll) => {
   return (
-    <HomeHeaderContentWrapper>
+    <HomeHeaderContentWrapper $isScroll={isScroll}>
       <Content>숙소</Content>
       <Content>체험</Content>
       <Content>온라인 체험</Content>
@@ -17,6 +20,19 @@ const HomeHeaderContentWrapper = styled.div`
   gap: 0.9rem;
   align-items: center;
   justify-content: center;
+  margin: 0 29.5rem 0 45.9rem;
+
+  transition: all 0.3s;
+  ${(props) =>
+    props.$isScroll
+      ? css`
+          transform: translate(0, -4.2rem);
+          opacity: 0;
+        `
+      : css`
+          transform: translate(0, 0);
+          opacity: 1;
+        `}
 `;
 
 const Content = styled.div`

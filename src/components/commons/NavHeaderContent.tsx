@@ -1,8 +1,10 @@
-import styled from 'styled-components';
-
-const NavHeaderContent = () => {
+import styled, { css } from 'styled-components';
+type scroll = {
+  isScroll: boolean;
+};
+const NavHeaderContent = ({ isScroll }: scroll) => {
   return (
-    <NavHeaderWrapper>
+    <NavHeaderWrapper $isScroll={isScroll}>
       <Content>어디든지</Content>
       <Bar />
       <Content>언제든 일주일</Content>
@@ -15,16 +17,32 @@ const NavHeaderContent = () => {
 export default NavHeaderContent;
 
 const NavHeaderWrapper = styled.div`
+  position: absolute;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 25.2rem;
+  margin: 0 25.5rem 0 49.9rem;
   padding: 0.4rem 1rem;
 
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0 0.2rem 0.6rem 0 ${({ theme }) => theme.colors.boxDrop};
   border: 1px solid ${({ theme }) => theme.colors.gray400};
   border-radius: 99px;
+
+  /* stylelint-disable-next-line unit-allowed-list */
+  transition: all 0.2s;
+  ${(props) =>
+    props.$isScroll
+      ? css`
+          /* transform: translate(0, ); */
+          scale: 1;
+        `
+      : css`
+          transform: translate(0, 0);
+          scale: 0;
+        `}
 `;
 
 const Content = styled.div`

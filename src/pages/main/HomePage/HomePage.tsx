@@ -1,6 +1,6 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 
+import { HomeDefaultHeader } from '../../../components/commons/Header';
 import useScrollY from '../../hooks/useScrollY';
 import CarouselWrapperList from './components/CarouselWrapperList';
 import Chips from './components/Chips';
@@ -8,7 +8,6 @@ import HomeCategorySearch from './components/HomeCategorySearch';
 import HomeFooter from './components/HomeFooter';
 import LnbList from './components/LnbList';
 import SearchTravel from './components/SearchTravel';
-import { HomeDefaultHeader, NavHeader } from '../../../components/commons/Header';
 
 interface Scroll {
   isScroll: boolean;
@@ -19,7 +18,6 @@ const HomePage = () => {
 
   return (
     <HomeWrapper>
-      <NavHeader />
       <HomeDefaultHeader isScroll={isScroll} />
       <SearchTravel isScroll={isScroll} />
       <LnbChipWrapper $isScroll={isScroll}>

@@ -7,6 +7,9 @@ import HomeHeaderContent from './HomeHeaderContent';
 import NavHeaderContent from './NavHeaderContent';
 import { LogoIcon } from '../../assets/svgs';
 
+type scroll = {
+  isScroll: boolean;
+};
 // 로고만 있는 헤더
 export const DefaultHeader = () => {
   const navigate = useNavigate();
@@ -29,12 +32,13 @@ export const WishHeader = () => {
 };
 
 // 홈 헤더 기본 버전
-export const HomeDefaultHeader = () => {
+export const HomeDefaultHeader = ({ isScroll }: scroll) => {
   const navigate = useNavigate();
   return (
     <HeaderWrapper $paddingTop={1.2} $paddingRight={6} $paddingBottom={1.2} $paddingLeft={6}>
       <LogoIc onClick={() => navigate('/')} />
-      <HomeHeaderContent />
+      <NavHeaderContent isScroll={isScroll} />
+      <HomeHeaderContent isScroll={isScroll} />
       <HeaderProfile padding={6} />
     </HeaderWrapper>
   );
@@ -46,7 +50,7 @@ export const NavHeader = () => {
   return (
     <HeaderWrapper $paddingTop={1.2} $paddingRight={25.6} $paddingBottom={1.2} $paddingLeft={25.6}>
       <LogoIc onClick={() => navigate('/')} />
-      <NavHeaderContent />
+      {/* <NavHeaderContent /> */}
       <HeaderProfile padding={25.6} />
     </HeaderWrapper>
   );
