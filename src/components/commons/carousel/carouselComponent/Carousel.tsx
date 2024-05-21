@@ -31,15 +31,7 @@ const Carousel: React.FC<Props> = (props: CarouselProps) => {
     prevArrow: isHovered && slideState.activeSlide > 0 ? <StyledPrevArrow /> : null,
 
     appendDots: (dots: React.ReactNode) => (
-      <div
-        style={{
-          width: '100%',
-          position: 'absolute',
-          bottom: '0.9rem',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
+      <StyledDots>
         <ul>
           {React.Children.map(dots, (dot, index) =>
             React.cloneElement(dot as React.ReactElement, {
@@ -55,24 +47,23 @@ const Carousel: React.FC<Props> = (props: CarouselProps) => {
             })
           )}
         </ul>
-      </div>
+      </StyledDots>
     ),
     dotsClass: 'dots_custom',
   };
 
   return (
-    <div
-      className="carousel-container"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}>
+    <Carouselcontainer onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
       <Slider {...settings} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
         {roomImageList && roomImageList.map((src, index) => <CarouselImg key={index} src={src} />)}
       </Slider>
-    </div>
+    </Carouselcontainer>
   );
 };
 
 export default Carousel;
+
+const Carouselcontainer = styled.div``;
 
 const CarouselImg = styled.img`
   width: 23.7rem;
@@ -97,4 +88,13 @@ const StyledPrevArrow = styled(PrevArrow)`
   z-index: 1;
 
   transform: translateY(-50%);
+`;
+
+const StyledDots = styled.div`
+  width: 100%;
+  position: absolute;
+  bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
