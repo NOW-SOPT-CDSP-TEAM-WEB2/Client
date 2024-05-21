@@ -21,6 +21,7 @@ export { default as HamburgerBlackIcon } from './ic_hamburger_black_12.svg?react
 export { default as InstaBalckIcon } from './ic_insta_black_14.svg?react';
 export { default as InternetBlackIcon } from './ic_internet_black_12.svg?react';
 export { default as KeyIcon } from './ic_key_black_24.svg?react';
+export { default as KeyboardIcon } from './ic_keyboard_black_18.svg?react';
 export { default as KitchenIcon } from './ic_kitchen_black_18.svg?react';
 export { default as LeafLeftIcon } from './ic_leaf_left_black_32.svg?react';
 export { default as LeafRightIcon } from './ic_leaf_right_black_32.svg?react';
