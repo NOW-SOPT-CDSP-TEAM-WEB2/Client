@@ -5,13 +5,15 @@ import { API_Test } from './../../constatnts/apiTestText';
 import { InfoReservationCardContent } from '../../constatnts/postResevationText';
 import { getPrice } from '../../utils/getPrice.ts';
 import AccomodationCard from './AccomodationCard';
-type Props = {
+
+interface InfoReservationCardProps {
   price: number;
   daysDifference: number;
-};
+}
 
-const InfoReservationCard = (props: Props) => {
-  const { detailPrice, commissionFee, totalPrice } = getPrice(props.price, props.daysDifference);
+const InfoReservationCard = (props: InfoReservationCardProps) => {
+  const { price, daysDifference } = props;
+  const { detailPrice, commissionFee, totalPrice } = getPrice(price, daysDifference);
 
   return (
     <>
@@ -25,7 +27,7 @@ const InfoReservationCard = (props: Props) => {
           <PriceTitle>{InfoReservationCardContent.title}</PriceTitle>
           <PriceWrapper>
             <PriceLabel>
-              ₩{props.price.toLocaleString()} X {props.daysDifference}박
+              ₩{price.toLocaleString()} X {daysDifference}박
             </PriceLabel>
             <PriceLabel>₩{detailPrice.toLocaleString()}</PriceLabel>
           </PriceWrapper>

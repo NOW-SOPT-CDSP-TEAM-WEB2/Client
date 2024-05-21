@@ -3,40 +3,37 @@ import styled from 'styled-components';
 
 import { ReserInfoContent } from '../../constatnts/postResevationText.ts';
 
-type Props = {
+interface ReserveInfoProps {
   checkInDate: string;
   checkOutDate: string;
-  paymentDay: string;
-};
+}
 
-const ReserveInfo = (props: Props) => {
+const ReserveInfo = (props: ReserveInfoProps) => {
+  const { checkInDate, checkOutDate } = props;
   return (
-    <>
-      <ReserveInfoWrapper>
-        <ReserveInfoTitle>{ReserInfoContent.title}</ReserveInfoTitle>
-        <ReserveContentWrapper>
-          <ReserveDescribeWrapper>
-            <ReserveDescribeTitle> {ReserInfoContent.content1} </ReserveDescribeTitle>
-            <ReserveDescribeTxt>
-              {' '}
-              {props.checkInDate}-{props.checkOutDate}
-            </ReserveDescribeTxt>
-          </ReserveDescribeWrapper>
-          <ReserveDescribeWrapper>
-            <ReserveInfoEditTxt>{ReserInfoContent.content_edit}</ReserveInfoEditTxt>
-          </ReserveDescribeWrapper>
-        </ReserveContentWrapper>
-        <ReserveContentWrapper>
-          <ReserveDescribeWrapper>
-            <ReserveDescribeTitle> {ReserInfoContent.content2} </ReserveDescribeTitle>
-            <ReserveDescribeTxt> {ReserInfoContent.content2_txt}</ReserveDescribeTxt>
-          </ReserveDescribeWrapper>
-          <ReserveDescribeWrapper>
-            <ReserveInfoEditTxt>{ReserInfoContent.content_edit}</ReserveInfoEditTxt>
-          </ReserveDescribeWrapper>
-        </ReserveContentWrapper>
-      </ReserveInfoWrapper>
-    </>
+    <ReserveInfoWrapper>
+      <ReserveInfoTitle>{ReserInfoContent.title}</ReserveInfoTitle>
+      <ReserveContentWrapper>
+        <ReserveDescribeWrapper>
+          <ReserveDescribeTitle> {ReserInfoContent.content1} </ReserveDescribeTitle>
+          <ReserveDescribeTxt>
+            {checkInDate}-{checkOutDate}
+          </ReserveDescribeTxt>
+        </ReserveDescribeWrapper>
+        <ReserveDescribeWrapper>
+          <ReserveInfoEditTxt>{ReserInfoContent.content_edit}</ReserveInfoEditTxt>
+        </ReserveDescribeWrapper>
+      </ReserveContentWrapper>
+      <ReserveContentWrapper>
+        <ReserveDescribeWrapper>
+          <ReserveDescribeTitle> {ReserInfoContent.content2} </ReserveDescribeTitle>
+          <ReserveDescribeTxt> {ReserInfoContent.content2_txt}</ReserveDescribeTxt>
+        </ReserveDescribeWrapper>
+        <ReserveDescribeWrapper>
+          <ReserveInfoEditTxt>{ReserInfoContent.content_edit}</ReserveInfoEditTxt>
+        </ReserveDescribeWrapper>
+      </ReserveContentWrapper>
+    </ReserveInfoWrapper>
   );
 };
 

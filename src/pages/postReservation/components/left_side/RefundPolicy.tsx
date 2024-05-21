@@ -5,52 +5,51 @@ import { TimePink32 } from '../../../../assets/svgs';
 import { RefundPolicyCard, RefundPolicyContent } from '../../constatnts/postResevationText.ts';
 import { getRefundDate } from './../../utils/getRefundDate';
 
-type Props = {
+interface RefundPolicyProps {
   checkInDate: string;
-};
+}
 
-const RefundPolicy = (props: Props) => {
+const RefundPolicy = (props: RefundPolicyProps) => {
+  const { checkInDate } = props;
   const refundDay = getRefundDate(props.checkInDate);
   return (
-    <>
-      <RefundPolicyWrapper>
-        <RefundPolicyTitle>{RefundPolicyContent.title}</RefundPolicyTitle>
-        <RefundPolicyTextArea1>
-          <TextBold>
-            {props.checkInDate} {RefundPolicyContent.content_bold}
-          </TextBold>
-          <TextNormal>
-            {RefundPolicyContent.content_normal1}
-            {refundDay} {RefundPolicyContent.content_normal2}
-          </TextNormal>
-          <TextUnderline>{RefundPolicyContent.content_underline}</TextUnderline>
-        </RefundPolicyTextArea1>
-        <RefundPolicyTextArea2>
-          <TimePink32 />
-          <Area2TextWrapper>
-            <TextBold>{RefundPolicyCard.content_bold}</TextBold>
-            <TextNormal>{RefundPolicyCard.content_normal}</TextNormal>
-          </Area2TextWrapper>
-        </RefundPolicyTextArea2>
-        <RefundPolicyTextArea3>
-          <TextArea3Normal>{RefundPolicyContent.contentDetail_normal1}</TextArea3Normal>
-          <TextArea3Underline>{RefundPolicyContent.contentDetail_underline1}</TextArea3Underline>
-          <TextArea3Normal>{RefundPolicyContent.contentDetail_normal2}</TextArea3Normal>
-          <TextArea3Underline>{RefundPolicyContent.contentDetail_underline2}</TextArea3Underline>
-          <TextArea3Normal>{RefundPolicyContent.contentDetail_normal3}</TextArea3Normal>
-        </RefundPolicyTextArea3>
+    <RefundPolicyWrapper>
+      <RefundPolicyTitle>{RefundPolicyContent.title}</RefundPolicyTitle>
+      <RefundPolicyTextArea1>
+        <TextBold>
+          {checkInDate} {RefundPolicyContent.content_bold}
+        </TextBold>
+        <TextNormal>
+          {RefundPolicyContent.content_normal1}
+          {refundDay} {RefundPolicyContent.content_normal2}
+        </TextNormal>
+        <TextUnderline>{RefundPolicyContent.content_underline}</TextUnderline>
+      </RefundPolicyTextArea1>
+      <RefundPolicyTextArea2>
+        <TimePink32 />
+        <Area2TextWrapper>
+          <TextBold>{RefundPolicyCard.content_bold}</TextBold>
+          <TextNormal>{RefundPolicyCard.content_normal}</TextNormal>
+        </Area2TextWrapper>
+      </RefundPolicyTextArea2>
+      <RefundPolicyTextArea3>
+        <TextArea3Normal>{RefundPolicyContent.contentDetail_normal1}</TextArea3Normal>
+        <TextArea3Underline>{RefundPolicyContent.contentDetail_underline1}</TextArea3Underline>
+        <TextArea3Normal>{RefundPolicyContent.contentDetail_normal2}</TextArea3Normal>
+        <TextArea3Underline>{RefundPolicyContent.contentDetail_underline2}</TextArea3Underline>
+        <TextArea3Normal>{RefundPolicyContent.contentDetail_normal3}</TextArea3Normal>
+      </RefundPolicyTextArea3>
 
-        <RefundPolicyTextArea3>
-          <TextArea3Normal> 또한, </TextArea3Normal>
-          <TextArea3UnderlineBlue>{RefundPolicyContent.contentPolicy_blue1}</TextArea3UnderlineBlue>
-          <TextArea3Normal>과 </TextArea3Normal>
-          <TextArea3UnderlineBlue>{RefundPolicyContent.contentPolicy_blue2}</TextArea3UnderlineBlue>
-          <TextArea3Normal>및 </TextArea3Normal>
-          <TextArea3UnderlineBlue>{RefundPolicyContent.contentPolicy_blue3}</TextArea3UnderlineBlue>
-          <TextArea3Normal>에도 동의합니다. </TextArea3Normal>
-        </RefundPolicyTextArea3>
-      </RefundPolicyWrapper>
-    </>
+      <RefundPolicyTextArea3>
+        <TextArea3Normal> 또한, </TextArea3Normal>
+        <TextArea3UnderlineBlue>{RefundPolicyContent.contentPolicy_blue1}</TextArea3UnderlineBlue>
+        <TextArea3Normal>과 </TextArea3Normal>
+        <TextArea3UnderlineBlue>{RefundPolicyContent.contentPolicy_blue2}</TextArea3UnderlineBlue>
+        <TextArea3Normal>및 </TextArea3Normal>
+        <TextArea3UnderlineBlue>{RefundPolicyContent.contentPolicy_blue3}</TextArea3UnderlineBlue>
+        <TextArea3Normal>에도 동의합니다. </TextArea3Normal>
+      </RefundPolicyTextArea3>
+    </RefundPolicyWrapper>
   );
 };
 

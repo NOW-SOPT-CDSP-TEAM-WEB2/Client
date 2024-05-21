@@ -3,20 +3,21 @@ import styled from 'styled-components';
 
 import { MedalFillBlackIcon, PostReservationHousingCard, StarIcon } from '../../../../assets/svgs';
 
-type Props = {
+interface AccomodationCardProps {
   roomName: string;
   description: string;
   isSuperHost: boolean;
-};
+}
 
-const AccomodationInfoCard = (props: Props) => {
+const AccomodationInfoCard = (props: AccomodationCardProps) => {
+  const { roomName, description, isSuperHost } = props;
   return (
     <>
       <Accomodationwrapper>
         <PostReservationHousingCard />
         <AccomodationTextWrapper>
-          <AccomodationName>{props.roomName}</AccomodationName>
-          <AccomodationDetail>{props.description}</AccomodationDetail>
+          <AccomodationName>{roomName}</AccomodationName>
+          <AccomodationDetail>{description}</AccomodationDetail>
           <IconAreaWrapper>
             <AccomodationDescr>
               {' '}
@@ -24,9 +25,9 @@ const AccomodationInfoCard = (props: Props) => {
                 <StarIcon />
               </IconWrapper>
               4.94 {'('}후기 84개{')'}
-              {props.isSuperHost && (
+              {isSuperHost && (
                 <>
-                  <IconWrapper $issuperHost={props.isSuperHost}>
+                  <IconWrapper $issuperHost={isSuperHost}>
                     <MedalFillBlackIcon />
                   </IconWrapper>
                   슈퍼호스트

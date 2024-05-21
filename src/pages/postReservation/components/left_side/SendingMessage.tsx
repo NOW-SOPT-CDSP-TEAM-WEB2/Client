@@ -4,42 +4,40 @@ import styled from 'styled-components';
 import { SendingMessagetoHost } from '../../../../assets/svgs';
 import { SendingMessageContent } from '../../constatnts/postResevationText.ts';
 
-type Props = {
+interface SendingMessageProps {
   hostName: string;
   yearsOfHosting: string;
   messageToHost: string;
   onChange: (value: string) => void;
-};
+}
 
-const SendingMessage = (props: Props) => {
+const SendingMessage = (props: SendingMessageProps) => {
+  const { hostName, yearsOfHosting, messageToHost, onChange } = props;
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     props.onChange(e.target.value);
   };
   return (
-    <>
-      <SendingMessageWrapper>
-        <SendingTitle>{SendingMessageContent.title}</SendingTitle>
-        <ContentWrapper>
-          <SendingContent>{SendingMessageContent.content}</SendingContent>
-          <HostProfileWrapper>
-            <SendingMessagetoHost />
-            <HostInfoWrapper>
-              <HostName> {props.hostName} </HostName>
-              <HostYears>
-                {' '}
-                {SendingMessageContent.hostInfo} {props.yearsOfHosting}년{' '}
-              </HostYears>
-            </HostInfoWrapper>
-          </HostProfileWrapper>
-          <InputCard
-            type="text"
-            value={props.messageToHost}
-            onChange={handleChange}
-            placeholder={`${props.hostName}${SendingMessageContent.hostMessage}`}
-          />
-        </ContentWrapper>
-      </SendingMessageWrapper>
-    </>
+    <SendingMessageWrapper>
+      <SendingTitle>{SendingMessageContent.title}</SendingTitle>
+      <ContentWrapper>
+        <SendingContent>{SendingMessageContent.content}</SendingContent>
+        <HostProfileWrapper>
+          <SendingMessagetoHost />
+          <HostInfoWrapper>
+            <HostName> {hostName} </HostName>
+            <HostYears>
+              {SendingMessageContent.hostInfo} {yearsOfHosting}년
+            </HostYears>
+          </HostInfoWrapper>
+        </HostProfileWrapper>
+        <InputCard
+          type="text"
+          value={messageToHost}
+          onChange={handleChange}
+          placeholder={`${hostName}${SendingMessageContent.hostMessage}`}
+        />
+      </ContentWrapper>
+    </SendingMessageWrapper>
   );
 };
 

@@ -4,14 +4,15 @@ import styled from 'styled-components';
 import { getPrice } from './../../utils/getPrice';
 import { SelectPaymentContent } from '../../constatnts/postResevationText';
 
-type Props = {
+interface SelectPaymentProps {
   price: number;
   daysDifference: number;
   paymentDate: string;
-};
+}
 
-const SelectPayment = (props: Props) => {
-  const { totalPrice, departPrcie, otherPrice } = getPrice(props.price, props.daysDifference);
+const SelectPayment = (props: SelectPaymentProps) => {
+  const { price, daysDifference, paymentDate } = props;
+  const { totalPrice, departPrcie, otherPrice } = getPrice(price, daysDifference);
 
   return (
     <>
@@ -26,7 +27,7 @@ const SelectPayment = (props: Props) => {
             <Option2TxtWrapper>
               <PaymentOption2Txt>{SelectPaymentContent.content1}</PaymentOption2Txt>
               <PaymentOption2DescrTxt>
-                오늘은 ₩{departPrcie.toLocaleString()}, {props.paymentDate}에는 ₩{otherPrice.toLocaleString()}의 금액을
+                오늘은 ₩{departPrcie.toLocaleString()}, {paymentDate}에는 ₩{otherPrice.toLocaleString()}의 금액을
                 결제하세요. {SelectPaymentContent.content2}{' '}
                 <PaymentOption2Detail>{SelectPaymentContent.content3}</PaymentOption2Detail>
               </PaymentOption2DescrTxt>

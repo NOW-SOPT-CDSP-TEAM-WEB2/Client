@@ -11,14 +11,15 @@ import SelectPayment from './SelectPayment';
 import SendingMessage from './SendingMessage';
 import { API_Test } from '../../constatnts/apiTestText.ts';
 
-type Props = {
+interface WrapLeftComponentsProps {
   checkInDate: string;
   checkOutDate: string;
   daysDifference: number;
   paymentDate: string;
-};
+}
 
-const WrapComponents = (props: Props) => {
+const WrapComponents = (props: WrapLeftComponentsProps) => {
+  const { checkInDate, checkOutDate, daysDifference, paymentDate } = props;
   const [hostMessage, setHostMessage] = useState<string>('');
 
   const handleHostMessageChange = (value: string) => {
@@ -29,12 +30,8 @@ const WrapComponents = (props: Props) => {
     <>
       <ComponentsWrapper>
         <CardNotice hostName={API_Test.hostName} />
-        <ReserveInfo checkInDate={props.checkInDate} checkOutDate={props.checkOutDate} />
-        <SelectPayment
-          price={API_Test.roomPrice}
-          daysDifference={props.daysDifference}
-          paymentDate={props.paymentDate}
-        />
+        <ReserveInfo checkInDate={checkInDate} checkOutDate={checkOutDate} />
+        <SelectPayment price={API_Test.roomPrice} daysDifference={daysDifference} paymentDate={paymentDate} />
         <PaymentWay />
         <SendingMessage
           hostName={API_Test.hostName}
@@ -42,7 +39,7 @@ const WrapComponents = (props: Props) => {
           yearsOfHosting={API_Test.yearsOfHosting}
           messageToHost={hostMessage}
         />
-        <RefundPolicy checkInDate={props.checkInDate} />
+        <RefundPolicy checkInDate={checkInDate} />
         <PostButton buttonText={PostContent.title} />
       </ComponentsWrapper>
     </>

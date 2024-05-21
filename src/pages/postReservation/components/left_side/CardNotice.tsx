@@ -4,17 +4,20 @@ import styled from 'styled-components';
 import { DiamondPinkIcon } from '../../../../assets/svgs';
 import { CardNoticeContent } from '../../constatnts/postResevationText.ts';
 
-type Props = {
+interface CareNoticeProps {
   hostName: string;
-};
-const CardNotice = (props: Props) => {
+}
+
+const CardNotice = (props: CareNoticeProps) => {
+  const { hostName } = props;
+
   return (
     <>
       <CardNoticeWrapper>
         <CardTextWrapper>
           <CardNoticeTitle>{CardNoticeContent.content1}</CardNoticeTitle>
           <CardNoticeTxt>
-            {props.hostName}
+            {hostName}
             {CardNoticeContent.content2}
           </CardNoticeTxt>
         </CardTextWrapper>

@@ -2,12 +2,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-interface ButtonProps {
+interface PostButtonProps {
   buttonText: string;
-  onClick: () => void;
 }
 
-const PostButton = (props: ButtonProps) => {
+const PostButton = (props: PostButtonProps) => {
+  const { buttonText } = props;
   const navigate = useNavigate();
 
   const onClickPost = () => {
@@ -17,18 +17,12 @@ const PostButton = (props: ButtonProps) => {
 
   return (
     <>
-      <PostButtonWrapper>
-        <PostResevationButton onClick={onClickPost}>{props.buttonText}</PostResevationButton>
-      </PostButtonWrapper>
+      <PostResevationButton onClick={onClickPost}>{buttonText}</PostResevationButton>
     </>
   );
 };
 
 export default PostButton;
-
-const PostButtonWrapper = styled.div`
-  display: flex;
-`;
 
 const PostResevationButton = styled.button`
   width: 10.4rem;

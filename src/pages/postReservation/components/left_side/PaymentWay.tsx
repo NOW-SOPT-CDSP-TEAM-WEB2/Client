@@ -13,31 +13,29 @@ import { PaymentContent } from '../../constatnts/postResevationText.ts';
 
 const PaymentWay = () => {
   return (
-    <>
-      <PaymentWayWrapper>
-        <TitleArea>
-          <PaymentWayTitle>{PaymentContent.title}</PaymentWayTitle>
-          <IconWrapper>
-            <VisaIcon />
-            <AmexIcon />
-            <MasterCardIcon />
-            <NaverPayIcon />
-          </IconWrapper>
-        </TitleArea>
+    <PaymentWayWrapper>
+      <TitleArea>
+        <PaymentWayTitle>{PaymentContent.title}</PaymentWayTitle>
+        <IconWrapper>
+          <VisaIcon />
+          <AmexIcon />
+          <MasterCardIcon />
+          <NaverPayIcon />
+        </IconWrapper>
+      </TitleArea>
 
-        <PaymentCardArea>
-          <CurrentCardInfo>
-            <CardInfoIconWrapper>
-              <MasterCardNormalIcon />
-            </CardInfoIconWrapper>
-            <PaymentCardInfo> {PaymentContent.content}</PaymentCardInfo>
-          </CurrentCardInfo>
-          <ArrowIconWrapper>
-            <ArrowDownIcon />
-          </ArrowIconWrapper>
-        </PaymentCardArea>
-      </PaymentWayWrapper>
-    </>
+      <PaymentCardArea>
+        <CurrentCardInfo>
+          <CardInfoIconWrapper>
+            <MasterCardNormalIcon />
+          </CardInfoIconWrapper>
+          <PaymentCardInfo> {PaymentContent.content}</PaymentCardInfo>
+        </CurrentCardInfo>
+        <ArrowIconWrapper>
+          <ArrowDownIcon />
+        </ArrowIconWrapper>
+      </PaymentCardArea>
+    </PaymentWayWrapper>
   );
 };
 

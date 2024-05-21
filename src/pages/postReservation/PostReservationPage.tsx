@@ -5,7 +5,7 @@ import { getDifferenceDate } from '../../pages/postReservation/utils/getDifferen
 import { getDateBeforeDays } from '../../pages/postReservation/utils/getPaymentDay';
 import Footer from './../../components/commons/footer/Footer';
 import { DefaultHeader } from './../../components/commons/Header';
-import PostReservationHeader from './components/header/PostReservationHeader';
+import PostReservationHeader from './components/header/postReservationHeader';
 import WrapLeftComponents from './components/left_side/WrapLeftComponents';
 import InfoReservationCard from './components/right_side/InfoReservationCard';
 import { API_Test } from './constatnts/apiTestText.ts';
@@ -63,11 +63,6 @@ export default PostReservationPage;
 const PostReservationWrapper = styled.div`
   width: 1366px;
   padding: 6rem 23.8rem 0 23.9rem;
-
-  @media (width<=1046px) {
-    position: absolute;
-    left: 0;
-  }
 `;
 
 const PostReservationContentWrapper = styled.div`
