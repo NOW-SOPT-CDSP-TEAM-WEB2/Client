@@ -16,14 +16,18 @@ interface WrapLeftComponentsProps {
   checkOutDate: string;
   daysDifference: number;
   paymentDate: string;
+  inputVal: string;
+  setInputVal: string;
+  onClick(): void;
 }
 
 const WrapComponents = (props: WrapLeftComponentsProps) => {
-  const { checkInDate, checkOutDate, daysDifference, paymentDate } = props;
-  const [hostMessage, setHostMessage] = useState<string>('');
+  const { checkInDate, checkOutDate, daysDifference, paymentDate, onClick, inputVal, setInputVal } = props;
 
-  const handleHostMessageChange = (value: string) => {
-    setHostMessage(value);
+  const handleChange = (e) => {
+    setInputVal((prev) => ({
+      ...prev,
+    }));
   };
 
   return (
@@ -35,12 +39,13 @@ const WrapComponents = (props: WrapLeftComponentsProps) => {
         <PaymentWay />
         <SendingMessage
           hostName={API_Test.hostName}
-          handleChange={handleHostMessageChange}
+          handleChange={handleChange}
           yearsOfHosting={API_Test.yearsOfHosting}
-          messageToHost={hostMessage}
+          inputVal={inputVal}
+          setInputVal={setInputVal}
         />
         <RefundPolicy checkInDate={checkInDate} />
-        <PostButton buttonText={PostContent.title} />
+        <PostButton onClick={onClick} buttonText={PostContent.title} />
       </ComponentsWrapper>
     </>
   );

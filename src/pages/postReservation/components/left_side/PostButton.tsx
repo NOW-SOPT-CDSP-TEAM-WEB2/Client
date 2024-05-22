@@ -4,10 +4,11 @@ import styled from 'styled-components';
 
 interface PostButtonProps {
   buttonText: string;
+  onClick(): props;
 }
 
 const PostButton = (props: PostButtonProps) => {
-  const { buttonText } = props;
+  const { buttonText, onClick } = props;
   const navigate = useNavigate();
 
   const onClickPost = () => {
@@ -17,7 +18,7 @@ const PostButton = (props: PostButtonProps) => {
 
   return (
     <>
-      <PostResevationButton onClick={onClickPost}>{buttonText}</PostResevationButton>
+      <PostResevationButton onClick={onClick}>{buttonText}</PostResevationButton>
     </>
   );
 };

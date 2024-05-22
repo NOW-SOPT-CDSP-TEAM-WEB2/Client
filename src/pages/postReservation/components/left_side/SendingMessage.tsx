@@ -8,14 +8,20 @@ interface SendingMessageProps {
   hostName: string;
   yearsOfHosting: string;
   messageToHost: string;
-  onChange: (value: string) => void;
+  inputVal: string;
+  setInputVal: string;
 }
 
 const SendingMessage = (props: SendingMessageProps) => {
-  const { hostName, yearsOfHosting, messageToHost, onChange } = props;
+  const { hostName, yearsOfHosting, messageToHost, inputVal, setInputVal } = props;
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    props.onChange(e.target.value);
+    const { name, value } = e.target;
+    setInputVal((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
+
   return (
     <SendingMessageWrapper>
       <SendingTitle>{SendingMessageContent.title}</SendingTitle>
@@ -32,8 +38,9 @@ const SendingMessage = (props: SendingMessageProps) => {
         </HostProfileWrapper>
         <InputCard
           type="text"
-          value={messageToHost}
+          name="messageToHost"
           onChange={handleChange}
+          value={inputVal.messageToHost}
           placeholder={`${hostName}${SendingMessageContent.hostMessage}`}
         />
       </ContentWrapper>
