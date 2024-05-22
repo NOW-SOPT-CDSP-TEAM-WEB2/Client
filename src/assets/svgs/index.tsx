@@ -22,5 +22,5 @@ export { default as XBlackIcon } from './ic_x_black_14.svg?react';
 export { default as LogoIcon } from './logo.svg?react';
 export { default as PostReservationHousingCard } from './postReservation_housingCard.svg?react';
 export { default as ProfileImgIcon } from './profileImg.svg?react';
-export { default as SendingMessagetoHost } from './sendingMessagetoHost.svg?react';
+export { default as SendingMessagetoHost } from './SendingMessagetoHost.svg?react';
 export { default as WishListThumIcon } from './wishListThumb.svg?react';

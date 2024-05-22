@@ -1,41 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-import { getDifferenceDate } from '../../pages/postReservation/utils/getDifferenceDate';
-import { getDateBeforeDays } from '../../pages/postReservation/utils/getPaymentDay';
 import Footer from './../../components/commons/footer/Footer';
 import { DefaultHeader } from './../../components/commons/Header';
 import PostReservationHeader from './components/header/postReservationHeader';
 import WrapLeftComponents from './components/left_side/WrapLeftComponents';
 import InfoReservationCard from './components/right_side/InfoReservationCard';
 import { API_Test } from './constatnts/apiTestText.ts';
-import { extractMonthAndDay } from '../../pages/postReservation/utils/extractMonthAndDay';
+import { useExtractDate } from './hooks/extractDate';
 
 const PostReservationPage = () => {
-  const [checkInDate, setCheckInDate] = useState<string>('');
-
-  const [checkOutDate, setCheckOutDate] = useState<string>('');
-  const [daysDifference, setDaysDifference] = useState<number>('');
-  const [paymentDate, setPaymentDate] = useState<string>('');
-
-  const EditDate = () => {
-    DifferenceIndays(API_Test.checkInDate, API_Test.checkOutDate);
-    const { month: checkInmonth, day: checkInday } = extractMonthAndDay(API_Test.checkInDate);
-    setCheckInDate(checkInmonth + '월 ' + checkInday + '일');
-    const { day: checkOutday } = extractMonthAndDay(API_Test.checkOutDate);
-    setCheckOutDate(checkOutday + '일');
-    const paymentPeriod = getDateBeforeDays(API_Test.checkInDate);
-    setPaymentDate(paymentPeriod);
-  };
-
-  const DifferenceIndays = (dateString1, dateString2) => {
-    const daysDifference = getDifferenceDate(dateString1, dateString2);
-    setDaysDifference(daysDifference);
-  };
-
-  useEffect(() => {
-    EditDate();
-  }, []);
+  const { formattedCheckInDate, formattedCheckOutDate, daysDifference, paymentDate } = useExtractDate(
+    API_Test.checkInDate,
+    API_Test.checkOutDate
+  );
 
   return (
     <>
@@ -44,8 +22,8 @@ const PostReservationPage = () => {
         <PostReservationHeader />
         <PostReservationContentWrapper>
           <WrapLeftComponents
-            checkInDate={checkInDate}
-            checkOutDate={checkOutDate}
+            checkInDate={formattedCheckInDate}
+            checkOutDate={formattedCheckOutDate}
             daysDifference={daysDifference}
             paymentDate={paymentDate}
           />
