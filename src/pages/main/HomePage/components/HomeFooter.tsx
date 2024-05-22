@@ -14,23 +14,21 @@ const HomeFooter = () => {
       </FooterCarouselTitleList>
       <FooterCarousel>
         <CarouselLeftBtn />
-        {FooterCarouselItemInfo.map((info) => {
-          return (
-            <FooterCarouselItem key={info.id}>
-              <FooterCarouselImg src={info.img} />
-              <FooterCarouselInfo>
-                <FooterCarouselTitle>{info.title}</FooterCarouselTitle>
-                <FooterCarouselRecommend>{info.recommend}</FooterCarouselRecommend>
-                <FooterCarouselDescription>{info.description}</FooterCarouselDescription>
-                <FooterCarouselPriceWrapper>
-                  <FooterCarouselDefaultPrice>{info.defaultPrice}</FooterCarouselDefaultPrice>
-                  <FooterCarouselDiscountPrice>{info.discountPrice}</FooterCarouselDiscountPrice>
-                  <FooterCarouselDay>{info.day}</FooterCarouselDay>
-                </FooterCarouselPriceWrapper>
-              </FooterCarouselInfo>
-            </FooterCarouselItem>
-          );
-        })}
+        {FooterCarouselItemInfo.map((info) => (
+          <FooterCarouselItem key={info.id}>
+            <FooterCarouselImg src={info.img} />
+            <FooterCarouselInfo>
+              <FooterCarouselTitle>{info.title}</FooterCarouselTitle>
+              <FooterCarouselRecommend>{info.recommend}</FooterCarouselRecommend>
+              <FooterCarouselDescription>{info.description}</FooterCarouselDescription>
+              <FooterCarouselPriceWrapper>
+                <FooterCarouselDefaultPrice>{info.defaultPrice}</FooterCarouselDefaultPrice>
+                <FooterCarouselDiscountPrice>{info.discountPrice}</FooterCarouselDiscountPrice>
+                <FooterCarouselDay>{info.day}</FooterCarouselDay>
+              </FooterCarouselPriceWrapper>
+            </FooterCarouselInfo>
+          </FooterCarouselItem>
+        ))}
         <CarouselRightBtn />
       </FooterCarousel>
     </HomeFooterWrapper>
@@ -42,7 +40,7 @@ export default HomeFooter;
 const HomeFooterWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 136.6rem;
+  width: 1366px;
   padding: 1.3rem 0 0 25.5rem;
 
   background-color: ${({ theme }) => theme.colors.gray100};

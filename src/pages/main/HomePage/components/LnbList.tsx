@@ -4,19 +4,25 @@ import styled, { css } from 'styled-components';
 import { LnbInfo } from '../constants';
 
 const LnbList = () => {
-  const [isHoverIcon, setIsHoverIcon] = useState<boolean[]>([false, false, false, false, false, false, false, false]);
-  const [isClickIcon, setIsClickIcon] = useState<boolean[]>([false, false, false, false, false, false, false, false]);
+  const [isHoverIcon, setIsHoverIcon] = useState<boolean[]>(Array(8).fill(false));
+  const [isClickIcon, setIsClickIcon] = useState<boolean[]>(Array(8).fill(false));
 
   const handleIconClick = (id: number, identifier: string) => {
-    if (identifier === 'click') {
-      const temp = isClickIcon.map((_, index) => (index === id ? true : false));
-      setIsClickIcon(temp);
-    } else if (identifier === 'mouseOver') {
-      const temp = isHoverIcon.map((_, index) => (index === id || isClickIcon[index] ? true : false));
-      setIsHoverIcon(temp);
-    } else {
-      const temp = isHoverIcon.map(() => false);
-      setIsHoverIcon(temp);
+    switch (identifier) {
+      case 'click': {
+        const clickTemp = isClickIcon.map((_, index) => (index === id ? true : false));
+        setIsClickIcon(clickTemp);
+        break;
+      }
+      case 'mouseOver': {
+        const hoverTemp = isHoverIcon.map((_, index) => (index === id || isClickIcon[index] ? true : false));
+        setIsHoverIcon(hoverTemp);
+        break;
+      }
+      default: {
+        const defaultTemp = isHoverIcon.map(() => false);
+        setIsHoverIcon(defaultTemp);
+      }
     }
   };
 

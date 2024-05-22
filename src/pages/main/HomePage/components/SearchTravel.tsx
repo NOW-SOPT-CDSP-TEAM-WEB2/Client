@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { searchMiniWhiteIcon } from '../../../../assets/svgs';
+import { SearchMiniWhiteIcon } from '../../../../assets/svgs';
 
 type SearchTravelProps = {
   isScroll: boolean;
@@ -38,7 +38,7 @@ const SearchTravel = (props: SearchTravelProps) => {
 
 export default SearchTravel;
 
-const SearchTravelWrapper = styled.div`
+const SearchTravelWrapper = styled.div<{ $isScroll: boolean }>`
   z-index: 100;
   display: flex;
   align-items: center;
@@ -112,6 +112,6 @@ const Divider = styled.div`
   border: solid 1px ${({ theme }) => theme.colors.gray400};
 `;
 
-const SearchMiniWhiteIC = styled(searchMiniWhiteIcon)`
+const SearchMiniWhiteIC = styled(SearchMiniWhiteIcon)`
   cursor: pointer;
 `;

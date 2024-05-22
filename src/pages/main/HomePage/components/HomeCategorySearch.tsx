@@ -16,7 +16,7 @@ const HomeCategorySearchWrapper = styled.div`
   flex-direction: column;
   gap: 2rem;
   align-items: center;
-  width: 136.6rem;
+  width: 1366px;
   padding: 4.4rem 0;
 `;
 

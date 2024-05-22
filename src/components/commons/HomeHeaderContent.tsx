@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components';
 
-type scroll = {
+interface HomeHeaderContentProps {
   isScroll: boolean;
-};
-const HomeHeaderContent = ({ isScroll }: scroll) => {
+}
+const HomeHeaderContent = (props: HomeHeaderContentProps) => {
+  const { isScroll } = props;
   return (
     <HomeHeaderContentWrapper $isScroll={isScroll}>
       <Content>숙소</Content>
@@ -15,13 +16,14 @@ const HomeHeaderContent = ({ isScroll }: scroll) => {
 
 export default HomeHeaderContent;
 
-const HomeHeaderContentWrapper = styled.div`
+const HomeHeaderContentWrapper = styled.div<{ $isScroll: boolean }>`
   display: flex;
   gap: 0.9rem;
   align-items: center;
   justify-content: center;
   margin: 0 29.5rem 0 45.9rem;
 
+  /* stylelint-disable-next-line unit-allowed-list */
   transition: all 0.3s;
   ${(props) =>
     props.$isScroll

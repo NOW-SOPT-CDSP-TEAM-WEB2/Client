@@ -12,7 +12,7 @@ export { default as HotGrayIcon } from './ic_hot_grey_18.svg?react';
 export { default as InternetBlackIcon } from './ic_internet_black_12.svg?react';
 export { default as ParkBlackIcon } from './ic_park_black_18.svg?react';
 export { default as ParkGrayIcon } from './ic_park_gray_18.svg?react';
-export { default as searchMiniWhiteIcon } from './ic_search_mini_white_12.svg?react';
+export { default as SearchMiniWhiteIcon } from './ic_search_mini_white_12.svg?react';
 export { default as SwimmingPoolBlackIcon } from './ic_swimming_pool_black_18.svg?react';
 export { default as SwimmingPoolGrayIcon } from './ic_swimming_pool_gray_18.svg?react';
 export { default as UfoBlackIcon } from './ic_ufo_black_18.svg?react';

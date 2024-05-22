@@ -37,13 +37,13 @@ const HomeWrapper = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 136.6rem;
+  width: 1366px;
 `;
 const LnbChipWrapper = styled.div<{ $isScroll: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 136.6rem;
+  width: 1366px;
   height: 14rem;
 
   ${(props) =>

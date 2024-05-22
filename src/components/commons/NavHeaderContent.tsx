@@ -1,8 +1,9 @@
 import styled, { css } from 'styled-components';
-type scroll = {
+interface NavHeaderContentProps {
   isScroll: boolean;
-};
-const NavHeaderContent = ({ isScroll }: scroll) => {
+}
+const NavHeaderContent = (props: NavHeaderContentProps) => {
+  const { isScroll } = props;
   return (
     <NavHeaderWrapper $isScroll={isScroll}>
       <Content>어디든지</Content>
@@ -16,7 +17,7 @@ const NavHeaderContent = ({ isScroll }: scroll) => {
 
 export default NavHeaderContent;
 
-const NavHeaderWrapper = styled.div`
+const NavHeaderWrapper = styled.div<{ $isScroll: boolean }>`
   position: absolute;
   z-index: 100;
   display: flex;
@@ -36,7 +37,6 @@ const NavHeaderWrapper = styled.div`
   ${(props) =>
     props.$isScroll
       ? css`
-          /* transform: translate(0, ); */
           scale: 1;
         `
       : css`
