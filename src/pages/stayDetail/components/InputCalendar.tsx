@@ -59,6 +59,7 @@ const StyledDatePicker = styled(DatePicker)`
   height: 1.2rem;
   ${({ theme }) => theme.fonts.detail1_middle};
   color: ${({ theme }) => theme.colors.black};
+
   border: none;
   background-color: transparent;
 

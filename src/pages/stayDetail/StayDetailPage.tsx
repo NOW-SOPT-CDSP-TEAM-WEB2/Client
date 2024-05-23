@@ -98,6 +98,7 @@ const PageWrapper = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   gap: 7.3rem;
+  width: 100%;
   padding: 0 25.6rem 3.2rem 0;
 `;
 
