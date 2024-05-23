@@ -10,9 +10,19 @@ import Footer from '../../components/commons/footer/Footer';
 import { WishHeader } from '../../components/commons/header/Header';
 import { wishListApiDataType, getWishList } from '../wishList/utils/getWishList';
 
+interface location {
+  lat: number;
+  lng: number;
+}
+
+export interface latlngType {
+  latlng: location;
+}
+
 const WishListDetail = () => {
   const navigate = useNavigate();
   const [wishList, setWishList] = useState<wishListApiDataType[]>([]);
+  const [latLngList, setLatLngList] = useState<latlngType[]>([]);
 
   const getWishListData = async () => {
     try {
@@ -24,9 +34,22 @@ const WishListDetail = () => {
     }
   };
 
+  const convertLatLng = (roomData: wishListApiDataType[]) => {
+    return roomData.map((item) => ({
+      latlng: { lat: item.latitude, lng: item.longitude },
+    }));
+  };
+
   useEffect(() => {
     getWishListData();
   }, []);
+
+  useEffect(() => {
+    if (wishList.length !== 0) {
+      const convertedWishLocList = convertLatLng(wishList);
+      setLatLngList(convertedWishLocList);
+    }
+  }, [wishList]);
 
   const onClickBack = () => {
     navigate('/wishList');
@@ -50,7 +73,7 @@ const WishListDetail = () => {
         <CarouselWrapper wishList={wishList} />
         <WishMapContainer>
           <WishLocTitle>위시 위치</WishLocTitle>
-          <StayLocationMap />
+          <StayLocationMap latlngList={latLngList} />
         </WishMapContainer>
       </WishListDetailWrapper>
       <Footer />
