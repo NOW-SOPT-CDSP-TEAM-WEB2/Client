@@ -5,7 +5,8 @@ import styled from 'styled-components';
 import HeaderProfile from './HeaderProfile';
 import HomeHeaderContent from './HomeHeaderContent';
 import NavHeaderContent from './NavHeaderContent';
-import { LogoIcon } from '../../assets/svgs';
+import StayDetailHeaderContent from './StayDetailHeaderContent';
+import { LogoIcon } from '../../../assets/svgs';
 
 interface HomeDefaultHeaderProps {
   isScroll: boolean;
@@ -47,6 +48,19 @@ export const HomeDefaultHeader = (props: HomeDefaultHeaderProps) => {
       <NavHeaderContent isScroll={isScroll} />
       <HomeHeaderContent isScroll={isScroll} />
       <HeaderProfile padding={6} />
+    </HeaderWrapper>
+  );
+};
+
+export const NavHeader = () => {
+  const navigate = useNavigate();
+  return (
+    <HeaderWrapper $paddingTop={1.2} $paddingRight={25.6} $paddingBottom={1.2} $paddingLeft={25.6}>
+      <LogoDiv onClick={() => navigate('/')}>
+        <LogoIcon />
+      </LogoDiv>
+      <StayDetailHeaderContent />
+      <HeaderProfile padding={25.6} />
     </HeaderWrapper>
   );
 };

@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { ArrowLeftBlackICon } from '../../../../assets/svgs';
+import { ArrowLeftBlackICon } from '../../../../assets/svgs/index.tsx';
 import { PostContent } from '../../constatnts/postResevationText.ts';
 
 const PostReservationHeader = () => {

@@ -12,7 +12,7 @@ import SearchTravel from './components/SearchTravel';
 import useScrollY from './hooks/useScrollY';
 import { RoomDataType } from './types/HomePageItemType';
 import Footer from '../../components/commons/footer/Footer';
-import { HomeDefaultHeader } from '../../components/commons/Header';
+import { HomeDefaultHeader } from '../../components/commons/header/Header';
 
 interface Scroll {
   isScroll: boolean;

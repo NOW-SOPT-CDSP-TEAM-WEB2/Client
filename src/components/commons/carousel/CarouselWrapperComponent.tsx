@@ -42,8 +42,9 @@ const CarouselWrapperComponent = (props: CarouselWrapperComponentprops) => {
     <CarouselComponentWrapper>
       {room.isSuperHost ? <SuperHostCard /> : ''}
       <HeartComponent isWishList={localWish} handleCardClick={() => handleCardClick(room)} />
-      <Carousel roomImageList={room.roomImageList} />
+      <Carousel type="home" roomImageList={room.roomImageList} />
       <CarouselText
+        type="home"
         roomlocation={room.roomLocation}
         currentDistance={room.currentDistance}
         roomRating={room.roomRating}

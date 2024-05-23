@@ -1,15 +1,16 @@
+/* eslint-disable simple-import-sort/imports */
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Footer from './../../components/commons/footer/Footer';
-import { DefaultHeader } from './../../components/commons/Header';
 import PostReservationHeader from './components/header/postReservationHeader.tsx';
 import WrapLeftComponents from './components/left_side/WrapLeftComponents';
 import InfoReservationCard from './components/right_side/InfoReservationCard';
 import { API_Test } from './constatnts/apiTestText.ts';
 import { useExtractDate } from './hooks/useExtractDate';
 import { postReserveInfo } from './utils/postReserveInfo';
+import { DefaultHeader } from '../../components/commons/header/Header.tsx';
 
 export interface inputValType {
   checkInDate: string;

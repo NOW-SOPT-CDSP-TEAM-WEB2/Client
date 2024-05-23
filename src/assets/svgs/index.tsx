@@ -1,9 +1,15 @@
 /* eslint-disable import/no-unresolved */
 // 명명규칙은 xxxxIcon으로 통일
+//
+export { default as CirclePinIcon } from './btn_ic_circle_pin_amall.svg?react';
 export { default as CopyrightIcon } from './copyright.svg?react';
+export { default as HostInfoDetailIcon } from './host_info_detail.svg?react';
+export { default as HostMarkIcon } from './host_mark.svg?react';
+export { default as HostProfileIcon } from './host_profile.svg?react';
 export { default as AmexIcon } from './ic_amex_normal_24.svg?react';
 export { default as ArrowDownIcon } from './ic_arrow_down.svg?react';
 export { default as ArrowLeftBlackICon } from './ic_arrow_left_black_24.svg?react';
+export { default as ArrowLeftWishListDetailBlackIcon } from './ic_arrow_left_black_wish_detail.svg?react';
 export { default as CarouselLeftIcon } from './ic_arrow_left_circle_32.svg?react';
 export { default as CarouselrightIcon } from './ic_arrow_right_circle_32.svg?react';
 export { default as BeachBlackIcon } from './ic_beach_black_18.svg?react';
@@ -25,13 +31,15 @@ export { default as InstaBalckIcon } from './ic_insta_black_14.svg?react';
 export { default as InternetBlackIcon } from './ic_internet_black_12.svg?react';
 export { default as MasterCardIcon } from './ic_mastercard_normal_24.svg?react';
 export { default as MasterCardNormalIcon } from './ic_mastercard_normal_32.svg?react';
+export { default as MeatballBlackIcon } from './ic_meatball_black_24.svg?react';
 export { default as MedalFillBlackIcon } from './ic_medal_fill_black_10.svg?react';
 export { default as NaverBlackIcon } from './ic_naver_black_14.svg?react';
 export { default as NaverPayIcon } from './ic_naverpay_normal_24.svg?react';
 export { default as ParkBlackIcon } from './ic_park_black_18.svg?react';
 export { default as ParkGrayIcon } from './ic_park_gray_18.svg?react';
 export { default as SearchMiniWhiteIcon } from './ic_search_mini_white_12.svg?react';
-export { default as StarIcon } from './ic_star.svg?react';
+export { default as ShareBlackIcon } from './ic_share_black_24.svg?react';
+export { default as StarPostIcon } from './ic_star.svg?react';
 export { default as SwimmingPoolBlackIcon } from './ic_swimming_pool_black_18.svg?react';
 export { default as SwimmingPoolGrayIcon } from './ic_swimming_pool_gray_18.svg?react';
 export { default as TimePink32 } from './ic_time_pink_32.svg?react';
@@ -39,8 +47,15 @@ export { default as UfoBlackIcon } from './ic_ufo_black_18.svg?react';
 export { default as UfoGrayIcon } from './ic_ufo_gray_18.svg?react';
 export { default as VisaIcon } from './ic_visa_normal_24.svg?react';
 export { default as XBlackIcon } from './ic_x_black_14.svg?react';
+export { default as LeafLeftUnderIcon } from './leaf_left.svg?react';
+export { default as LeafRightUnderIcon } from './leaf_right.svg?react';
 export { default as LogoIcon } from './logo.svg?react';
+export { default as PayWarnIcon } from './pay_warn.svg?react';
 export { default as PostReservationHousingCard } from './postReservation_housingCard.svg?react';
 export { default as ProfileImgIcon } from './profileImg.svg?react';
+export { default as RateListIcon } from './rate_list.svg?react';
+export { default as ReviewListIcon } from './review_list.svg?react';
 export { default as SendingMessagetoHost } from './SendingMessagetoHost.svg?react';
+export { default as ShareHostIcon } from './share_host.svg?react';
+export { default as StarHotelDetailIcon } from './star.svg?react';
 export { default as WishListThumIcon } from './wishListThumb.svg?react';
