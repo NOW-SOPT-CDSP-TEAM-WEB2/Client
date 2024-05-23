@@ -1,14 +1,15 @@
+/* eslint-disable simple-import-sort/imports */
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 
-import useScrollY from './hooks/useScrollY';
 import CarouselWrapperList from './components/CarouselWrapperList';
 import Chips from './components/Chips';
 import HomeCategorySearch from './components/HomeCategorySearch';
 import HomeFooter from './components/HomeFooter';
 import LnbList from './components/LnbList';
 import SearchTravel from './components/SearchTravel';
+import useScrollY from './hooks/useScrollY';
 import { HomeDefaultHeader } from '../../components/commons/Header';
 
 interface Scroll {
