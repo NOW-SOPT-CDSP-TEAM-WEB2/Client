@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Main from './pages/main/Main';
-import WishList from './pages/wishList/WishList';
 import PostReservation from './pages/postReservation/PostReservationPage';
+import WishList from './pages/wishList/WishList';
 
 const Router = () => {
   return (

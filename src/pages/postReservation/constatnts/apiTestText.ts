@@ -8,5 +8,4 @@ export const API_Test = {
   roomPrice: 150000,
   checkInDate: '2024-05-13',
   checkOutDate: '2024-05-17',
-  messageToHost: '잘 부탁드려용',
 };

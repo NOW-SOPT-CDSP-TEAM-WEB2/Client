@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Footer from './../../components/commons/footer/Footer';
@@ -9,10 +9,12 @@ import WrapLeftComponents from './components/left_side/WrapLeftComponents';
 import InfoReservationCard from './components/right_side/InfoReservationCard';
 import { API_Test } from './constatnts/apiTestText.ts';
 import { useExtractDate } from './hooks/extractDate';
-import { usePostReserveInfo } from './hooks/usePostReserveInfo';
+import { postReserveInfo } from './utils/postReserveInfo';
 
 const PostReservationPage = () => {
   const navigate = useNavigate();
+  /*   const roomId = useParams().id; */
+  const roomId = 2;
   const { formattedCheckInDate, formattedCheckOutDate, daysDifference, paymentDate } = useExtractDate(
     API_Test.checkInDate,
     API_Test.checkOutDate
@@ -23,11 +25,16 @@ const PostReservationPage = () => {
     checkOutDate: API_Test.checkOutDate,
     headCount: API_Test.headCount,
     messageToHost: '',
+    roomId: roomId,
   });
 
-  const { submitInfo } = usePostReserveInfo();
+  console.log(inputVal);
+
   const handlePost = async () => {
-    await submitInfo(inputVal);
+    const res = await postReserveInfo(inputVal);
+    if (res) {
+      if (confirm(res?.data.message)) navigate('/main');
+    }
   };
 
   return (

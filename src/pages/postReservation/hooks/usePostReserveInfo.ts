@@ -1,3 +1,4 @@
+import { isAxiosError } from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 import { postReserveInfo } from './../utils/postReserveInfo';
@@ -7,13 +8,20 @@ export const usePostReserveInfo = () => {
 
   const submitInfo = async (inputVal) => {
     try {
-      const response = await postReserveInfo(inputVal);
-      const roomId = response.headers.location;
-
-      /*       alert('예약이 완료되었습니다!');
-      navigate('/main'); */
+      const roomId = 1;
+      const response = await postReserveInfo(inputVal, roomId);
+      alert('예약이 완료되었습니다!');
+      navigate('/main');
     } catch (err) {
-      console.log(err);
+      if (isAxiosError(err)) {
+        {
+          console.log('AxiosError');
+          console.log(inputVal);
+          alert(err.response?.data);
+        }
+      } else {
+        console.log(err);
+      }
     }
   };
 
