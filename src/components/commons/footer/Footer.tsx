@@ -64,8 +64,7 @@ const Footer = () => {
 export default Footer;
 
 const FooterWrapper = styled.footer`
-  position: fixed;
-  bottom: 0;
+  width: 1366px;
 
   background-color: ${({ theme }) => theme.colors.gray100};
 `;
