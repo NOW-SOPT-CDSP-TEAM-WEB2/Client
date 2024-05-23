@@ -16,10 +16,11 @@ const Router = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/stayDetail" element={<StayDetail />} />
         <Route path="/wishListDetail" element={<WishListDetail />} />
-        <Route path="/StayDetailPage" element={<StayDetailPage />} />
+        <Route path="/StayDetailPage/:roomId" element={<StayDetailPage />} />
       </Routes>
     </BrowserRouter>
   );
 };
 
 export default Router;
+  

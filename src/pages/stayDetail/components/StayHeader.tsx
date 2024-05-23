@@ -2,15 +2,20 @@
 import styled from 'styled-components';
 
 import { BentoIcon, HeartPinkIcon, ShareIcon } from '../../../assets/svgs';
-import { STAY_INFO } from '../constants';
 import Divider from './Divider';
 
-const StayHeader = () => {
+interface StayHeaderProps {
+  roomName: string;
+}
+
+const StayHeader = (props: StayHeaderProps) => {
+  const { roomName } = props;
+  const displayName = roomName || '';
   return (
     <StayHeaderWrapper>
       <Divider />
       <TextBox>
-        <StayNameText>{STAY_INFO.roomName}</StayNameText>
+        <StayNameText>{displayName}</StayNameText>
         <IconBox>
           <IconWrapper>
             <ShareIc />

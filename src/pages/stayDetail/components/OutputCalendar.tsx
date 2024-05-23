@@ -4,12 +4,13 @@ import Calendar from 'react-calendar';
 import styled from 'styled-components';
 
 interface OutputCalendarProps {
-  startDate: Date;
-  endDate: Date;
+  startDate?: Date;
+  endDate?: Date;
+  type: string;
 }
 
 const OutputCalendar = (props: OutputCalendarProps) => {
-  const { startDate, endDate } = props;
+  const { startDate, endDate, type } = props;
 
   return (
     <div>
@@ -33,7 +34,7 @@ const OutputCalendar = (props: OutputCalendarProps) => {
           }
           return null;
         }}
-        tileDisabled={() => true}
+        tileDisabled={() => false}
       />
     </div>
   );
