@@ -42,7 +42,7 @@ const PostReservationPage = () => {
   const handlePost = async () => {
     const res = await postReserveInfo(inputVal);
     if (res) {
-      if (confirm(res?.data.message)) navigate('/main');
+      if (confirm(res?.data.message)) navigate('/');
     }
   };
 
