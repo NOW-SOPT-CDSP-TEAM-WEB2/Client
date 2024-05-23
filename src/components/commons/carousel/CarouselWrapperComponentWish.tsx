@@ -21,6 +21,7 @@ const CarouselWrapperComponentWish = (props: carouselWrapperComponentWishProps) 
       </HeartComponentWrapper>
       <Carousel type="wish" roomImageList={wishList.roomImageList} />
       <CarouselText
+        type="wish"
         roomlocation={wishList.roomLocation}
         currentDistance={wishList.currentDistance}
         roomRating={wishList.roomRating}
