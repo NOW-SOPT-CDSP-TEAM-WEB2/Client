@@ -145,14 +145,6 @@ const NavButton = styled.button`
   ${({ theme }) => theme.fonts.body03_middle};
 `;
 
-// const CarouselTest = styled.div`
-//   width: 100%;
-//   height: 34.8rem;
-//   margin-bottom: 6.4rem;
-
-//   background-color: ${({ theme }) => theme.colors.blue400};
-// `;
-
 const WishMapContainer = styled.section`
   display: flex;
   flex-direction: column;

@@ -37,8 +37,6 @@ const PostReservationPage = () => {
     roomId: roomId,
   });
 
-  console.log(inputVal);
-
   const handlePost = async () => {
     const res = await postReserveInfo(inputVal);
     if (res) {

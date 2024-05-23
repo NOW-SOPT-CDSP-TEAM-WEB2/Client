@@ -71,8 +71,6 @@ const Carouselcontainer = styled.div`
 const CarouselImg = styled.img<{ $type: string }>`
   width: ${({ $type }) => ($type === 'home' ? '23.7rem' : '26.3rem')};
   height: ${({ $type }) => ($type === 'home' ? '22.2rem' : '24.7rem')};
-  /* width: 23.7rem; */
-  /* height: 22.2rem;  */
 
   border-radius: 10px;
 `;
