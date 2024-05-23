@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { SearchMiniWhiteIcon } from '../../../../assets/svgs';
+import { SearchMiniWhiteIcon } from '../../../assets/svgs';
 
 type SearchTravelProps = {
   isScroll: boolean;

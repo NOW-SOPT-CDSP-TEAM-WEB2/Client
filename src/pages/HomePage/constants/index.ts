@@ -1,4 +1,4 @@
-import { californiaImg, spainImg } from '../../../../assets/images';
+import { californiaImg, spainImg } from '../../../assets/images';
 import {
   BeachBlackIcon,
   BeachGrayIcon,
@@ -12,7 +12,7 @@ import {
   SwimmingPoolGrayIcon,
   UfoBlackIcon,
   UfoGrayIcon,
-} from '../../../../assets/svgs';
+} from '../../../assets/svgs';
 
 interface ContetnType {
   id: number;

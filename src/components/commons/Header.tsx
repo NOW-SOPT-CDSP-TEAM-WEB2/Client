@@ -41,21 +41,13 @@ export const HomeDefaultHeader = (props: HomeDefaultHeaderProps) => {
   const navigate = useNavigate();
   return (
     <HeaderWrapper $paddingTop={1.2} $paddingRight={6} $paddingBottom={1.2} $paddingLeft={6}>
-      <LogoIcon onClick={() => navigate('/')} />
+      <LogoDiv onClick={() => navigate('/')}>
+        <LogoIcon />
+      </LogoDiv>
+      <LogoIcon />
       <NavHeaderContent isScroll={isScroll} />
       <HomeHeaderContent isScroll={isScroll} />
       <HeaderProfile padding={6} />
-    </HeaderWrapper>
-  );
-};
-
-// 홈 헤더 스크롤 버전, 숙소 상세 헤더 (검색창 있는 버전)
-export const NavHeader = () => {
-  const navigate = useNavigate();
-  return (
-    <HeaderWrapper $paddingTop={1.2} $paddingRight={25.6} $paddingBottom={1.2} $paddingLeft={25.6}>
-      <LogoIcon onClick={() => navigate('/')} />
-      <HeaderProfile padding={25.6} />
     </HeaderWrapper>
   );
 };

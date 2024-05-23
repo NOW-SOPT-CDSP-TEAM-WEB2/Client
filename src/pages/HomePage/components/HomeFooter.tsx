@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { CarouselLeftIcon, CarouselrightIcon } from '../../../../assets/svgs';
+import { CarouselLeftIcon, CarouselrightIcon } from '../../../assets/svgs';
 import { FooterCarouselItemInfo, FooterCaureselTitle } from '../constants';
 
 const HomeFooter = () => {
