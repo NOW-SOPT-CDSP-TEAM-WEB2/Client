@@ -1,6 +1,6 @@
 import { client } from '../../../utils/client';
 
-export interface wishListApiDataType {
+export interface roomResponseType {
   roomId: number;
   roomImageList: string[];
   roomLocation: string;
@@ -13,6 +13,16 @@ export interface wishListApiDataType {
   isWishList: boolean;
 }
 
+export interface wishListApiDataType {
+  latitude: number;
+  longitude: number;
+  roomResponse: roomResponseType;
+}
+
+export interface wishListResponseType {
+  data: wishListApiDataType[];
+}
+
 export const getWishList = () => {
-  return client.get<wishListApiDataType[]>(`/api/v1/rooms`);
+  return client.get<wishListResponseType>(`/api/v1/wishes`);
 };

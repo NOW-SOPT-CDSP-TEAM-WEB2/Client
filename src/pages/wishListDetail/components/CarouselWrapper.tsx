@@ -12,7 +12,7 @@ const CarouselWrapper = (props: carouselWrapperProps) => {
   return (
     <CardWrapper>
       {wishList.map((wish) => (
-        <CarouselWrapperComponentWish key={wish.roomId} wishList={wish} />
+        <CarouselWrapperComponentWish key={wish.roomResponse.roomId} wishList={wish.roomResponse} />
       ))}
     </CardWrapper>
   );
@@ -27,11 +27,4 @@ const CardWrapper = styled.ul`
 
   column-gap: 3.8rem;
   row-gap: 3rem;
-`;
-
-const Card = styled.div`
-  width: 26.3rem;
-  height: 34.8rem;
-
-  background-color: ${({ theme }) => theme.colors.black};
 `;

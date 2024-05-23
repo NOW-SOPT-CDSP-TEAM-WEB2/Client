@@ -6,11 +6,11 @@ import styled from 'styled-components';
 import { WishListThumIcon } from '../../assets/svgs';
 import Footer from '../../components/commons/footer/Footer';
 import { WishHeader } from '../../components/commons/header/Header';
-import { getWishList, wishListApiDataType } from './utils/getWishList';
+import { getWishList, roomResponseType } from './utils/getWishList';
 
 const WishList = () => {
   const navigate = useNavigate();
-  const [wishList, setWishList] = useState<wishListApiDataType[]>([]);
+  const [wishList, setWishList] = useState<roomResponseType[]>([]);
 
   const getWishListData = async () => {
     try {

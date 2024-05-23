@@ -5,10 +5,10 @@ import Carousel from './carouselComponent/Carousel';
 import CarouselText from './components/CarouselText';
 import SuperHostCard from './components/SuperHostCard';
 import { HeartPink24Icon } from '../../../assets/svgs/index.tsx';
-import { wishListApiDataType } from '../../../pages/wishList/utils/getWishList.ts';
+import { roomResponseType } from '../../../pages/wishList/utils/getWishList.ts';
 
 interface carouselWrapperComponentWishProps {
-  wishList: wishListApiDataType;
+  wishList: roomResponseType;
 }
 
 const CarouselWrapperComponentWish = (props: carouselWrapperComponentWishProps) => {
