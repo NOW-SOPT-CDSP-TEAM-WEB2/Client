@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import Footer from '../../../components/commons/footer/Footer';
 import { NavHeader } from '../../../components/commons/header/Header';

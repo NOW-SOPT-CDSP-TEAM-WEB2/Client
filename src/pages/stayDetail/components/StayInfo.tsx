@@ -175,10 +175,10 @@ const InfoText = styled.p`
 
 //게스트 선호 숙소 박스
 const RateWrapper = styled.div`
+  display: flex;
   width: 49.8rem;
   margin-top: 2.8rem;
   padding: 1.6rem 1.8rem;
-  display: flex;
 
   border: 1px solid ${({ theme }) => theme.colors.gray400};
   border-radius: 8px;
@@ -218,23 +218,24 @@ const LowerText = styled.p`
 
 const LovedText = styled.p`
   width: 21.1rem;
+
   color: ${({ theme }) => theme.colors.black};
   ${({ theme }) => theme.fonts.body02_middle};
 `;
 const RateSpan = styled.span`
-  width: 4.4rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 0.2rem 0;
-  margin-left: 2.2rem;
   gap: 0.6rem;
+  align-items: center;
+  width: 4.4rem;
+  margin-left: 2.2rem;
+  padding: 0.2rem 0;
 `;
 
 const RateIconSpan = styled.span`
-  width: 4.4rem;
   display: flex;
   justify-content: center;
+  width: 4.4rem;
 `;
 
 const RateNum = styled.p`
@@ -243,12 +244,11 @@ const RateNum = styled.p`
 `;
 
 const ReviewSpan = styled.span`
-  width: 4.4rem;
-
-  margin: 0.1rem 0rem 0.1rem 1.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 4.4rem;
+  margin: 0.1rem 0 0.1rem 1.4rem;
 `;
 
 const CountReview = styled.p`
@@ -259,21 +259,22 @@ const CountReview = styled.p`
 const ReviewText = styled.p`
   ${({ theme }) => theme.fonts.detail1_middle};
   color: ${({ theme }) => theme.colors.black};
-  border-bottom: 1px solid;
+
   border-color: ${({ theme }) => theme.colors.black};
+  border-bottom: 1px solid;
 `;
 //호스트 프로필 박스
 const HostInfoWrapper = styled.div`
-  margin-top: 3.2rem;
+  display: flex;
+  gap: 1.8rem;
   width: 49.8rem;
   height: 3rem;
-  gap: 1.8rem;
-  display: flex;
+  margin-top: 3.2rem;
 `;
 const ProfileSpan = styled.div`
+  position: relative;
   width: 3.2rem;
   height: 3rem;
-  position: relative;
 `;
 
 const ProfileImgIc = styled(ProfileImgIcon)`
@@ -307,44 +308,45 @@ const HostingYear = styled.p`
 const InfoKeyWordWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   width: 49.8rem;
   padding-top: 2.2rem;
   padding-bottom: 3rem;
-  border-bottom: 1px solid;
+
   border-color: ${({ theme }) => theme.colors.gray400};
-  gap: 2rem;
+  border-bottom: 1px solid;
 `;
 
 const IsSuperHost = styled.div`
-  height: 3.2rem;
-  width: 49.8rem;
-  gap: 2.2rem;
   display: flex;
   flex-direction: row;
+  gap: 2.2rem;
   justify-content: flex-start;
+  width: 49.8rem;
+  height: 3.2rem;
 `;
 
 const CanlenderArea = styled.div`
-  height: 3.2rem;
-  width: 49.8rem;
-  gap: 2.2rem;
   display: flex;
   flex-direction: row;
+  gap: 2.2rem;
   justify-content: flex-start;
+  width: 49.8rem;
+  height: 3.2rem;
 `;
 
 const BadgeIc = styled(BadgeIcon)`
-  margin-left: 0.4rem;
   top: 0;
+  margin-left: 0.4rem;
 `;
 const KeyIc = styled(KeyIcon)`
-  margin-left: 0.4rem;
   top: 0;
+  margin-left: 0.4rem;
 `;
 
 const CalendarIc = styled(CalendarIcon)`
-  margin-left: 0.4rem;
   top: 0;
+  margin-left: 0.4rem;
 `;
 
 const TextArea = styled.div`
@@ -352,9 +354,10 @@ const TextArea = styled.div`
 `;
 
 const BoldText = styled.p`
+  margin-bottom: 0.3rem;
+
   ${({ theme }) => theme.fonts.body02_heavy};
   color: ${({ theme }) => theme.colors.black};
-  margin-bottom: 0.3rem;
 `;
 
 const ThinText = styled.p`
@@ -366,26 +369,29 @@ const DescriptionWrapper = styled.div`
   width: 49.8rem;
   padding-top: 2.8rem;
   padding-bottom: 3.2rem;
-  border-bottom: 1px solid;
+
   border-color: ${({ theme }) => theme.colors.gray400};
+  border-bottom: 1px solid;
 `;
 
-const DescriptionText = styled.p`
+const DescriptionText = styled.div`
   padding-right: 5rem;
+
+  white-space: pre-line;
+
   ${({ theme }) => theme.fonts.body02_middle};
 `;
 
 const ViewMoreSpan = styled.div`
-  width: 5rem;
   display: flex;
   flex-direction: row;
+  width: 5rem;
 `;
 
 const ViewMoreText = styled.p`
   ${({ theme }) => theme.fonts.body02_middle};
   color: ${({ theme }) => theme.colors.black};
 
-  border-bottom: 1px solid;
   border-color: ${({ theme }) => theme.colors.black};
-  white-space: pre-wrap;
+  border-bottom: 1px solid;
 `;

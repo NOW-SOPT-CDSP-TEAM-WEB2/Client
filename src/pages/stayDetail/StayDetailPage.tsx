@@ -1,5 +1,6 @@
 /* eslint-disable import/order */
 import { useEffect, useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -12,31 +13,37 @@ import StayReserve from './components/StayReserve';
 import StayRule from './components/StayRule';
 import { getStayDetailType } from './types/getStayDetailType';
 
-const StayDetailPage = () => {
+interface StayDetailPageProps {
+  stayInfo: getStayDetailType;
+  setStayInfo: Dispatch<SetStateAction<getStayDetailType>>;
+}
+
+const StayDetailPage = (props: StayDetailPageProps) => {
+  const { stayInfo, setStayInfo } = props;
   const [startDate, setStartDate] = useState<Date>(new Date());
   const [endDate, setEndDate] = useState<Date>(new Date());
-  const [stayInfo, setStayInfo] = useState<getStayDetailType>({
-    roomImageList: [''],
-    roomLocation: '',
-    roomRating: 0,
-    isSuperHost: true,
-    roomPrice: 0,
-    latitude: 0,
-    longitude: 0,
-    roomDetail: {
-      roomId: 0,
-      roomName: '',
-      roomInfo: {
-        maxGuests: 0,
-        bedrooms: 0,
-        beds: 0,
-        bathrooms: 0,
-      },
-      hostName: '',
-      yearsOfHosting: 0,
-      description: '',
-    },
-  });
+  // const [stayInfo, setStayInfo] = useState<getStayDetailType>({
+  //   roomImageList: [''],
+  //   roomLocation: '',
+  //   roomRating: 0,
+  //   isSuperHost: true,
+  //   roomPrice: 0,
+  //   latitude: 0,
+  //   longitude: 0,
+  //   roomDetail: {
+  //     roomId: 0,
+  //     roomName: '',
+  //     roomInfo: {
+  //       maxGuests: 0,
+  //       bedrooms: 0,
+  //       beds: 0,
+  //       bathrooms: 0,
+  //     },
+  //     hostName: '',
+  //     yearsOfHosting: 0,
+  //     description: '',
+  //   },
+  // });
   const { roomId } = useParams();
 
   const renderPage = async (roomId: number) => {

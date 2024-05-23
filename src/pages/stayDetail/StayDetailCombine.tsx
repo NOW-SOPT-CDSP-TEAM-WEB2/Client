@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import HostDetail from './components/HostDetail';
@@ -5,14 +6,38 @@ import Layout from './components/Layout';
 import Location from './components/Location';
 import Review from './components/Review';
 import StayDetailPage from './StayDetailPage';
+import { getStayDetailType } from './types/getStayDetailType';
 
 const StayDetailCombine = () => {
+  const [stayInfo, setStayInfo] = useState<getStayDetailType>({
+    roomImageList: [''],
+    roomLocation: '',
+    roomRating: 0,
+    isSuperHost: true,
+    roomPrice: 0,
+    latitude: 0,
+    longitude: 0,
+    roomDetail: {
+      roomId: 0,
+      roomName: '',
+      roomInfo: {
+        maxGuests: 0,
+        bedrooms: 0,
+        beds: 0,
+        bathrooms: 0,
+      },
+      hostName: '',
+      yearsOfHosting: 0,
+      description: '',
+    },
+  });
+
   return (
     <Layout>
       <StayDetailWrapper>
-        <StayDetailPage />
+        <StayDetailPage stayInfo={stayInfo} setStayInfo={setStayInfo} />
         <Review />
-        <Location />
+        <Location lat={stayInfo.latitude} lng={stayInfo.longitude} />
         <HostDetail />
       </StayDetailWrapper>
     </Layout>
