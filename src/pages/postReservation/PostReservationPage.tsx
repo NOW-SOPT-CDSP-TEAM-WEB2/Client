@@ -14,13 +14,12 @@ import { useExtractDate } from './hooks/useExtractDate';
 export interface inputValType {
   checkInDate: string;
   checkOutDate: string;
-  headCount: number;
   messageToHost: string;
 }
 
 const PostReservationPage = () => {
   const navigate = useNavigate();
-
+  const headCount = 1;
   const roomId = 2;
 
   const { formattedCheckInDate, formattedCheckOutDate, daysDifference, paymentDate } = useExtractDate(
@@ -31,7 +30,7 @@ const PostReservationPage = () => {
   const [inputVal, setInputVal] = useState({
     checkInDate: API_Test.checkInDate,
     checkOutDate: API_Test.checkOutDate,
-    headCount: API_Test.headCount,
+    headCount: headCount,
     messageToHost: '',
   });
 

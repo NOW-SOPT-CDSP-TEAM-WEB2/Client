@@ -2,7 +2,6 @@ export const API_Test = {
   roomName: "휴식과 기록 'studio supe'",
   roomLocation: '제주 애월읍 (Korea, Jeju)',
   hostName: '김창균',
-  headCount: 1,
   isSuperHost: true,
   yearsOfHosting: 2,
   roomPrice: 150000,
