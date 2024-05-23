@@ -1,4 +1,6 @@
 /* eslint-disable simple-import-sort/imports */
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Carousel from './carouselComponent/Carousel';
@@ -12,9 +14,16 @@ interface carouselWrapperComponentWishProps {
 }
 
 const CarouselWrapperComponentWish = (props: carouselWrapperComponentWishProps) => {
+  const navigate = useNavigate();
+
   const { wishList } = props;
+
+  const onClickRoom = () => {
+    navigate(`/stayDetail/${wishList.roomId}`);
+  };
+
   return (
-    <CarouselComponentWrapper>
+    <CarouselComponentWrapper onClick={onClickRoom}>
       {wishList.isSuperHost ? <SuperHostCard /> : ''}
       <HeartComponentWrapper>
         <HeartPink24Icon />

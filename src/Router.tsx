@@ -13,7 +13,7 @@ const Router = () => {
         <Route path="/wishList" element={<WishList />} />
         <Route path="/reservation/post" element={<PostReservation />} />
         <Route path="/" element={<HomePage />} />
-        <Route path="/stayDetail" element={<StayDetail />} />
+        <Route path="/stayDetail/:roomId" element={<StayDetail />} />
         <Route path="/wishListDetail" element={<WishListDetail />} />
       </Routes>
     </BrowserRouter>

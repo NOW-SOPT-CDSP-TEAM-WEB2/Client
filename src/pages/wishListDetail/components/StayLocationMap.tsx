@@ -2,7 +2,6 @@
 import { Map, MapMarker, ZoomControl } from 'react-kakao-maps-sdk';
 import styled from 'styled-components';
 
-// import LOCATION_DATA from '../constants/wishListDetailData';
 import { latlngType } from '../WishListDetail';
 
 interface StayLocationMapProps {
