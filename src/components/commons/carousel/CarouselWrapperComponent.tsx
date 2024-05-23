@@ -10,8 +10,9 @@ const CarouselWrapperComponent = () => {
     <CarouselComponentWrapper>
       {API_TEST_CAROUSEL.isSuperHost ? <SuperHostCard /> : ''}
       <HeartComponent />
-      <Carousel roomImageList={API_TEST_CAROUSEL.roomImageList} />
+      <Carousel type="home" roomImageList={API_TEST_CAROUSEL.roomImageList} />
       <CarouselText
+        type="home"
         roomlocation={API_TEST_CAROUSEL.roomLocation}
         currentDistance={API_TEST_CAROUSEL.currentDistance}
         roomRating={API_TEST_CAROUSEL.roomRating}

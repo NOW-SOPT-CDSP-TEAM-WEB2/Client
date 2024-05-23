@@ -24,5 +24,5 @@ export interface wishListResponseType {
 }
 
 export const getWishList = () => {
-  return client.get<wishListResponseType>(`/api/v1/wishes`);
+  return client.get(`/api/v1/wishes`);
 };
