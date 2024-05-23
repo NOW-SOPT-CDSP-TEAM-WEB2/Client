@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
-import { LeafLeftIcon, LeafRightIcon, RateListIcon, ReviewListIcon } from '../../../assets/svgs';
+import { LeafLeftUnderIcon, LeafRightUnderIcon, RateListIcon, ReviewListIcon } from '../../../assets/svgs';
 
 const Review = () => {
   return (
     <ReviewWrapper>
       <StarWrapper>
         <Star>
-          <LeafLeftIcon />
+          <LeafLeftUnderIcon />
           <StarRate>4.95</StarRate>
-          <LeafRightIcon />
+          <LeafRightUnderIcon />
         </Star>
         <StarDetail>
           <StarDetailTextTop>게스트 선호</StarDetailTextTop>
