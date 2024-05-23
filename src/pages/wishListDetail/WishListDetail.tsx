@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import StayLocationMap from './components/StayLocationMap';
 import { ArrowLeftWishListDetailBlackIcon, MeatballBlackIcon, ShareBlackIcon } from '../../assets/svgs';
 import Footer from '../../components/commons/footer/Footer';
-import { WishHeader } from '../../components/commons/Header';
+import { WishHeader } from '../../components/commons/header/Header';
 
 const WishListDetail = () => {
   const navigate = useNavigate();

@@ -5,7 +5,7 @@ import HostDetail from './HostDetail';
 import Location from './Location';
 import Review from './Review';
 import Footer from '../../../components/commons/footer/Footer';
-import { NavHeader } from '../../../components/commons/Header';
+import { NavHeader } from '../../../components/commons/header/Header';
 
 const StayDetail = () => {
   return (

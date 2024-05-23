@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
 import styled from 'styled-components';
 
-import { HEADER_DROPDOWN_CONTENT } from '../../assets/constants/headerDropdown';
-import { HamburgerBlackIcon, InternetBlackIcon, ProfileImgIcon } from '../../assets/svgs';
-import useClickOutside from '../../hooks/useClickOutside';
+import { HEADER_DROPDOWN_CONTENT } from '../../../assets/constants/headerDropdown';
+import { HamburgerBlackIcon, InternetBlackIcon, ProfileImgIcon } from '../../../assets/svgs';
+import useClickOutside from '../../../hooks/useClickOutside';
 
 interface headerProfilePropsType {
   padding: number;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { WishListThumIcon } from '../../assets/svgs';
 import Footer from '../../components/commons/footer/Footer';
-import { WishHeader } from '../../components/commons/Header';
+import { WishHeader } from '../../components/commons/header/Header';
 
 const WishList = () => {
   const navigate = useNavigate();
