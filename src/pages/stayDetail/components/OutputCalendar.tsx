@@ -1,6 +1,5 @@
 import 'react-calendar/dist/Calendar.css';
 
-// import { useState } from 'react';
 import Calendar from 'react-calendar';
 import styled from 'styled-components';
 
@@ -11,9 +10,31 @@ interface OutputCalendarProps {
 
 const OutputCalendar = (props: OutputCalendarProps) => {
   const { startDate, endDate } = props;
+
   return (
     <div>
-      <StyleCalendar selected={(startDate, endDate)} />
+      <StyleCalendar
+        selected={(startDate, endDate)}
+        calendarType="gregory"
+        view="month"
+        // selectRange={true}
+        prev2Label={null}
+        next2Label={null}
+        showNeighboringMonth={false}
+        formatDay={(_locale, date) => date.toLocaleString('en', { day: 'numeric' })}
+        tileClassName={({ date, view }) => {
+          if (view === 'month') {
+            if (
+              (startDate && date.toDateString() === startDate.toDateString()) ||
+              (endDate && date.toDateString() === endDate.toDateString())
+            ) {
+              return 'react-calendar__tile--active';
+            }
+          }
+          return null;
+        }}
+        tileDisabled={() => true}
+      />
     </div>
   );
 };
@@ -31,22 +52,13 @@ export const StyleCalendar = styled(Calendar)`
   .react-calendar__navigation {
     display: flex;
     height: 3.8rem;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     margin: 0;
   }
-
-  /* .react-calendar__navigation button {
-    width: 23.9rem;
-  } */
-
-  /* .react-calendar__navigation button:disabled {
-    background-color: #ff0000;
-  } */
-
-  /* .react-calendar__navigation button:enabled:hover,
-  .react-calendar__navigation button:enabled:focus {
-    background-color: #e8e8e8;
-  } */
+  .react-calendar__navigation__label__labelText {
+    ${({ theme }) => theme.fonts.body02_heavy};
+    color: ${({ theme }) => theme.colors.black};
+  }
 
   //요일 텍스트 스타일
   .react-calendar__month-view__weekdays {
@@ -63,18 +75,12 @@ export const StyleCalendar = styled(Calendar)`
     padding: 0;
   }
 
-  /* .react-calendar__aria-label {
-    text-decoration: none;
-    text-decoration-line: none;
-  } */
-  /* .react-calendar__month-view__weekdays__weekday--weekend {
+  /* .react-calendar__month-view__weekdays__weekday__aria-label {
     text-decoration: none;
     text-decoration-line: none;
   }
-  .react-calendar__year-view .react-calendar__tile,
-  .react-calendar__decade-view .react-calendar__tile,
-  .react-calendar__century-view .react-calendar__tile {
-    padding: 1.2em 0.5em;
+
+  .react-calendar__month-view__weekdays__weekday--weekend {
     text-decoration: none;
     text-decoration-line: none;
   } */
@@ -99,13 +105,6 @@ export const StyleCalendar = styled(Calendar)`
   .react-calendar__tile--hasActive {
     color: ${({ theme }) => theme.colors.white};
     background-color: ${({ theme }) => theme.colors.pink200};
-  }
-
-  .react-calendar__tile--hasActive:enabled:hover {
-    background-color: ${({ theme }) => theme.colors.pink200};
-  }
-  .react-calendar__tile--hasActive:enabled:focus {
-    background-color: #ff4242;
   }
 
   //날짜 호버 스타일

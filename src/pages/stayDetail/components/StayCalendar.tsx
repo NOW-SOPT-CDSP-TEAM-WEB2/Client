@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { KeyboardIcon } from '../../../assets/svgs';
 import { STAY_INFO } from '../constants';
+import formatDateWithDots from '../utils/getDateInKor';
 import OutputCalendar from './OutputCalendar';
 
 interface StayCaledarProps {
@@ -12,15 +13,19 @@ interface StayCaledarProps {
 
 const StayCalendar = (props: StayCaledarProps) => {
   const { startDate, endDate } = props;
-
+  const finalDateInKor = formatDateWithDots(startDate);
+  const finalDateInKor2 = formatDateWithDots(endDate);
   return (
     <CalendarPageWrapper>
-      <div>{startDate?.toDateString()}</div>
       <CalendarTextBox>
         <StayName>
           {STAY_INFO.roomLocation}, {STAY_INFO.roomName}
         </StayName>
-        <StayDate /> {/*날짜 설정 시 반영되는 기능 구현하기.,,,,까악*/}
+        <StayDate>
+          {finalDateInKor}
+          {endDate ? ' - ' : null}
+          {finalDateInKor2}
+        </StayDate>
         <OutputCalendarWrapper>
           <OutputCalendar startDate={startDate} />
           <OutputCalendar endDate={endDate} />

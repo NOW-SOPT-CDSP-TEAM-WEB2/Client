@@ -17,7 +17,7 @@ export const STAY_INFO = {
     bedrooms: 1,
     beds: 1,
     bathrooms: 1.0,
-    Rate: 1.2,
+    Rate: 3.2,
   },
   hostName: '김창균',
   isSuperHost: true,

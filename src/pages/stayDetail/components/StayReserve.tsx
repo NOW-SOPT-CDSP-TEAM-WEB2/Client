@@ -1,8 +1,13 @@
 /* eslint-disable import/order */
+// import { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { ArrowBelowIcon, DiamondIcon, FlagIcon } from '../../../assets/svgs';
 import { STAY_INFO } from '../constants';
+import freeCancelationDate from '../utils/getFreeCancelationDate';
+import { getStayDate } from '../utils/getStayDate';
+import { getStayFee } from '../utils/stayFee';
 import InputCalendar from './InputCalendar';
 
 interface StayReserveProps {
@@ -15,7 +20,16 @@ interface StayReserveProps {
 }
 
 const StayReserve = (props: StayReserveProps) => {
+  const { roomId } = useParams();
+  const navigate = useNavigate();
   const { startDate, endDate, setStartDate, setEndDate } = props;
+
+  const getDateDifference = getStayDate(startDate, endDate);
+  const roomPrice = STAY_INFO.roomPrice;
+
+  const { totalPrice, stayFee } = getStayFee(roomPrice, getDateDifference);
+  const freeCancelDate = freeCancelationDate(startDate);
+
   return (
     <StayReservePage>
       <ReserveWrapper>
@@ -45,26 +59,33 @@ const StayReserve = (props: StayReserveProps) => {
             </GuestNumerText>
             <ArrowBelowIc />
           </GuestNumberBox>
-          <ReserveBtn>예약하기</ReserveBtn>
+          <ReserveBtn onClick={() => navigate(`/postReservation/${roomId}`)}>예약하기</ReserveBtn>
         </ReserveBox>
         <PriceBox>
           <PriceConfirmText>예약 확정 전에는 요금이 청구되지 않습니다.</PriceConfirmText>
           <PriceCalTextBox>
-            <PriceCalText>₩{STAY_INFO.roomPrice.toLocaleString()} x n박</PriceCalText> {/* 총 숙박 일수 계산하기*/}
-            <PriceSpan>₩{STAY_INFO.roomPrice.toLocaleString()}</PriceSpan> {/*박 당 가격 * 총 일수 계산하기*/}
+            <PriceCalText>
+              {getDateDifference ? (
+                <>
+                  ₩{STAY_INFO.roomPrice.toLocaleString()} x {getDateDifference}박
+                </>
+              ) : (
+                <>₩{STAY_INFO.roomPrice.toLocaleString()} x 박</>
+              )}
+            </PriceCalText>{' '}
+            <PriceSpan>₩{STAY_INFO.roomPrice.toLocaleString()}</PriceSpan>
           </PriceCalTextBox>
           <PriceCalTextBox>
             <PriceCalText>에어비앤비 서비스 수수료</PriceCalText>
-            <PriceSpan>₩{STAY_INFO.roomPrice.toLocaleString()}</PriceSpan> {/*박 당 가격의 14.2% 계산하기*/}
+            <PriceSpan>{stayFee ? <>₩{stayFee.toLocaleString()}</> : <>₩ 원</>}</PriceSpan>
           </PriceCalTextBox>
           <TotlaTextBox>
             <TotalText>총 합계</TotalText>
-            <TotalNum>₩{STAY_INFO.roomPrice.toLocaleString()}</TotalNum>{' '}
-            {/*박 당 가격 x 총 숙박 일수 + 수수료 계산하기*/}
+            <TotalNum>{totalPrice ? <>₩{totalPrice.toLocaleString()}</> : <>₩ 원</>}</TotalNum>
           </TotlaTextBox>
         </PriceBox>
         <FreeCancelation>
-          <FreeCancleText>n일 전까지 무료로 취소하실 수 있습니다.</FreeCancleText>
+          <FreeCancleText>{freeCancelDate} 전까지 무료로 취소하실 수 있습니다.</FreeCancleText>
           <ViewMoreText>더보기</ViewMoreText>
         </FreeCancelation>
       </ReserveWrapper>

@@ -14,6 +14,8 @@ import {
 import { STAY_INFO } from '../constants';
 
 const StayInfo = () => {
+  const rate = STAY_INFO.roomInfo.Rate;
+
   return (
     <StayInfoPage>
       {/* 숙소 스펙 정리 부분 */}
@@ -37,8 +39,39 @@ const StayInfo = () => {
             <LovedText>에어비앤비 게스트에게 가장 사랑받는 숙소</LovedText>
             <RateSpan>
               <RateNum>{STAY_INFO.roomInfo.Rate}</RateNum>
-              {/*if문으로 별표 개수 렌더링하기*/}
-              <StarIcon />
+              <RateIconSpan>
+                {rate >= 1 && rate < 2 && <StarIcon />}
+                {rate >= 2 && rate < 3 && (
+                  <>
+                    <StarIcon />
+                    <StarIcon />
+                  </>
+                )}
+                {rate >= 3 && rate < 4 && (
+                  <>
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                  </>
+                )}
+                {rate >= 4 && rate < 5 && (
+                  <>
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                  </>
+                )}
+                {rate === 5 && (
+                  <>
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                  </>
+                )}
+              </RateIconSpan>
             </RateSpan>
           </RateBox>
           <ReviewSpan>
@@ -54,21 +87,25 @@ const StayInfo = () => {
           </ProfileSpan>
           <TextSpan>
             <HostName>호스트 : {STAY_INFO.hostName} 님</HostName>
-            {/*if문으로 슈퍼 여부 렌더링하기*/}
-            <HostingYear>호스트 : 호스팅 경력 {STAY_INFO.yearsOfHosting}년</HostingYear>
+            {STAY_INFO.isSuperHost ? (
+              <HostingYear>슈퍼호스트 : 호스팅 경력 {STAY_INFO.yearsOfHosting}년</HostingYear>
+            ) : (
+              <HostingYear>호스트 : 호스팅 경력 {STAY_INFO.yearsOfHosting}년</HostingYear>
+            )}
           </TextSpan>
         </HostInfoWrapper>
       </InfoWrapper>
       {/* 숙소 키워드 부분 */}
       <InfoKeyWordWrapper>
-        {/* api 데이터 issuperhost가 true일 경우에만 렌더링하기 */}
-        <IsSuperHost>
-          <BadgeIc />
-          <TextArea>
-            <BoldText>{STAY_INFO.hostName}님은 슈퍼호스트입니다</BoldText>
-            <ThinText>슈퍼호스트는 풍부한 경험과 높은 평점을 자랑하는 호스트입니다.</ThinText>
-          </TextArea>
-        </IsSuperHost>
+        {STAY_INFO.isSuperHost ? (
+          <IsSuperHost>
+            <BadgeIc />
+            <TextArea>
+              <BoldText>{STAY_INFO.hostName}님은 슈퍼호스트입니다</BoldText>
+              <ThinText>슈퍼호스트는 풍부한 경험과 높은 평점을 자랑하는 호스트입니다.</ThinText>
+            </TextArea>
+          </IsSuperHost>
+        ) : null}
         <CanlenderArea>
           <KeyIc />
           <TextArea>
@@ -183,6 +220,12 @@ const RateSpan = styled.span`
   padding: 0.2rem 0;
   margin-left: 2.2rem;
   gap: 0.6rem;
+`;
+
+const RateIconSpan = styled.span`
+  width: 4.4rem;
+  display: flex;
+  justify-content: center;
 `;
 
 const RateNum = styled.p`

@@ -1,9 +1,9 @@
 import 'react-datepicker/dist/react-datepicker.css';
 
-// import { ko } from 'date-fns/esm/locale';
 // import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import styled from 'styled-components';
+
 interface CaledarProps {
   startDate: Date;
   endDate: Date;
@@ -21,13 +21,14 @@ const InputCalendar = (props: CaledarProps) => {
   const handleEndDateChange = (date: Date) => {
     setEndDate(date);
   };
+
   return (
     <Wrapper>
       <DateBox1>
         <StyledDatePicker
           shouldCloseOnSelect // 날짜를 선택하면 datepicker가 자동으로 닫힘
           closeOnScroll={true} // 스크롤을 움직였을 때 자동으로 닫히도록 설정 기본값 false
-          dateFormat="yyyy.M.d" //날짜 형태
+          dateFormat="yyyy. M. d." //날짜 형태
           minDate={new Date('2024-01-01')} // minDate 이전 날짜 선택 불가
           maxDate={new Date('2100-01-01')} // maxDate 이후 날짜 선택 불가
           selected={startDate}
@@ -39,12 +40,12 @@ const InputCalendar = (props: CaledarProps) => {
         <StyledDatePicker
           shouldCloseOnSelect // 날짜를 선택하면 datepicker가 자동으로 닫힘
           closeOnScroll={true} // 스크롤을 움직였을 때 자동으로 닫히도록 설정 기본값 false
-          dateFormat="yyyy.M.d"
           minDate={new Date('2024-01-01')} // minDate 이전 날짜 선택 불가
           maxDate={new Date('2100-01-01')} // maxDate 이후 날짜 선택 불가
           selected={endDate}
           onChange={handleEndDateChange}
           placeholderText="0000-00-00"
+          dateFormat="yyyy. M. d."
         />
       </DateBox2>
     </Wrapper>
