@@ -1,13 +1,13 @@
-import React from 'react';
 import { styled } from 'styled-components';
 
 import { HeartPink24Icon } from '../../../../assets/svgs';
 
-interface HeartComponentProps {
-  isWishList: boolean;
-}
-const HeartComponent = (props: HeartComponentProps) => {
-  const isWishList = props;
+// interface HeartComponentProps {
+//   isWishList: boolean;
+// }
+// api 연결 시 wishList boolean값 받아서 사용하세용~~
+const HeartComponent = () => {
+  // const { isWishList } = props;
   return (
     <HeartComponentWrapper>
       <HeartPink24Icon />

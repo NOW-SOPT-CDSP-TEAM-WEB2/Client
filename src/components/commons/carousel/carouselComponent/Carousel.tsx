@@ -11,7 +11,7 @@ interface CarouselProps {
   roomImageList: string;
 }
 
-const Carousel: React.FC<Props> = (props: CarouselProps) => {
+const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
   const { roomImageList } = props;
   const [slideState, setSlideState] = useState({
     activeSlide: 0,
@@ -27,8 +27,8 @@ const Carousel: React.FC<Props> = (props: CarouselProps) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     beforeChange: (current: number, next: number) => setSlideState({ activeSlide: next, activeSlide2: current }),
-    nextArrow: isHovered && slideState.activeSlide < 4 ? <StyledNextArrow /> : null,
-    prevArrow: isHovered && slideState.activeSlide > 0 ? <StyledPrevArrow /> : null,
+    nextArrow: isHovered && slideState.activeSlide < 4 ? <StyledNextArrow /> : undefined,
+    prevArrow: isHovered && slideState.activeSlide > 0 ? <StyledPrevArrow /> : undefined,
 
     appendDots: (dots: React.ReactNode) => (
       <StyledDots>
@@ -54,7 +54,7 @@ const Carousel: React.FC<Props> = (props: CarouselProps) => {
 
   return (
     <Carouselcontainer onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-      <Slider {...settings} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+      <Slider {...settings}>
         {roomImageList && roomImageList.map((src, index) => <CarouselImg key={index} src={src} />)}
       </Slider>
     </Carouselcontainer>
