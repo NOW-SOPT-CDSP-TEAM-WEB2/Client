@@ -10,7 +10,7 @@ import HomeFooter from './components/HomeFooter';
 import LnbList from './components/LnbList';
 import SearchTravel from './components/SearchTravel';
 import useScrollY from './hooks/useScrollY';
-import { HomeDefaultHeader } from '../../components/commons/Header';
+import { HomeDefaultHeader } from '../../components/commons/header/Header';
 
 interface Scroll {
   isScroll: boolean;
