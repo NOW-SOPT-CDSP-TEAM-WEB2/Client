@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import StayLocationMap from './components/StayLocationMap';
-import { ArrowLeftBlackIcon, MeatballBlackIcon, ShareBlackIcon } from '../../assets/svgs';
+import { ArrowLeftWishListDetailBlackIcon, MeatballBlackIcon, ShareBlackIcon } from '../../assets/svgs';
 import Footer from '../../components/commons/footer/Footer';
 import { WishHeader } from '../../components/commons/Header';
 
@@ -17,7 +17,9 @@ const WishListDetail = () => {
     <>
       <WishHeader />
       <WishNav>
-        <ArrowLeftBlackIc onClick={onClickBack} />
+        <ArrowLeftDiv onClick={onClickBack}>
+          <ArrowLeftWishListDetailBlackIc />
+        </ArrowLeftDiv>
         <ShareBlackIc />
         <MeatBallBlackIc />
       </WishNav>
@@ -48,10 +50,12 @@ const WishNav = styled.nav`
   padding: 1.4rem 9.2rem 1.6rem 9.2rem;
 `;
 
-const ArrowLeftBlackIc = styled(ArrowLeftBlackIcon)`
-  margin-right: 109.1rem;
-
+const ArrowLeftDiv = styled.div`
   cursor: pointer;
+`;
+
+const ArrowLeftWishListDetailBlackIc = styled(ArrowLeftWishListDetailBlackIcon)`
+  margin-right: 109.1rem;
 `;
 
 const ShareBlackIc = styled(ShareBlackIcon)`
