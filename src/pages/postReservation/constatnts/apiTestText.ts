@@ -5,6 +5,7 @@ export const API_Test = {
   isSuperHost: true,
   yearsOfHosting: 2,
   roomPrice: 150000,
+  roomRating: 4.94,
   checkInDate: '2024-05-13',
   checkOutDate: '2024-05-17',
 };

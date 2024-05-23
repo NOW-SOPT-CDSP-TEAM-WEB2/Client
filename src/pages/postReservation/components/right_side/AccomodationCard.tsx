@@ -6,10 +6,11 @@ interface AccomodationCardProps {
   roomName: string;
   description: string;
   isSuperHost: boolean;
+  roomRating: number;
 }
 
 const AccomodationInfoCard = (props: AccomodationCardProps) => {
-  const { roomName, description, isSuperHost } = props;
+  const { roomName, description, isSuperHost, roomRating } = props;
   return (
     <>
       <Accomodationwrapper>
@@ -23,7 +24,7 @@ const AccomodationInfoCard = (props: AccomodationCardProps) => {
               <IconWrapper>
                 <StarIcon />
               </IconWrapper>
-              4.94 {'('}후기 84개{')'}
+              {roomRating} {'('}후기 84개{')'}
               {isSuperHost && (
                 <>
                   <HostIconWrapper $issuperHost={isSuperHost}>

@@ -22,6 +22,7 @@ const InfoReservationCard = (props: InfoReservationCardProps) => {
           roomName={API_Test.roomName}
           description={'농장 체험 숙소'}
           isSuperHost={API_Test.isSuperHost}
+          roomRating={API_Test.roomRating}
         />
         <PriceInfoWrapper>
           <PriceTitle>{InfoReservationCardContent.title}</PriceTitle>
