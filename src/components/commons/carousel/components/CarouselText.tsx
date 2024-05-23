@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { StarIcon } from '../../../../assets/svgs';
+import { StarCarouselIcon } from '../../../../assets/svgs';
 
 interface CarouselTextProps {
   roomlocation: string;
@@ -18,7 +18,7 @@ const CarouselText = (props: CarouselTextProps) => {
       <TextTitleWrapper>
         <TextTitle>{roomlocation}</TextTitle>
         <TextRate>
-          <StarIcon />
+          <StarCarouselIcon />
           {roomRating}
         </TextRate>
       </TextTitleWrapper>
