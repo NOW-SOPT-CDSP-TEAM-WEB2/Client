@@ -1,5 +1,4 @@
 /* eslint-disable simple-import-sort/imports */
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 
@@ -10,7 +9,9 @@ import HomeFooter from './components/HomeFooter';
 import LnbList from './components/LnbList';
 import SearchTravel from './components/SearchTravel';
 import useScrollY from './hooks/useScrollY';
+import { RoomDataType } from './types/HomePageItemType';
 import { HomeDefaultHeader } from '../../components/commons/Header';
+import { client } from '../../utils/client';
 
 interface Scroll {
   isScroll: boolean;
@@ -18,12 +19,11 @@ interface Scroll {
 
 const HomePage = () => {
   const { isScroll }: Scroll = useScrollY();
-  const [roomData, setRoomData] = useState([]);
+  const [roomData, setRoomData] = useState<RoomDataType[]>([]);
   const getRoomData = async () => {
     try {
-      const room = await axios.get(`${import.meta.env.VITE_BASE_URL}api/v1/rooms`);
-      console.log(room.data);
-      setRoomData(room.data);
+      const response = await client.get<RoomDataType[]>(`/api/v1/rooms`);
+      setRoomData(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -31,7 +31,7 @@ const HomePage = () => {
   useEffect(() => {
     getRoomData();
   }, []);
-
+  console.log(roomData);
   return (
     <HomeWrapper>
       <HomeDefaultHeader isScroll={isScroll} />
@@ -40,7 +40,7 @@ const HomePage = () => {
         <LnbList />
         <Chips />
       </LnbChipWrapper>
-      <CarouselWrapperList roomData={roomData} />
+      <CarouselWrapperList roomData={roomData} setRoomData={setRoomData} />
       <HomeCategorySearch />
       <HomeFooter />
     </HomeWrapper>
