@@ -11,19 +11,28 @@ import {
   ProfileImgIcon,
   Star8Icon,
 } from '../../../assets/svgs';
-import { STAY_INFO } from '../constants';
+import { roomDetailType, roomInfoType } from '../types/getStayDetailType';
 
-const StayInfo = () => {
-  const rate = STAY_INFO.roomInfo.Rate;
+interface StayInfoProps {
+  roomLocation: string;
+  roomRate: number;
+  roomInfo: roomInfoType;
+  roomDetail: roomDetailType;
+  isSuperHost: boolean;
+}
+
+const StayInfo = (props: StayInfoProps) => {
+  const { roomLocation, roomInfo, roomRate, roomDetail, isSuperHost } = props;
+  const rate = roomRate;
 
   return (
     <StayInfoPage>
       {/* 숙소 스펙 정리 부분 */}
       <InfoWrapper>
-        <Title>{STAY_INFO.roomLocation}</Title>
+        <Title>{roomLocation}</Title>
         <InfoText>
-          최대 인원 {STAY_INFO.roomInfo.maxGuests}명 • 침실 {STAY_INFO.roomInfo.bedrooms} • 침대{' '}
-          {STAY_INFO.roomInfo.beds}개 • 욕실 {STAY_INFO.roomInfo.bathrooms}개
+          최대 인원 {roomInfo.maxGuests}명 • 침실 {roomInfo.bedrooms} • 침대 {roomInfo.beds}개 • 욕실
+          {roomInfo.bathrooms}개
         </InfoText>
         <RateWrapper>
           <RateBox>
@@ -38,7 +47,7 @@ const StayInfo = () => {
             </PreferenceSpan>
             <LovedText>에어비앤비 게스트에게 가장 사랑받는 숙소</LovedText>
             <RateSpan>
-              <RateNum>{STAY_INFO.roomInfo.Rate}</RateNum>
+              <RateNum>{roomRate}</RateNum>
               <RateIconSpan>
                 {rate >= 1 && rate < 2 && <Star8Icon />}
                 {rate >= 2 && rate < 3 && (
@@ -86,22 +95,22 @@ const StayInfo = () => {
             <MedalIc />
           </ProfileSpan>
           <TextSpan>
-            <HostName>호스트 : {STAY_INFO.hostName} 님</HostName>
-            {STAY_INFO.isSuperHost ? (
-              <HostingYear>슈퍼호스트 : 호스팅 경력 {STAY_INFO.yearsOfHosting}년</HostingYear>
+            <HostName>호스트 : {roomDetail.hostName} 님</HostName>
+            {isSuperHost ? (
+              <HostingYear>슈퍼호스트 : 호스팅 경력 {roomDetail.yearsOfHosting}년</HostingYear>
             ) : (
-              <HostingYear>호스트 : 호스팅 경력 {STAY_INFO.yearsOfHosting}년</HostingYear>
+              <HostingYear>호스트 : 호스팅 경력 {roomDetail.yearsOfHosting}년</HostingYear>
             )}
           </TextSpan>
         </HostInfoWrapper>
       </InfoWrapper>
       {/* 숙소 키워드 부분 */}
       <InfoKeyWordWrapper>
-        {STAY_INFO.isSuperHost ? (
+        {isSuperHost ? (
           <IsSuperHost>
             <BadgeIc />
             <TextArea>
-              <BoldText>{STAY_INFO.hostName}님은 슈퍼호스트입니다</BoldText>
+              <BoldText>{roomDetail.hostName}님은 슈퍼호스트입니다</BoldText>
               <ThinText>슈퍼호스트는 풍부한 경험과 높은 평점을 자랑하는 호스트입니다.</ThinText>
             </TextArea>
           </IsSuperHost>
@@ -117,13 +126,13 @@ const StayInfo = () => {
           <CalendarIc />
           <TextArea>
             {/* placeholder 값 하루 전으로 날짜 바꾸기 */}
-            <BoldText>{STAY_INFO.hostName} 전까지 무료로 취소 가능</BoldText>
+            <BoldText>{roomDetail.hostName} 전까지 무료로 취소 가능</BoldText>
             <ThinText>여행 계획이 변경되어도 전액 환불받으실 수 있습니다.</ThinText>
           </TextArea>
         </CanlenderArea>
       </InfoKeyWordWrapper>
       <DescriptionWrapper>
-        <DescriptionText>{STAY_INFO.description}</DescriptionText>
+        <DescriptionText>{roomDetail.description}</DescriptionText>
         <ViewMoreSpan>
           <ViewMoreText>더보기</ViewMoreText>
           <ArrowRightIcon />

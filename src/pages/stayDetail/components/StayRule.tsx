@@ -2,10 +2,15 @@
 import styled from 'styled-components';
 
 import { ClockIcon, DogIcon, PartyIcon, PeopleIcon, SmokeIcon } from '../../../assets/svgs';
-import { STAY_INFO } from '../constants';
+import { roomInfoType } from '../types/getStayDetailType';
 import Divider from './Divider';
 
-const StayRule = () => {
+interface StayRuleProps {
+  roomInfo: roomInfoType;
+}
+
+const StayRule = (props: StayRuleProps) => {
+  const { roomInfo } = props;
   return (
     <StayRuleWrapper>
       <Title>숙소 이용규칙</Title>
@@ -31,7 +36,7 @@ const StayRule = () => {
           <ColumnWrapper>
             <PeopleIcon />
             {/* n명에 api 붙여야함 */}
-            <Text2>게스트 정원 {STAY_INFO.roomInfo.maxGuests}명</Text2>
+            <Text2>게스트 정원 {roomInfo.maxGuests}명</Text2>
           </ColumnWrapper>
           <Divider />
           <ColumnWrapper>

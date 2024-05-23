@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { ArrowBelowIcon, DiamondIcon, FlagIcon } from '../../../assets/svgs';
-import { STAY_INFO } from '../constants';
+import { roomDetailType } from '../types/getStayDetailType';
 import freeCancelationDate from '../utils/getFreeCancelationDate';
 import { getStayDate } from '../utils/getStayDate';
 import { getStayFee } from '../utils/stayFee';
@@ -17,15 +17,16 @@ interface StayReserveProps {
   setStartDate: (date: Date) => void;
   // eslint-disable-next-line no-unused-vars
   setEndDate: (date: Date) => void;
+  roomPrice: number;
+  roomDetail: roomDetailType;
 }
 
 const StayReserve = (props: StayReserveProps) => {
   const { roomId } = useParams();
   const navigate = useNavigate();
-  const { startDate, endDate, setStartDate, setEndDate } = props;
+  const { startDate, endDate, setStartDate, setEndDate, roomPrice, roomDetail } = props;
 
   const getDateDifference = getStayDate(startDate, endDate);
-  const roomPrice = STAY_INFO.roomPrice;
 
   const { totalPrice, stayFee } = getStayFee(roomPrice, getDateDifference);
   const freeCancelDate = freeCancelationDate(startDate);
@@ -35,7 +36,7 @@ const StayReserve = (props: StayReserveProps) => {
       <ReserveWrapper>
         <ReserveBox>
           <PriceTextBox>
-            <PriceText>₩{STAY_INFO.roomPrice.toLocaleString()}</PriceText>
+            <PriceText>₩{roomPrice.toLocaleString()}</PriceText>
             <PerDayText>/박</PerDayText>
           </PriceTextBox>
           <ChooseDateBox>
@@ -67,13 +68,13 @@ const StayReserve = (props: StayReserveProps) => {
             <PriceCalText>
               {getDateDifference ? (
                 <>
-                  ₩{STAY_INFO.roomPrice.toLocaleString()} x {getDateDifference}박
+                  ₩{roomPrice.toLocaleString()} x {getDateDifference}박
                 </>
               ) : (
-                <>₩{STAY_INFO.roomPrice.toLocaleString()} x 박</>
+                <>₩{roomPrice.toLocaleString()} x 박</>
               )}
             </PriceCalText>{' '}
-            <PriceSpan>₩{STAY_INFO.roomPrice.toLocaleString()}</PriceSpan>
+            <PriceSpan>₩{roomPrice.toLocaleString()}</PriceSpan>
           </PriceCalTextBox>
           <PriceCalTextBox>
             <PriceCalText>에어비앤비 서비스 수수료</PriceCalText>
@@ -93,7 +94,7 @@ const StayReserve = (props: StayReserveProps) => {
         <DiamondIcon />
         <TextSpan>
           <Title2>흔치 않은 기회</Title2>
-          <Text>{STAY_INFO.hostName}님의 숙소는 보통 예약이 가득 차있습니다.</Text>
+          <Text>{roomDetail.hostName}님의 숙소는 보통 예약이 가득 차있습니다.</Text>
         </TextSpan>
       </ChanceBox>
       <ReportBtn>

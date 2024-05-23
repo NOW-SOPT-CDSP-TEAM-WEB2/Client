@@ -2,24 +2,26 @@
 import styled from 'styled-components';
 
 import { KeyboardIcon } from '../../../assets/svgs';
-import { STAY_INFO } from '../constants';
+import { roomDetailType } from '../types/getStayDetailType';
 import formatDateWithDots from '../utils/getDateInKor';
 import OutputCalendar from './OutputCalendar';
 
 interface StayCaledarProps {
   startDate: Date;
   endDate: Date;
+  roomLocation: string;
+  roomDetail: roomDetailType;
 }
 
 const StayCalendar = (props: StayCaledarProps) => {
-  const { startDate, endDate } = props;
+  const { startDate, endDate, roomLocation, roomDetail } = props;
   const finalDateInKor = formatDateWithDots(startDate);
   const finalDateInKor2 = formatDateWithDots(endDate);
   return (
     <CalendarPageWrapper>
       <CalendarTextBox>
         <StayName>
-          {STAY_INFO.roomLocation}, {STAY_INFO.roomName}
+          {roomLocation}, {roomDetail.roomName}
         </StayName>
         <StayDate>
           {finalDateInKor}

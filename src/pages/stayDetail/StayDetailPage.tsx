@@ -55,15 +55,33 @@ const StayDetailPage = () => {
 
   return (
     <PageWrapper>
-      <StayHeader roomName={stayInfo.roomDetail.roomName} />
+      <StayHeader roomName={stayInfo.roomDetail.roomName} roomImageList={stayInfo.roomImageList} />
       <ContentWrapper>
         <ColumnWrapper>
-          <StayInfo />
-          <StayRule />
+          <StayInfo
+            roomLocation={stayInfo.roomLocation}
+            roomInfo={stayInfo.roomDetail.roomInfo}
+            roomRate={stayInfo.roomRating}
+            roomDetail={stayInfo.roomDetail}
+            isSuperHost={stayInfo.isSuperHost}
+          />
+          <StayRule roomInfo={stayInfo.roomDetail.roomInfo} />
           <StayFacility />
-          <StayCalendar startDate={startDate} endDate={endDate} />
+          <StayCalendar
+            startDate={startDate}
+            endDate={endDate}
+            roomDetail={stayInfo.roomDetail}
+            roomLocation={stayInfo.roomLocation}
+          />
         </ColumnWrapper>
-        <StayReserve startDate={startDate} endDate={endDate} setStartDate={setStartDate} setEndDate={setEndDate} />
+        <StayReserve
+          startDate={startDate}
+          endDate={endDate}
+          setStartDate={setStartDate}
+          setEndDate={setEndDate}
+          roomPrice={stayInfo.roomPrice}
+          roomDetail={stayInfo.roomDetail}
+        />
       </ContentWrapper>
     </PageWrapper>
   );

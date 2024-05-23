@@ -6,11 +6,15 @@ import Divider from './Divider';
 
 interface StayHeaderProps {
   roomName: string;
+  roomImageList: string[];
 }
 
 const StayHeader = (props: StayHeaderProps) => {
-  const { roomName } = props;
+  const { roomName, roomImageList } = props;
   const displayName = roomName || '';
+
+  const imageList = [roomImageList[1], roomImageList[2], roomImageList[3], roomImageList[4]];
+  const renderImageList = imageList.map((images, index) => <SubImg key={index} src={images} />);
   return (
     <StayHeaderWrapper>
       <Divider />
@@ -28,6 +32,10 @@ const StayHeader = (props: StayHeaderProps) => {
         </IconBox>
       </TextBox>
       <ImgArea>
+        <ImgWrapper>
+          <MainImgWrapper src={roomImageList[0]} />
+          <SubImgWrapper>{renderImageList}</SubImgWrapper>
+        </ImgWrapper>
         <BtnWrapper>
           <BentoIcon />
           <BtnText>사진 모두 보기</BtnText>
@@ -39,6 +47,36 @@ const StayHeader = (props: StayHeaderProps) => {
 
 export default StayHeader;
 
+//이미지 영역
+const ImgWrapper = styled.div`
+  display: flex;
+  gap: 0.7rem;
+`;
+const MainImgWrapper = styled.img`
+  width: 42.8rem;
+  height: 36.2rem;
+  border-radius: 1rem 0 0 1rem;
+`;
+
+const SubImgWrapper = styled.span`
+  display: flex;
+  gap: 0.7rem;
+  width: 42.8rem;
+  height: 36.2rem;
+  flex-wrap: wrap;
+`;
+const SubImg = styled.img`
+  width: 20.6rem;
+  height: 17.8rem;
+  &:nth-child(2) {
+    border-radius: 0 1rem 0 0;
+  }
+  &:nth-child(4) {
+    border-radius: 0 0 1rem 0;
+  }
+`;
+
+//전체 페이지
 const StayHeaderWrapper = styled.div`
   width: 136.6rem;
   display: flex;
@@ -104,6 +142,7 @@ const BtnWrapper = styled.span`
   gap: 0.6rem;
   display: flex;
   align-items: center;
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 const BtnText = styled.p`
   ${({ theme }) => theme.fonts.body03_middle};
