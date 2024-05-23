@@ -1,12 +1,12 @@
 {
-    "plugins": ["stylelint-order"],
-    "extends": ["stylelint-config-clean-order", "stylelint-config-recommended"],
-    "overrides": [
-      {
-        "files": ["**/*.{ts,tsx}"],
-        "customSyntax": "@stylelint/postcss-css-in-js"
-      }
-    ],
+  "plugins": ["stylelint-order"],
+  "extends": ["stylelint-config-clean-order", "stylelint-config-recommended"],
+  "overrides": [
+    {
+      "files": ["**/*.{ts,tsx}"],
+      "customSyntax": "@stylelint/postcss-css-in-js"
+    }
+  ],
   "rules": {
     "declaration-empty-line-before": [
       "never",
@@ -288,7 +288,7 @@
       "/^padding|^gap/": ["rem"]
     },
 
-    "unit-allowed-list": ["%", "deg", "px", "rem", "ms"],
+    "unit-allowed-list": ["%", "deg", "px", "rem", "ms", "fr"],
 
     "color-named": "never",
     "property-no-vendor-prefix": null,
