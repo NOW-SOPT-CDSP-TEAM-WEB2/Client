@@ -44,7 +44,6 @@ export const HomeDefaultHeader = (props: HomeDefaultHeaderProps) => {
       <LogoDiv onClick={() => navigate('/')}>
         <LogoIcon />
       </LogoDiv>
-      <LogoIcon />
       <NavHeaderContent isScroll={isScroll} />
       <HomeHeaderContent isScroll={isScroll} />
       <HeaderProfile padding={6} />

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import Footer from './../../components/commons/footer/Footer';
 import { DefaultHeader } from './../../components/commons/Header';
-import PostReservationHeader from './components/header/PostReservationHeader';
+import PostReservationHeader from './components/header/postReservationHeader.tsx';
 import WrapLeftComponents from './components/left_side/WrapLeftComponents';
 import InfoReservationCard from './components/right_side/InfoReservationCard';
 import { API_Test } from './constatnts/apiTestText.ts';

@@ -1,23 +1,29 @@
+/* eslint-disable simple-import-sort/imports */
 import styled from 'styled-components';
 
 import Carousel from './carouselComponent/Carousel';
 import CarouselText from './components/CarouselText';
 import HeartComponent from './components/HeartComponent';
 import SuperHostCard from './components/SuperHostCard';
-import { API_TEST_CAROUSEL } from './constants/apiTest.ts';
-const CarouselWrapperComponent = () => {
+import { RoomDataType } from '../../../pages/HomePage/types/HomePageItemType';
+
+interface CarouselWrapperComponentprops {
+  room: RoomDataType;
+}
+const CarouselWrapperComponent = (props: CarouselWrapperComponentprops) => {
+  const { room } = props;
   return (
     <CarouselComponentWrapper>
-      {API_TEST_CAROUSEL.isSuperHost ? <SuperHostCard /> : ''}
+      {room.isSuperHost ? <SuperHostCard /> : ''}
       <HeartComponent />
-      <Carousel roomImageList={API_TEST_CAROUSEL.roomImageList} />
+      <Carousel roomImageList={room.roomImageList} />
       <CarouselText
-        roomlocation={API_TEST_CAROUSEL.roomlocation}
-        currentDistance={API_TEST_CAROUSEL.currentDistance}
-        roomRating={API_TEST_CAROUSEL.roomRating}
-        recommendedDates={API_TEST_CAROUSEL.recommendedDates}
-        guestReview={API_TEST_CAROUSEL.guestReview}
-        roomPrice={API_TEST_CAROUSEL.roomPrice}
+        roomlocation={room.roomLocation}
+        currentDistance={room.currentDistance}
+        roomRating={room.roomRating}
+        recommendedDates={room.recommendedDates}
+        guestReview={room.guestReview}
+        roomPrice={room.roomPrice}
       />
     </CarouselComponentWrapper>
   );

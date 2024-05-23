@@ -10,6 +10,7 @@ import LnbList from './components/LnbList';
 import SearchTravel from './components/SearchTravel';
 import useScrollY from './hooks/useScrollY';
 import { RoomDataType } from './types/HomePageItemType';
+import Footer from '../../components/commons/footer/Footer';
 import { HomeDefaultHeader } from '../../components/commons/Header';
 import { client } from '../../utils/client';
 
@@ -43,6 +44,7 @@ const HomePage = () => {
       <CarouselWrapperList roomData={roomData} setRoomData={setRoomData} />
       <HomeCategorySearch />
       <HomeFooter />
+      <Footer />
     </HomeWrapper>
   );
 };

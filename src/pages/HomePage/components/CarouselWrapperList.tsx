@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
 
+import CarouselWrapperComponent from '../../../components/commons/carousel/CarouselWrapperComponent';
 import { client } from '../../../utils/client';
 import { RoomDataType } from '../types/HomePageItemType';
 
@@ -46,7 +47,7 @@ const CarouselWrapperList = (props: CarouselWrapperListProps) => {
   return (
     <CardWrapper>
       {roomData.map((room) => (
-        <Card key={room.roomId} onClick={() => handleCardClick(room)} />
+        <CarouselWrapperComponent key={room.roomId} room={room} />
       ))}
     </CardWrapper>
   );
