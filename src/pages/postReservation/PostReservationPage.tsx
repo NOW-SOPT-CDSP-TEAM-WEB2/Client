@@ -19,7 +19,6 @@ export interface inputValType {
 
 const PostReservationPage = () => {
   const navigate = useNavigate();
-  const headCount = 1;
   const roomId = 2;
 
   const { formattedCheckInDate, formattedCheckOutDate, daysDifference, paymentDate } = useExtractDate(
@@ -30,7 +29,7 @@ const PostReservationPage = () => {
   const [inputVal, setInputVal] = useState({
     checkInDate: API_Test.checkInDate,
     checkOutDate: API_Test.checkOutDate,
-    headCount: headCount,
+    headCount: 1,
     messageToHost: '',
   });
 
@@ -38,7 +37,7 @@ const PostReservationPage = () => {
     const res = await postReserveInfo(inputVal, roomId);
     console.log(res);
     if (res) {
-      if (confirm(res?.data.message)) navigate('/main');
+      if (confirm(res?.data.message)) navigate('/home');
     }
   };
 
