@@ -1,11 +1,46 @@
+import axios from 'axios';
+import { useState } from 'react';
 import styled from 'styled-components';
 
-import { TestDummy } from '../constants';
-const CarouselWrapperList = () => {
+interface CarouselWrapperListProps {
+  roomData: object[];
+}
+const CarouselWrapperList = (props: CarouselWrapperListProps) => {
+  const { roomData } = props;
+  const initBoolean = Array(roomData.length + 1).fill(false);
+
+  const [isLiked, setIsLiked] = useState<boolean[]>(initBoolean);
+
+  const postWish = async (roomId: number) => {
+    const temp = isLiked.map((elem, index) => (roomId === index ? elem : elem));
+    console.log('temp', temp);
+    setIsLiked([...temp]);
+    const data = await axios.post(`${import.meta.env.VITE_BASE_URL}api/v1/wishes/${roomId}`);
+    console.log(data.data);
+  };
+
+  const getWish = async () => {
+    const wishList = await axios.get(`${import.meta.env.VITE_BASE_URL}api/v1/wishes`);
+    console.log(wishList.data);
+  };
+
+  const deleteWish = async (roomId: number) => {
+    const temp = isLiked.map((elem, index) => (roomId === index ? !elem : elem));
+    setIsLiked(temp);
+    const data = await axios.delete(`${import.meta.env.VITE_BASE_URL}api/v1/wishes/${roomId}`);
+    console.log(data.data);
+  };
+
+  const handleCardClick = (roomId: number) => {
+    isLiked[roomId] ? deleteWish(roomId) : postWish(roomId);
+    getWish();
+    console.log(isLiked);
+  };
+
   return (
     <CardWrapper>
-      {TestDummy.map((elem) => (
-        <Card key={elem.id} />
+      {roomData.map((room) => (
+        <Card key={room.roomId} onClick={() => handleCardClick(room.roomId)} />
       ))}
     </CardWrapper>
   );

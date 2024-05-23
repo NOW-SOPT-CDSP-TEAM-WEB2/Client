@@ -1,6 +1,7 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 
-import { HomeDefaultHeader } from '../../../components/commons/Header';
 import useScrollY from '../../hooks/useScrollY';
 import CarouselWrapperList from './components/CarouselWrapperList';
 import Chips from './components/Chips';
@@ -8,6 +9,7 @@ import HomeCategorySearch from './components/HomeCategorySearch';
 import HomeFooter from './components/HomeFooter';
 import LnbList from './components/LnbList';
 import SearchTravel from './components/SearchTravel';
+import { HomeDefaultHeader } from '../../../components/commons/Header';
 
 interface Scroll {
   isScroll: boolean;
@@ -15,6 +17,19 @@ interface Scroll {
 
 const HomePage = () => {
   const { isScroll }: Scroll = useScrollY();
+  const [roomData, setRoomData] = useState([]);
+  const getRoomData = async () => {
+    try {
+      const room = await axios.get(`${import.meta.env.VITE_BASE_URL}api/v1/rooms`);
+      console.log(room.data);
+      setRoomData(room.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getRoomData();
+  }, []);
 
   return (
     <HomeWrapper>
@@ -24,7 +39,7 @@ const HomePage = () => {
         <LnbList />
         <Chips />
       </LnbChipWrapper>
-      <CarouselWrapperList />
+      <CarouselWrapperList roomData={roomData} />
       <HomeCategorySearch />
       <HomeFooter />
     </HomeWrapper>
