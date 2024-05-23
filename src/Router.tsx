@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import WishList from './pages/wishList/WishList';
+import HomePage from './pages/HomePage/HomePage';
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/wishList" element={<WishList />} />
+        <Route path="/home" element={<HomePage />} />
       </Routes>
     </BrowserRouter>
   );
