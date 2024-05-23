@@ -9,7 +9,7 @@ import {
   LeafRightIcon,
   MedalIcon,
   ProfileImgIcon,
-  StarIcon,
+  Star8Icon,
 } from '../../../assets/svgs';
 import { STAY_INFO } from '../constants';
 
@@ -40,35 +40,35 @@ const StayInfo = () => {
             <RateSpan>
               <RateNum>{STAY_INFO.roomInfo.Rate}</RateNum>
               <RateIconSpan>
-                {rate >= 1 && rate < 2 && <StarIcon />}
+                {rate >= 1 && rate < 2 && <Star8Icon />}
                 {rate >= 2 && rate < 3 && (
                   <>
-                    <StarIcon />
-                    <StarIcon />
+                    <Star8Icon />
+                    <Star8Icon />
                   </>
                 )}
                 {rate >= 3 && rate < 4 && (
                   <>
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
+                    <Star8Icon />
+                    <Star8Icon />
+                    <Star8Icon />
                   </>
                 )}
                 {rate >= 4 && rate < 5 && (
                   <>
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
+                    <Star8Icon />
+                    <Star8Icon />
+                    <Star8Icon />
+                    <Star8Icon />
                   </>
                 )}
                 {rate === 5 && (
                   <>
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
+                    <Star8Icon />
+                    <Star8Icon />
+                    <Star8Icon />
+                    <Star8Icon />
+                    <Star8Icon />
                   </>
                 )}
               </RateIconSpan>
