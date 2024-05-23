@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Footer from './../../components/commons/footer/Footer';
-import PostReservationHeader from './components/header/PostReservationHeader.tsx';
+import PostReservationHeader from './components/header/postReservationHeader.tsx';
 import WrapLeftComponents from './components/left_side/WrapLeftComponents';
 import InfoReservationCard from './components/right_side/InfoReservationCard';
 import { API_Test } from './constatnts/apiTestText.ts';

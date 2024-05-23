@@ -1,8 +1,8 @@
 /* eslint-disable simple-import-sort/imports */
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 
+import { getRoomData } from './apis/https';
 import CarouselWrapperList from './components/CarouselWrapperList';
 import Chips from './components/Chips';
 import HomeCategorySearch from './components/HomeCategorySearch';
@@ -10,6 +10,8 @@ import HomeFooter from './components/HomeFooter';
 import LnbList from './components/LnbList';
 import SearchTravel from './components/SearchTravel';
 import useScrollY from './hooks/useScrollY';
+import { RoomDataType } from './types/HomePageItemType';
+import Footer from '../../components/commons/footer/Footer';
 import { HomeDefaultHeader } from '../../components/commons/header/Header';
 
 interface Scroll {
@@ -18,18 +20,15 @@ interface Scroll {
 
 const HomePage = () => {
   const { isScroll }: Scroll = useScrollY();
-  const [roomData, setRoomData] = useState([]);
-  const getRoomData = async () => {
-    try {
-      const room = await axios.get(`${import.meta.env.VITE_BASE_URL}api/v1/rooms`);
-      console.log(room.data);
-      setRoomData(room.data);
-    } catch (error) {
-      console.log(error);
-    }
+  const [roomData, setRoomData] = useState<RoomDataType[]>([]);
+
+  const fetchRoomData = async () => {
+    const roomList = await getRoomData();
+    setRoomData(roomList);
   };
+
   useEffect(() => {
-    getRoomData();
+    fetchRoomData();
   }, []);
 
   return (
@@ -40,9 +39,10 @@ const HomePage = () => {
         <LnbList />
         <Chips />
       </LnbChipWrapper>
-      <CarouselWrapperList roomData={roomData} />
+      <CarouselWrapperList roomData={roomData} setRoomData={setRoomData} />
       <HomeCategorySearch />
       <HomeFooter />
+      <Footer />
     </HomeWrapper>
   );
 };
