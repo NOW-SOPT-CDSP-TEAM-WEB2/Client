@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const NavHeaderContent = () => {
+const StayDetailHeaderContent = () => {
   return (
     <NavHeaderWrapper>
       <Content>어디든지</Content>
@@ -12,7 +12,7 @@ const NavHeaderContent = () => {
   );
 };
 
-export default NavHeaderContent;
+export default StayDetailHeaderContent;
 
 const NavHeaderWrapper = styled.div`
   display: flex;
@@ -33,7 +33,6 @@ const Content = styled.div`
   color: ${({ theme }) => theme.colors.black};
   ${({ theme }) => theme.fonts.body03_heavy};
   cursor: pointer;
-
   &:nth-child(5) {
     color: ${({ theme }) => theme.colors.gray800};
     ${({ theme }) => theme.fonts.body03_middle};

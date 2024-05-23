@@ -5,14 +5,20 @@ import styled from 'styled-components';
 import HeaderProfile from './HeaderProfile';
 import HomeHeaderContent from './HomeHeaderContent';
 import NavHeaderContent from './NavHeaderContent';
-import { LogoIcon } from '../../assets/svgs';
+import StayDetailHeaderContent from './StayDetailHeaderContent';
+import { LogoIcon } from '../../../assets/svgs';
 
+interface HomeDefaultHeaderProps {
+  isScroll: boolean;
+}
 // 로고만 있는 헤더
 export const DefaultHeader = () => {
   const navigate = useNavigate();
   return (
     <HeaderWrapper $paddingTop={1.7} $paddingRight={0} $paddingBottom={1.7} $paddingLeft={2}>
-      <LogoIc onClick={() => navigate('/')} />
+      <LogoDiv onClick={() => navigate('/')}>
+        <LogoIcon />
+      </LogoDiv>
     </HeaderWrapper>
   );
 };
@@ -22,31 +28,38 @@ export const WishHeader = () => {
   const navigate = useNavigate();
   return (
     <HeaderWrapper $paddingTop={1.7} $paddingRight={10} $paddingBottom={1.7} $paddingLeft={10}>
-      <LogoIc onClick={() => navigate('/')} />
+      <LogoDiv onClick={() => navigate('/')}>
+        <LogoIcon />
+      </LogoDiv>
       <HeaderProfile padding={10} />
     </HeaderWrapper>
   );
 };
 
 // 홈 헤더 기본 버전
-export const HomeDefaultHeader = () => {
+export const HomeDefaultHeader = (props: HomeDefaultHeaderProps) => {
+  const { isScroll } = props;
   const navigate = useNavigate();
   return (
     <HeaderWrapper $paddingTop={1.2} $paddingRight={6} $paddingBottom={1.2} $paddingLeft={6}>
-      <LogoIc onClick={() => navigate('/')} />
-      <HomeHeaderContent />
+      <LogoDiv onClick={() => navigate('/')}>
+        <LogoIcon />
+      </LogoDiv>
+      <NavHeaderContent isScroll={isScroll} />
+      <HomeHeaderContent isScroll={isScroll} />
       <HeaderProfile padding={6} />
     </HeaderWrapper>
   );
 };
 
-// 홈 헤더 스크롤 버전, 숙소 상세 헤더 (검색창 있는 버전)
 export const NavHeader = () => {
   const navigate = useNavigate();
   return (
     <HeaderWrapper $paddingTop={1.2} $paddingRight={25.6} $paddingBottom={1.2} $paddingLeft={25.6}>
-      <LogoIc onClick={() => navigate('/')} />
-      <NavHeaderContent />
+      <LogoDiv onClick={() => navigate('/')}>
+        <LogoIcon />
+      </LogoDiv>
+      <StayDetailHeaderContent />
       <HeaderProfile padding={25.6} />
     </HeaderWrapper>
   );
@@ -73,6 +86,6 @@ const HeaderWrapper = styled.div<{
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
-const LogoIc = styled(LogoIcon)`
+const LogoDiv = styled.div`
   cursor: pointer;
 `;
