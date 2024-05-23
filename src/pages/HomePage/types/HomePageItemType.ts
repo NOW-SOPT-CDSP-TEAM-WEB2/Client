@@ -5,7 +5,7 @@ export interface RoomDataType {
   isWishList: boolean;
   recommendedDates: string;
   roomId: number;
-  roomImageList: string;
+  roomImageList: string[];
   roomLocation: string;
   roomPrice: number;
   roomRating: number;

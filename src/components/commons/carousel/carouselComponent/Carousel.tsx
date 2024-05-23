@@ -8,7 +8,7 @@ import { styled } from 'styled-components';
 import { NextArrow, PrevArrow } from './CustonArrows';
 
 interface CarouselProps {
-  roomImageList: string;
+  roomImageList: string[];
 }
 
 const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {

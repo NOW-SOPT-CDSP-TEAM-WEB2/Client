@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 
+import { getRoomData } from './apis/https';
 import CarouselWrapperList from './components/CarouselWrapperList';
 import Chips from './components/Chips';
 import HomeCategorySearch from './components/HomeCategorySearch';
@@ -12,7 +13,6 @@ import useScrollY from './hooks/useScrollY';
 import { RoomDataType } from './types/HomePageItemType';
 import Footer from '../../components/commons/footer/Footer';
 import { HomeDefaultHeader } from '../../components/commons/Header';
-import { client } from '../../utils/client';
 
 interface Scroll {
   isScroll: boolean;
@@ -21,18 +21,16 @@ interface Scroll {
 const HomePage = () => {
   const { isScroll }: Scroll = useScrollY();
   const [roomData, setRoomData] = useState<RoomDataType[]>([]);
-  const getRoomData = async () => {
-    try {
-      const response = await client.get<RoomDataType[]>(`/api/v1/rooms`);
-      setRoomData(response.data);
-    } catch (error) {
-      console.log(error);
-    }
+
+  const fetchRoomData = async () => {
+    const roomList = await getRoomData();
+    setRoomData(roomList);
   };
+
   useEffect(() => {
-    getRoomData();
+    fetchRoomData();
   }, []);
-  console.log(roomData);
+
   return (
     <HomeWrapper>
       <HomeDefaultHeader isScroll={isScroll} />

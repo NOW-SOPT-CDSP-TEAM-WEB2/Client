@@ -2,7 +2,6 @@ import { Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
 
 import CarouselWrapperComponent from '../../../components/commons/carousel/CarouselWrapperComponent';
-import { client } from '../../../utils/client';
 import { RoomDataType } from '../types/HomePageItemType';
 
 interface CarouselWrapperListProps {
@@ -13,41 +12,10 @@ interface CarouselWrapperListProps {
 const CarouselWrapperList = (props: CarouselWrapperListProps) => {
   const { roomData, setRoomData } = props;
 
-  const getRoomData = async () => {
-    try {
-      const response = await client.get<RoomDataType[]>(`/api/v1/rooms`);
-      setRoomData(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const postWish = async (roomId: number) => {
-    const data = await client.post(`/api/v1/wishes/${roomId}`);
-    console.log(data.data);
-  };
-
-  const getWish = async () => {
-    const wishList = await client.get(`/api/v1/wishes`);
-    console.log(wishList.data);
-  };
-
-  const deleteWish = async (roomId: number) => {
-    const data = await client.delete(`/api/v1/wishes/${roomId}`);
-    console.log(data.data);
-  };
-
-  const handleCardClick = (props: RoomDataType) => {
-    const room = props;
-    room.isWishList ? deleteWish(room.roomId) : postWish(room.roomId);
-    getRoomData();
-    getWish();
-  };
-
   return (
     <CardWrapper>
       {roomData.map((room) => (
-        <CarouselWrapperComponent key={room.roomId} room={room} />
+        <CarouselWrapperComponent key={room.roomId} room={room} setRoomData={setRoomData} />
       ))}
     </CardWrapper>
   );
@@ -64,10 +32,4 @@ const CardWrapper = styled.ul`
 
   column-gap: 1.6rem;
   row-gap: 3rem;
-`;
-const Card = styled.div`
-  width: 23.7rem;
-  height: 31.2rem;
-
-  background-color: ${({ theme }) => theme.colors.black};
 `;

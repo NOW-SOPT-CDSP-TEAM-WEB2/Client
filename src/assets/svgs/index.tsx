@@ -17,6 +17,7 @@ export { default as DesignGrayIcon } from './ic_design_gray_18.svg?react';
 export { default as DiamondPinkIcon } from './ic_diamond_pink_24.svg?react';
 export { default as FacebookBlackIcon } from './ic_facebook_black_14.svg?react';
 export { default as HamburgerBlackIcon } from './ic_hamburger_black_12.svg?react';
+export { default as HeartGray24Icon } from './ic_heart_gray_24.svg?react';
 export { default as HeartPink24Icon } from './ic_heart_pink_24.svg?react';
 export { default as HotBlackIcon } from './ic_hot_black_18.svg?react';
 export { default as HotGrayIcon } from './ic_hot_grey_18.svg?react';
