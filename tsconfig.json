@@ -18,7 +18,10 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    // 카카오맵 api
+    "types": ["kakao.maps.d.ts"]
   },
   "include": ["src", "src/custom.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
