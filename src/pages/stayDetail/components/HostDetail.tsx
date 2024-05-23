@@ -202,7 +202,10 @@ const SuperHostDetail = styled.span`
 const ShareHostIc = styled(ShareHostIcon)`
   margin-bottom: 2.2rem;
 `;
-const PayWarnIc = styled(PayWarnIcon)``;
+
+const PayWarnIc = styled(PayWarnIcon)`
+  cursor: default;
+`;
 const Divider = styled.div`
   width: 100%;
   height: 1px;

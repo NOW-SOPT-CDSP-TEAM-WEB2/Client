@@ -1,14 +1,55 @@
 /* eslint-disable simple-import-sort/imports */
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
+import CarouselWrapper from './components/CarouselWrapper';
 import StayLocationMap from './components/StayLocationMap';
 import { ArrowLeftWishListDetailBlackIcon, MeatballBlackIcon, ShareBlackIcon } from '../../assets/svgs';
 import Footer from '../../components/commons/footer/Footer';
 import { WishHeader } from '../../components/commons/header/Header';
+import { wishListApiDataType, getWishList } from '../wishList/utils/getWishList';
+
+interface location {
+  lat: number;
+  lng: number;
+}
+
+export interface latlngType {
+  latlng: location;
+}
 
 const WishListDetail = () => {
   const navigate = useNavigate();
+  const [wishList, setWishList] = useState<wishListApiDataType[]>([]);
+  const [latLngList, setLatLngList] = useState<latlngType[]>([]);
+
+  const getWishListData = async () => {
+    try {
+      const res = await getWishList();
+      // console.log(res.data.data);
+      setWishList(res.data.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const convertLatLng = (roomData: wishListApiDataType[]) => {
+    return roomData.map((item) => ({
+      latlng: { lat: item.latitude, lng: item.longitude },
+    }));
+  };
+
+  useEffect(() => {
+    getWishListData();
+  }, []);
+
+  useEffect(() => {
+    if (wishList.length !== 0) {
+      const convertedWishLocList = convertLatLng(wishList);
+      setLatLngList(convertedWishLocList);
+    }
+  }, [wishList]);
 
   const onClickBack = () => {
     navigate('/wishList');
@@ -29,10 +70,10 @@ const WishListDetail = () => {
           <NavButton>날짜 입력하기</NavButton>
           <NavButton>게스트 1명</NavButton>
         </NavButtonWrapper>
-        <CarouselTest />
+        <CarouselWrapper wishList={wishList} />
         <WishMapContainer>
           <WishLocTitle>위시 위치</WishLocTitle>
-          <StayLocationMap />
+          <StayLocationMap latlngList={latLngList} />
         </WishMapContainer>
       </WishListDetailWrapper>
       <Footer />
@@ -102,14 +143,6 @@ const NavButton = styled.button`
   border-radius: 16px;
 
   ${({ theme }) => theme.fonts.body03_middle};
-`;
-
-const CarouselTest = styled.div`
-  width: 100%;
-  height: 34.8rem;
-  margin-bottom: 6.4rem;
-
-  background-color: ${({ theme }) => theme.colors.blue400};
 `;
 
 const WishMapContainer = styled.section`
