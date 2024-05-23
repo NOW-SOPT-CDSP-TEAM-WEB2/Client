@@ -51,5 +51,5 @@ export { default as RateListIcon } from './rate_list.svg?react';
 export { default as ReviewListIcon } from './review_list.svg?react';
 export { default as SendingMessagetoHost } from './SendingMessagetoHost.svg?react';
 export { default as ShareHostIcon } from './share_host.svg?react';
-export { default as StarIcon } from './star.svg?react';
+export { default as StarHotelDetailIcon } from './star.svg?react';
 export { default as WishListThumIcon } from './wishListThumb.svg?react';

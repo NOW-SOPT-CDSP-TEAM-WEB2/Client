@@ -6,7 +6,7 @@ import {
   HostProfileIcon,
   PayWarnIcon,
   ShareHostIcon,
-  StarIcon,
+  StarHotelDetailIcon,
 } from '../../../assets/svgs';
 
 const HostDetail = () => {
@@ -40,7 +40,7 @@ const HostDetail = () => {
                 <LabelContent>
                   {/* 서버값 연결 */}
                   <ReviewNum>4.94</ReviewNum>
-                  <StarIcon />
+                  <StarHotelDetailIcon />
                 </LabelContent>
               </HostDetailInfo>
               <HostDetailInfo>
