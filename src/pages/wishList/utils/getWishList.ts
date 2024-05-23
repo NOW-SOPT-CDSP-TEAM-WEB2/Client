@@ -1,6 +1,6 @@
 import { client } from '../../../utils/client';
 
-export interface wishListApiData {
+export interface wishListApiDataType {
   roomId: number;
   roomImageList: string[];
   roomLocation: string;
@@ -14,5 +14,5 @@ export interface wishListApiData {
 }
 
 export const getWishList = () => {
-  return client.get<wishListApiData[]>(`/api/v1/rooms`);
+  return client.get<wishListApiDataType[]>(`/api/v1/rooms`);
 };

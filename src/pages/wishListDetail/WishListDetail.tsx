@@ -1,14 +1,32 @@
 /* eslint-disable simple-import-sort/imports */
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
+import CarouselWrapper from './components/CarouselWrapper';
 import StayLocationMap from './components/StayLocationMap';
 import { ArrowLeftWishListDetailBlackIcon, MeatballBlackIcon, ShareBlackIcon } from '../../assets/svgs';
 import Footer from '../../components/commons/footer/Footer';
 import { WishHeader } from '../../components/commons/header/Header';
+import { wishListApiDataType, getWishList } from '../wishList/utils/getWishList';
 
 const WishListDetail = () => {
   const navigate = useNavigate();
+  const [wishList, setWishList] = useState<wishListApiDataType[]>([]);
+
+  const getWishListData = async () => {
+    try {
+      const res = await getWishList();
+      // console.log(res.data);
+      setWishList(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getWishListData();
+  }, []);
 
   const onClickBack = () => {
     navigate('/wishList');
@@ -29,7 +47,7 @@ const WishListDetail = () => {
           <NavButton>날짜 입력하기</NavButton>
           <NavButton>게스트 1명</NavButton>
         </NavButtonWrapper>
-        <CarouselTest />
+        <CarouselWrapper wishList={wishList} />
         <WishMapContainer>
           <WishLocTitle>위시 위치</WishLocTitle>
           <StayLocationMap />
@@ -104,13 +122,13 @@ const NavButton = styled.button`
   ${({ theme }) => theme.fonts.body03_middle};
 `;
 
-const CarouselTest = styled.div`
-  width: 100%;
-  height: 34.8rem;
-  margin-bottom: 6.4rem;
+// const CarouselTest = styled.div`
+//   width: 100%;
+//   height: 34.8rem;
+//   margin-bottom: 6.4rem;
 
-  background-color: ${({ theme }) => theme.colors.blue400};
-`;
+//   background-color: ${({ theme }) => theme.colors.blue400};
+// `;
 
 const WishMapContainer = styled.section`
   display: flex;
