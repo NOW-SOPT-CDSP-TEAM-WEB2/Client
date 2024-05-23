@@ -30,7 +30,7 @@ export { default as NaverPayIcon } from './ic_naverpay_normal_24.svg?react';
 export { default as ParkBlackIcon } from './ic_park_black_18.svg?react';
 export { default as ParkGrayIcon } from './ic_park_gray_18.svg?react';
 export { default as SearchMiniWhiteIcon } from './ic_search_mini_white_12.svg?react';
-export { default as StarIcon } from './ic_star.svg?react';
+export { default as StarPostIcon } from './ic_star.svg?react';
 export { default as SwimmingPoolBlackIcon } from './ic_swimming_pool_black_18.svg?react';
 export { default as SwimmingPoolGrayIcon } from './ic_swimming_pool_gray_18.svg?react';
 export { default as TimePink32 } from './ic_time_pink_32.svg?react';

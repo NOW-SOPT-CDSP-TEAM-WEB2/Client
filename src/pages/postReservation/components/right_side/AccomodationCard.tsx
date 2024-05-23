@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { MedalFillBlackIcon, PostReservationHousingCard, StarIcon } from '../../../../assets/svgs';
+import { MedalFillBlackIcon, PostReservationHousingCard, StarPostIcon } from '../../../../assets/svgs';
 
 interface AccomodationCardProps {
   roomName: string;
@@ -21,7 +21,7 @@ const AccomodationInfoCard = (props: AccomodationCardProps) => {
             <AccomodationDescr>
               {' '}
               <IconWrapper>
-                <StarIcon />
+                <StarPostIcon />
               </IconWrapper>
               4.94 {'('}후기 84개{')'}
               {isSuperHost && (
