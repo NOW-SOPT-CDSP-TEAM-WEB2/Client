@@ -8,21 +8,21 @@ import PostReservationHeader from './components/header/PostReservationHeader';
 import WrapLeftComponents from './components/left_side/WrapLeftComponents';
 import InfoReservationCard from './components/right_side/InfoReservationCard';
 import { API_Test } from './constatnts/apiTestText.ts';
+import { postReserveInfo } from './hooks/postReservation';
 import { useExtractDate } from './hooks/useExtractDate';
-import { postReserveInfo } from './utils/postReserveInfo';
 
 export interface inputValType {
   checkInDate: string;
   checkOutDate: string;
   headCount: number;
   messageToHost: string;
-  roomId: number;
 }
 
 const PostReservationPage = () => {
   const navigate = useNavigate();
 
   const roomId = 2;
+
   const { formattedCheckInDate, formattedCheckOutDate, daysDifference, paymentDate } = useExtractDate(
     API_Test.checkInDate,
     API_Test.checkOutDate
@@ -33,13 +33,11 @@ const PostReservationPage = () => {
     checkOutDate: API_Test.checkOutDate,
     headCount: API_Test.headCount,
     messageToHost: '',
-    roomId: roomId,
   });
 
-  console.log(inputVal);
-
   const handlePost = async () => {
-    const res = await postReserveInfo(inputVal);
+    const res = await postReserveInfo(inputVal, roomId);
+    console.log(res);
     if (res) {
       if (confirm(res?.data.message)) navigate('/main');
     }
