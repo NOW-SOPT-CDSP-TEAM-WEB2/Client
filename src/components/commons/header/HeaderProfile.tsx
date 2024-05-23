@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { HEADER_DROPDOWN_CONTENT } from '../../../assets/constants/headerDropdown';
@@ -10,6 +11,7 @@ interface headerProfilePropsType {
 }
 
 const HeaderProfile = (props: headerProfilePropsType) => {
+  const navigate = useNavigate();
   const { padding } = props;
   const dropDownRef = useRef(null);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
@@ -31,6 +33,14 @@ const HeaderProfile = (props: headerProfilePropsType) => {
 
   useClickOutside(dropDownRef, handleClickOutside);
 
+  const onClickWishList = () => {
+    navigate('/wishList');
+  };
+
+  const onClickItem = () => {
+    setIsDropDownOpen(false);
+  };
+
   return (
     <>
       <ProfileWrapper>
@@ -45,7 +55,11 @@ const HeaderProfile = (props: headerProfilePropsType) => {
       </ProfileWrapper>
       <ProfileDropDownWrapper $isDropDownOpen={isDropDownOpen} $right={padding} ref={dropDownRef}>
         {HEADER_DROPDOWN_CONTENT.map((content, idx) => (
-          <DropDownText key={idx + content.content.toString()}>{content.content}</DropDownText>
+          <DropDownText
+            key={idx + content.content.toString()}
+            onClick={content.content === '위시리스트' ? onClickWishList : onClickItem}>
+            {content.content}
+          </DropDownText>
         ))}
       </ProfileDropDownWrapper>
     </>
