@@ -1,4 +1,4 @@
-export function getDifferenceDate(dateString1, dateString2): number {
+export function getDifferenceDate(dateString1: string, dateString2: string) {
   const date1: Date = new Date(dateString1);
   const date2: Date = new Date(dateString2);
 

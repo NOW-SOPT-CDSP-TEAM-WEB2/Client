@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable import/order */
 import styled from 'styled-components';
 
 import { TimePink32 } from '../../../../assets/svgs';

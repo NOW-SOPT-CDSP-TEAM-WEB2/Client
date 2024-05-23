@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 import { MedalFillBlackIcon, PostReservationHousingCard, StarIcon } from '../../../../assets/svgs';
@@ -27,9 +26,9 @@ const AccomodationInfoCard = (props: AccomodationCardProps) => {
               4.94 {'('}후기 84개{')'}
               {isSuperHost && (
                 <>
-                  <IconWrapper $issuperHost={isSuperHost}>
+                  <HostIconWrapper $issuperHost={isSuperHost}>
                     <MedalFillBlackIcon />
-                  </IconWrapper>
+                  </HostIconWrapper>
                   슈퍼호스트
                 </>
               )}
@@ -71,20 +70,26 @@ const IconAreaWrapper = styled.div`
 const AccomodationDetail = styled.p`
   padding-top: 1.4rem;
 
-  color: ${({ theme }) => theme.colors.detail2};
+  color: ${({ theme }) => theme.colors.black};
   ${({ theme }) => theme.fonts.body03_middle};
 `;
 
 const AccomodationDescr = styled.p`
   height: 0.9rem;
 
-  color: ${({ theme }) => theme.colors.detail2};
+  color: ${({ theme }) => theme.colors.black};
   ${({ theme }) => theme.fonts.body03_middle};
 `;
 
-const IconWrapper = styled.span<{ $issuperHost: boolean }>`
+const IconWrapper = styled.span`
   position: relative;
   top: 0.25rem;
   display: inline-block;
-  padding-left: ${(props) => (props.$issuperHost ? '0.6rem' : '0')};
+`;
+
+const HostIconWrapper = styled.span<{ $issuperHost: boolean }>`
+  position: relative;
+  top: 0.25rem;
+  display: inline-block;
+  padding-left: ${({ $issuperHost }) => ($issuperHost ? '0.6rem' : '0')};
 `;

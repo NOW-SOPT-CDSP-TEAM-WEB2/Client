@@ -1,19 +1,27 @@
 import { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Footer from './../../components/commons/footer/Footer';
 import { DefaultHeader } from './../../components/commons/Header';
-import PostReservationHeader from './components/header/postReservationHeader';
+import PostReservationHeader from './components/header/PostReservationHeader';
 import WrapLeftComponents from './components/left_side/WrapLeftComponents';
 import InfoReservationCard from './components/right_side/InfoReservationCard';
 import { API_Test } from './constatnts/apiTestText.ts';
-import { useExtractDate } from './hooks/extractDate';
+import { useExtractDate } from './hooks/useExtractDate';
 import { postReserveInfo } from './utils/postReserveInfo';
+
+export interface inputValType {
+  checkInDate: string;
+  checkOutDate: string;
+  headCount: number;
+  messageToHost: string;
+  roomId: number;
+}
 
 const PostReservationPage = () => {
   const navigate = useNavigate();
-  /*   const roomId = useParams().id; */
+
   const roomId = 2;
   const { formattedCheckInDate, formattedCheckOutDate, daysDifference, paymentDate } = useExtractDate(
     API_Test.checkInDate,

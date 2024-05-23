@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+/* eslint-disable simple-import-sort/imports */
+import { Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
 
-import { PostContent } from '../../constatnts/postResevationText.ts';
+import { inputValType } from './../../PostReservationPage';
 import CardNotice from './CardNotice';
 import PaymentWay from './PaymentWay';
 import PostButton from './PostButton';
@@ -10,25 +11,20 @@ import ReserveInfo from './ReserveInfo';
 import SelectPayment from './SelectPayment';
 import SendingMessage from './SendingMessage';
 import { API_Test } from '../../constatnts/apiTestText.ts';
+import { PostContent } from '../../constatnts/postResevationText.ts';
 
 interface WrapLeftComponentsProps {
   checkInDate: string;
   checkOutDate: string;
   daysDifference: number;
   paymentDate: string;
-  inputVal: string;
-  setInputVal: string;
-  onClick(): void;
+  inputVal: inputValType;
+  setInputVal: Dispatch<SetStateAction<inputValType>>;
+  onClick: () => void;
 }
 
 const WrapComponents = (props: WrapLeftComponentsProps) => {
   const { checkInDate, checkOutDate, daysDifference, paymentDate, onClick, inputVal, setInputVal } = props;
-
-  const handleChange = (e) => {
-    setInputVal((prev) => ({
-      ...prev,
-    }));
-  };
 
   return (
     <>
@@ -39,7 +35,6 @@ const WrapComponents = (props: WrapLeftComponentsProps) => {
         <PaymentWay />
         <SendingMessage
           hostName={API_Test.hostName}
-          handleChange={handleChange}
           yearsOfHosting={API_Test.yearsOfHosting}
           inputVal={inputVal}
           setInputVal={setInputVal}

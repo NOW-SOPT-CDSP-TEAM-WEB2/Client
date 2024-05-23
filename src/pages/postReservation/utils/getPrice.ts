@@ -1,4 +1,4 @@
-export function getPrice(price, difference): number {
+export function getPrice(price: number, difference: number) {
   const detailPrice = price * difference;
   const commissionFee = Math.floor(detailPrice * 0.142);
   const totalPrice = detailPrice + commissionFee;

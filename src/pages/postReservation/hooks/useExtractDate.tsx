@@ -4,7 +4,7 @@ import { extractMonthAndDay } from './../utils/extractMonthAndDay';
 import { getDifferenceDate } from './../utils/getDifferenceDate';
 import { getDateBeforeDays } from './../utils/getPaymentDay';
 
-export const useExtractDate = (checkInDate, checkOutDate) => {
+export const useExtractDate = (checkInDate: string, checkOutDate: string) => {
   const [formattedCheckInDate, setFormattedCheckInDate] = useState('');
   const [formattedCheckOutDate, setFormattedCheckOutDate] = useState('');
   const [daysDifference, setDaysDifference] = useState(0);

@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable simple-import-sort/imports */
 import styled from 'styled-components';
 
 import { getPrice } from './../../utils/getPrice';

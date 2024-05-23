@@ -1,11 +1,10 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { ArrowLeftBlackICon } from '../../../../assets/svgs';
 import { PostContent } from '../../constatnts/postResevationText.ts';
 
-const postReservationHeader = () => {
+const PostReservationHeader = () => {
   const navigate = useNavigate();
 
   const onClickBefore = () => {
@@ -15,14 +14,16 @@ const postReservationHeader = () => {
   return (
     <>
       <PostHeader>
-        <ArrowLeftBlackICon onClick={onClickBefore} />
+        <IconWrapper onClick={onClickBefore}>
+          <ArrowLeftBlackICon />
+        </IconWrapper>
         <PostTxt>{PostContent.title}</PostTxt>
       </PostHeader>
     </>
   );
 };
 
-export default postReservationHeader;
+export default PostReservationHeader;
 
 const PostHeader = styled.div`
   display: flex;
@@ -30,6 +31,10 @@ const PostHeader = styled.div`
   align-items: center;
   height: 2.4rem;
   padding: 4.4rem 0 4rem 0;
+`;
+
+const IconWrapper = styled.div`
+  cursor: pointer;
 `;
 
 const PostTxt = styled.p`

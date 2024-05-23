@@ -1,10 +1,9 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 interface PostButtonProps {
   buttonText: string;
-  onClick(): props;
+  onClick: () => void;
 }
 
 const PostButton = (props: PostButtonProps) => {
@@ -12,13 +11,14 @@ const PostButton = (props: PostButtonProps) => {
   const navigate = useNavigate();
 
   const onClickPost = () => {
+    onClick();
     alert('예약이 완료되었습니다.');
     navigate('/main');
   };
 
   return (
     <>
-      <PostResevationButton onClick={onClick}>{buttonText}</PostResevationButton>
+      <PostResevationButton onClick={onClickPost}>{buttonText}</PostResevationButton>
     </>
   );
 };

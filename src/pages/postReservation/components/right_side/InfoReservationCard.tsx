@@ -1,10 +1,10 @@
-import React from 'react';
+/* eslint-disable simple-import-sort/imports */
 import styled from 'styled-components';
 
 import { API_Test } from './../../constatnts/apiTestText';
+import AccomodationCard from './AccomodationCard';
 import { InfoReservationCardContent } from '../../constatnts/postResevationText';
 import { getPrice } from '../../utils/getPrice.ts';
-import AccomodationCard from './AccomodationCard';
 
 interface InfoReservationCardProps {
   price: number;
@@ -74,7 +74,7 @@ const PriceInfoWrapper = styled.div`
 `;
 
 const PriceTitle = styled.p`
-  color: ${({ theme }) => theme.colors.detail2};
+  color: ${({ theme }) => theme.colors.black};
   ${({ theme }) => theme.fonts.heading04};
 `;
 

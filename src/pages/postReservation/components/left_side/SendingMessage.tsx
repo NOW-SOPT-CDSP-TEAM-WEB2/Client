@@ -1,22 +1,24 @@
-import React from 'react';
+/* eslint-disable import/order */
+// import { React } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
 
 import { SendingMessagetoHost } from '../../../../assets/svgs';
 import { SendingMessageContent } from '../../constatnts/postResevationText.ts';
+import { inputValType } from './../../PostReservationPage';
 
 interface SendingMessageProps {
   hostName: string;
-  yearsOfHosting: string;
-  messageToHost: string;
-  inputVal: string;
-  setInputVal: string;
+  yearsOfHosting: number;
+  inputVal: inputValType;
+  setInputVal: Dispatch<SetStateAction<inputValType>>;
 }
 
 const SendingMessage = (props: SendingMessageProps) => {
-  const { hostName, yearsOfHosting, messageToHost, inputVal, setInputVal } = props;
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const { hostName, yearsOfHosting, inputVal, setInputVal } = props;
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setInputVal((prev) => ({
+    setInputVal((prev: inputValType) => ({
       ...prev,
       [name]: value,
     }));
@@ -37,7 +39,6 @@ const SendingMessage = (props: SendingMessageProps) => {
           </HostInfoWrapper>
         </HostProfileWrapper>
         <InputCard
-          type="text"
           name="messageToHost"
           onChange={handleChange}
           value={inputVal.messageToHost}
