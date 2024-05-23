@@ -1,16 +1,30 @@
+/* eslint-disable import/order */
 import styled from 'styled-components';
 
 import { KeyboardIcon } from '../../../assets/svgs';
 import { STAY_INFO } from '../constants';
+import OutputCalendar from './OutputCalendar';
 
-const StayCalendar = () => {
+interface StayCaledarProps {
+  startDate: Date;
+  endDate: Date;
+}
+
+const StayCalendar = (props: StayCaledarProps) => {
+  const { startDate, endDate } = props;
+
   return (
     <CalendarPageWrapper>
+      <div>{startDate?.toDateString()}</div>
       <CalendarTextBox>
         <StayName>
           {STAY_INFO.roomLocation}, {STAY_INFO.roomName}
         </StayName>
         <StayDate /> {/*날짜 설정 시 반영되는 기능 구현하기.,,,,까악*/}
+        <OutputCalendarWrapper>
+          <OutputCalendar startDate={startDate} />
+          <OutputCalendar endDate={endDate} />
+        </OutputCalendarWrapper>
       </CalendarTextBox>
       <IconBox>
         <KeyboardIc />
@@ -68,4 +82,11 @@ const DeleteText = styled.p`
   ${({ theme }) => theme.fonts.body03_middle};
   color: ${({ theme }) => theme.colors.black};
   border-bottom: 1px solid ${({ theme }) => theme.colors.black};
+`;
+
+const OutputCalendarWrapper = styled.span`
+  display: flex;
+  flex-direction: row;
+  width: 49.8rem;
+  gap: 2rem;
 `;

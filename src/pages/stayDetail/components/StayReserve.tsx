@@ -1,9 +1,21 @@
+/* eslint-disable import/order */
 import styled from 'styled-components';
 
 import { ArrowBelowIcon, DiamondIcon, FlagIcon } from '../../../assets/svgs';
 import { STAY_INFO } from '../constants';
+import InputCalendar from './InputCalendar';
 
-const StayReserve = () => {
+interface StayReserveProps {
+  startDate: Date;
+  endDate: Date;
+  // eslint-disable-next-line no-unused-vars
+  setStartDate: (date: Date) => void;
+  // eslint-disable-next-line no-unused-vars
+  setEndDate: (date: Date) => void;
+}
+
+const StayReserve = (props: StayReserveProps) => {
+  const { startDate, endDate, setStartDate, setEndDate } = props;
   return (
     <StayReservePage>
       <ReserveWrapper>
@@ -15,11 +27,15 @@ const StayReserve = () => {
           <ChooseDateBox>
             <CheckInBox>
               <ChooseDateText>체크인</ChooseDateText>
-              <Input type="text" placeholder="2024. 1. 1."></Input>
+              <InputCalendar
+                startDate={startDate}
+                endDate={endDate}
+                setStartDate={setStartDate}
+                setEndDate={setEndDate}
+              />
             </CheckInBox>
             <CheckOutBox>
               <ChooseDateText>체크아웃</ChooseDateText>
-              <Input type="text" placeholder="2024. 1. 1."></Input>
             </CheckOutBox>
           </ChooseDateBox>
           <GuestNumberBox>
@@ -276,10 +292,4 @@ const UnderLineText = styled.p`
   ${({ theme }) => theme.fonts.body02_middle};
   border-bottom: 1px solid;
   border-color: ${({ theme }) => theme.colors.black};
-`;
-
-const Input = styled.input`
-  width: 10.6rem;
-  height: 1.2rem;
-  ${({ theme }) => theme.fonts.detail1_middle};
 `;
