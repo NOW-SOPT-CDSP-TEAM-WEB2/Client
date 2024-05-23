@@ -24,6 +24,7 @@ const CardWrapper = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 116.6rem;
+  margin-bottom: 4.3rem;
 
   column-gap: 3.8rem;
   row-gap: 3rem;

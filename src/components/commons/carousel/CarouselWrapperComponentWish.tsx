@@ -19,7 +19,7 @@ const CarouselWrapperComponentWish = (props: carouselWrapperComponentWishProps) 
       <HeartComponentWrapper>
         <HeartPink24Icon />
       </HeartComponentWrapper>
-      <Carousel roomImageList={wishList.roomImageList} />
+      <Carousel type="wish" roomImageList={wishList.roomImageList} />
       <CarouselText
         roomlocation={wishList.roomLocation}
         currentDistance={wishList.currentDistance}
@@ -35,17 +35,16 @@ const CarouselWrapperComponentWish = (props: carouselWrapperComponentWishProps) 
 export default CarouselWrapperComponentWish;
 
 const CarouselComponentWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
-  width: 23.7rem;
-  height: 31.2rem;
+  width: 26.3rem;
+  height: 34.8rem;
 `;
 
 const HeartComponentWrapper = styled.div`
   position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
   z-index: 1;
-  float: right;
-  width: 6.7rem;
-  height: 2.1rem;
-  margin: 1.3rem 1.5rem 0 20rem;
 `;
