@@ -8,7 +8,7 @@ import { styled } from 'styled-components';
 import { NextArrow, PrevArrow } from './CustonArrows';
 
 interface CarouselProps {
-  roomImageList: string;
+  roomImageList: string[];
 }
 
 const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
@@ -63,7 +63,9 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
 
 export default Carousel;
 
-const Carouselcontainer = styled.div``;
+const Carouselcontainer = styled.div`
+  cursor: pointer;
+`;
 
 const CarouselImg = styled.img`
   width: 23.7rem;
@@ -91,10 +93,10 @@ const StyledPrevArrow = styled(PrevArrow)`
 `;
 
 const StyledDots = styled.div`
-  width: 100%;
   position: absolute;
   bottom: 0.9rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 `;

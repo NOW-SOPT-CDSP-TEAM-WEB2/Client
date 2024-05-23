@@ -1,12 +1,30 @@
+/* eslint-disable import/order */
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { WishListThumIcon } from '../../assets/svgs';
 import Footer from '../../components/commons/footer/Footer';
 import { WishHeader } from '../../components/commons/header/Header';
+import { getWishList, wishListApiData } from './utils/getWishList';
 
 const WishList = () => {
   const navigate = useNavigate();
+  const [wishList, setWishList] = useState<wishListApiData[]>([]);
+
+  const getWishListData = async () => {
+    try {
+      const res = await getWishList();
+      console.log(res.data);
+      setWishList(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getWishListData();
+  }, []);
 
   const onClickWishList = () => {
     navigate('/wishListDetail');
@@ -20,7 +38,7 @@ const WishList = () => {
           <WishThumListIc />
           <WishDetail>
             <WishCategory>꼭 가보고 싶은 곳</WishCategory>
-            <WishNum>4개 저장됨</WishNum>
+            <WishNum>{wishList.length}개 저장됨</WishNum>
           </WishDetail>
         </WishCardWrapper>
       </WishListWrapper>
