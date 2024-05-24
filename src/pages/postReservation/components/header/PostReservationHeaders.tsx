@@ -2,9 +2,9 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { ArrowLeftBlackICon } from '../../../../assets/svgs/index.tsx';
-import { PostContent } from '../../constatnts/postResevationText.ts';
+import { PostContent } from '../../constatnts/postReservationText.ts';
 
-const PostReservationHeader = () => {
+const PostReservationHeaders = () => {
   const navigate = useNavigate();
 
   const onClickBefore = () => {
@@ -23,7 +23,7 @@ const PostReservationHeader = () => {
   );
 };
 
-export default PostReservationHeader;
+export default PostReservationHeaders;
 
 const PostHeader = styled.div`
   display: flex;

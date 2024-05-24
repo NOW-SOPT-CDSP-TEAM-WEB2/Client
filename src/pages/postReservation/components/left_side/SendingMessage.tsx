@@ -4,7 +4,7 @@ import { Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
 
 import { SendingMessagetoHost } from '../../../../assets/svgs';
-import { SendingMessageContent } from '../../constatnts/postResevationText.ts';
+import { SendingMessageContent } from '../../constatnts/postReservationText.ts';
 import { inputValType } from './../../PostReservationPage';
 
 interface SendingMessageProps {

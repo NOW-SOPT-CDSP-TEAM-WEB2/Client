@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ReserInfoContent } from '../../constatnts/postResevationText.ts';
+import { ReserInfoContent } from '../../constatnts/postReservationText.ts';
 
 interface ReserveInfoProps {
   checkInDate: string;

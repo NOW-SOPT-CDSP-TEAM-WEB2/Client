@@ -10,7 +10,7 @@ import RefundPolicy from './RefundPolicy';
 import ReserveInfo from './ReserveInfo';
 import SelectPayment from './SelectPayment';
 import SendingMessage from './SendingMessage';
-import { PostContent } from '../../constatnts/postResevationText.ts';
+import { PostContent } from '../../constatnts/postReservationText.ts';
 import { postReservationDataType } from '../../types/postReservationDataType.ts';
 
 interface WrapLeftComponentsProps {

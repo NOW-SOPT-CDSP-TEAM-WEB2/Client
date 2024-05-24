@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Footer from './../../components/commons/footer/Footer';
-import PostReservationHeader from './components/header/PostReservationHeader.tsx';
+import PostReservationHeaders from './components/header/PostReservationHeaders.tsx';
 import WrapLeftComponents from './components/left_side/WrapLeftComponents';
 import InfoReservationCard from './components/right_side/InfoReservationCard';
 import { postReserveInfo } from './hooks/postReservation';
@@ -84,7 +84,7 @@ const PostReservationPage = () => {
     <>
       <DefaultHeader />
       <PostReservationWrapper>
-        <PostReservationHeader />
+        <PostReservationHeaders />
         <PostReservationContentWrapper>
           <WrapLeftComponents
             checkInDate={formattedCheckInDate}

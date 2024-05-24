@@ -44,9 +44,3 @@ const TitleDetail = styled.span`
   color: ${({ theme }) => theme.colors.gray800};
   ${({ theme }) => theme.fonts.body02_middle};
 `;
-const Map = styled.div`
-  width: 100%;
-  height: 37.5rem;
-
-  background-color: ${({ theme }) => theme.colors.blue400};
-`;

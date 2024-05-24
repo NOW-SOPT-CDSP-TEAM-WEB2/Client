@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { DiamondPinkIcon } from '../../../../assets/svgs';
-import { CardNoticeContent } from '../../constatnts/postResevationText.ts';
+import { CardNoticeContent } from '../../constatnts/postReservationText.ts';
 
 interface CareNoticeProps {
   hostName: string;
