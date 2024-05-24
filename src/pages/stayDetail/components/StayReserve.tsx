@@ -36,6 +36,7 @@ const StayReserve = (props: StayReserveProps) => {
     navigate(`/postReservation/${roomId}`, {
       state: {
         startDate: startDate,
+        endDate: endDate,
         roomPrice: roomPrice,
         roomDetail: roomDetail,
         isSuperHost: isSuperHost,
