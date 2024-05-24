@@ -46,17 +46,17 @@ const StayCalendar = (props: StayCaledarProps) => {
 export default StayCalendar;
 
 const CalendarPageWrapper = styled.div`
-  width: 49.8rem;
   display: flex;
   flex-direction: column;
+  width: 49.8rem;
   padding-top: 4rem;
 `;
 //캘린더 상단 영역
 const CalendarTextBox = styled.span`
-  width: 49.8rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 49.8rem;
 `;
 const StayName = styled.p`
   ${({ theme }) => theme.fonts.heading04};
@@ -72,10 +72,10 @@ const StayDate = styled.p`
 
 //캘린더 하단 영역
 const IconBox = styled.span`
-  width: 49.8rem;
-  margin-top: 1.8rem;
   display: flex;
   justify-content: space-between;
+  width: 49.8rem;
+  margin-top: 1.8rem;
 `;
 
 const KeyboardIc = styled(KeyboardIcon)`
@@ -88,12 +88,13 @@ const TextBox = styled.span`
 const DeleteText = styled.p`
   ${({ theme }) => theme.fonts.body03_middle};
   color: ${({ theme }) => theme.colors.black};
+
   border-bottom: 1px solid ${({ theme }) => theme.colors.black};
 `;
 
 const OutputCalendarWrapper = styled.span`
   display: flex;
   flex-direction: row;
-  width: 49.8rem;
   gap: 2rem;
+  width: 49.8rem;
 `;
