@@ -2,12 +2,8 @@
 import styled from 'styled-components';
 
 import AccomodationCard from './AccomodationCard';
-<<<<<<< HEAD
 import { InfoReservationCardContent } from '../../constatnts/postResevationText.ts';
-=======
-import { InfoReservationCardContent } from '../../constatnts/PostResevationText.ts';
 import { postReservationDataType } from '../../types/postReservationDataType.ts';
->>>>>>> develop
 import { getPrice } from '../../utils/getPrice.ts';
 
 interface InfoReservationCardProps {
