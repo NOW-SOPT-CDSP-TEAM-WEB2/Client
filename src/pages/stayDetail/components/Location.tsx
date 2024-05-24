@@ -1,13 +1,21 @@
 import styled from 'styled-components';
 
-const Location = () => {
+import StayMap from './StayMap';
+
+interface LocationProps {
+  lat: number;
+  lng: number;
+}
+
+const Location = (props: LocationProps) => {
+  const { lat, lng } = props;
   return (
     <LocationWrapper>
       <TitleContainer>
         <Title>숙소 위치</Title>
         <TitleDetail>Gandong-myeon, Hwacheon, 강원도, 한국</TitleDetail>
       </TitleContainer>
-      <Map />
+      <StayMap lat={lat} lng={lng} />
     </LocationWrapper>
   );
 };

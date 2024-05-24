@@ -116,6 +116,6 @@ const PriceTotalUnderLineLabel = styled.p`
 `;
 
 const AdditionalTxt = styled.p`
-  padding: 2rem 0 0.8rem 0; /* 3rem 0 0.8rem 0 */
+  padding: 2rem 0 0.8rem 0;
   ${({ theme }) => theme.fonts.body03_middle};
 `;
