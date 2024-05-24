@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 interface PostButtonProps {
@@ -8,12 +7,9 @@ interface PostButtonProps {
 
 const PostButton = (props: PostButtonProps) => {
   const { buttonText, onClick } = props;
-  const navigate = useNavigate();
 
   const onClickPost = () => {
     onClick();
-    alert('예약이 완료되었습니다.');
-    navigate('/main');
   };
 
   return (

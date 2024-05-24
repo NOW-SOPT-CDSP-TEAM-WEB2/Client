@@ -1,19 +1,22 @@
 import styled from 'styled-components';
 
-import { MedalFillBlackIcon, PostReservationHousingCard, StarPostIcon } from '../../../../assets/svgs';
+import { MedalFillBlackIcon, StarPostIcon } from '../../../../assets/svgs';
 
 interface AccomodationCardProps {
   roomName: string;
   description: string;
   isSuperHost: boolean;
+  roomRating: number;
+  roomThumb: string;
 }
 
 const AccomodationInfoCard = (props: AccomodationCardProps) => {
-  const { roomName, description, isSuperHost } = props;
+  const { roomName, description, isSuperHost, roomRating, roomThumb } = props;
+
   return (
     <>
       <Accomodationwrapper>
-        <PostReservationHousingCard />
+        <AccomodationImg src={roomThumb} />
         <AccomodationTextWrapper>
           <AccomodationName>{roomName}</AccomodationName>
           <AccomodationDetail>{description}</AccomodationDetail>
@@ -23,7 +26,7 @@ const AccomodationInfoCard = (props: AccomodationCardProps) => {
               <IconWrapper>
                 <StarPostIcon />
               </IconWrapper>
-              4.94 {'('}후기 84개{')'}
+              {roomRating} {'('}후기 84개{')'}
               {isSuperHost && (
                 <>
                   <HostIconWrapper $issuperHost={isSuperHost}>
@@ -51,6 +54,13 @@ const AccomodationTextWrapper = styled.div`
   width: 23rem;
   height: 7.9rem;
   padding: 1.4rem 0 1.4rem 1.4rem;
+`;
+
+const AccomodationImg = styled.img`
+  width: 8.4rem;
+  height: 7.9rem;
+
+  border-radius: 8px;
 `;
 
 const AccomodationName = styled.p`

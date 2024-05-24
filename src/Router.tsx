@@ -15,7 +15,7 @@ const Router = () => {
         <Route path="/postReservation/:roomId" element={<PostReservation />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/wishListDetail" element={<WishListDetail />} />
-        <Route path="/stayDetailPage/:roomId" element={<StayDetailCombine />} />
+        <Route path="/stayDetail/:roomId" element={<StayDetailCombine />} />
       </Routes>
     </BrowserRouter>
   );
