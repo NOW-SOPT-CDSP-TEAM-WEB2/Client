@@ -20,12 +20,26 @@ interface StayReserveProps {
   roomPrice: number;
   roomDetail: roomDetailType;
   isSuperHost: boolean;
+  roomLocation: string;
+  roomRating: number;
+  roomThumb: string;
 }
 
 const StayReserve = (props: StayReserveProps) => {
   const { roomId } = useParams();
   const navigate = useNavigate();
-  const { startDate, endDate, setStartDate, setEndDate, roomPrice, roomDetail, isSuperHost } = props;
+  const {
+    startDate,
+    endDate,
+    setStartDate,
+    setEndDate,
+    roomPrice,
+    roomDetail,
+    isSuperHost,
+    roomLocation,
+    roomRating,
+    roomThumb,
+  } = props;
 
   const getDateDifference = getStayDate(startDate, endDate);
 
@@ -40,6 +54,9 @@ const StayReserve = (props: StayReserveProps) => {
         roomPrice: roomPrice,
         roomDetail: roomDetail,
         isSuperHost: isSuperHost,
+        roomLocation: roomLocation,
+        roomRating: roomRating,
+        roomThumb: roomThumb,
       },
     });
   };

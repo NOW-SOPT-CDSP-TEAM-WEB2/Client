@@ -8,7 +8,7 @@ interface StayMapProps {
 
 const StayMap = (props: StayMapProps) => {
   const { lat, lng } = props;
-  console.log(lat, lng);
+
   return (
     <StyledMap center={{ lat: lat, lng: lng }} level={3}>
       <MapMarker

@@ -67,6 +67,9 @@ const StayDetailPage = (props: StayDetailPageProps) => {
           roomPrice={stayInfo.roomPrice}
           roomDetail={stayInfo.roomDetail}
           isSuperHost={stayInfo.isSuperHost}
+          roomLocation={stayInfo.roomLocation}
+          roomRating={stayInfo.roomRating}
+          roomThumb={stayInfo.roomImageList[0]}
         />
       </ContentWrapper>
     </PageWrapper>

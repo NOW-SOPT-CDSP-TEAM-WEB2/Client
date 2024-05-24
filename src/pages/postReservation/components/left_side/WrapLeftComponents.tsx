@@ -10,8 +10,8 @@ import RefundPolicy from './RefundPolicy';
 import ReserveInfo from './ReserveInfo';
 import SelectPayment from './SelectPayment';
 import SendingMessage from './SendingMessage';
-import { API_Test } from '../../constatnts/apiTestText.ts';
 import { PostContent } from '../../constatnts/postResevationText.ts';
+import { postReservationDataType } from '../../types/postReservationDataType.ts';
 
 interface WrapLeftComponentsProps {
   checkInDate: string;
@@ -21,21 +21,22 @@ interface WrapLeftComponentsProps {
   inputVal: inputValType;
   setInputVal: Dispatch<SetStateAction<inputValType>>;
   onClick: () => void;
+  locationVal: postReservationDataType;
 }
 
 const WrapComponents = (props: WrapLeftComponentsProps) => {
-  const { checkInDate, checkOutDate, daysDifference, paymentDate, onClick, inputVal, setInputVal } = props;
+  const { checkInDate, checkOutDate, daysDifference, paymentDate, onClick, inputVal, setInputVal, locationVal } = props;
 
   return (
     <>
       <ComponentsWrapper>
-        <CardNotice hostName={API_Test.hostName} />
+        <CardNotice hostName={locationVal.hostName} />
         <ReserveInfo checkInDate={checkInDate} checkOutDate={checkOutDate} />
-        <SelectPayment price={API_Test.roomPrice} daysDifference={daysDifference} paymentDate={paymentDate} />
+        <SelectPayment price={locationVal.roomPrice} daysDifference={daysDifference} paymentDate={paymentDate} />
         <PaymentWay />
         <SendingMessage
-          hostName={API_Test.hostName}
-          yearsOfHosting={API_Test.yearsOfHosting}
+          hostName={locationVal.hostName}
+          yearsOfHosting={locationVal.yearsOfHosting}
           inputVal={inputVal}
           setInputVal={setInputVal}
         />
