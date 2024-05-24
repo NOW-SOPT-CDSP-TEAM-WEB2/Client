@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 import { TimePink32 } from '../../../../assets/svgs';
-import { RefundPolicyCard, RefundPolicyContent } from '../../constatnts/PostResevationText.ts';
+import { RefundPolicyCard, RefundPolicyContent } from '../../constatnts/postResevationText.ts';
 import { getRefundDate } from './../../utils/getRefundDate';
 
 interface RefundPolicyProps {

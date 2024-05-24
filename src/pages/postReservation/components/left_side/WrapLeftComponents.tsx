@@ -11,7 +11,7 @@ import ReserveInfo from './ReserveInfo';
 import SelectPayment from './SelectPayment';
 import SendingMessage from './SendingMessage';
 import { API_Test } from '../../constatnts/apiTestText.ts';
-import { PostContent } from '../../constatnts/PostResevationText.ts';
+import { PostContent } from '../../constatnts/postResevationText.ts';
 
 interface WrapLeftComponentsProps {
   checkInDate: string;

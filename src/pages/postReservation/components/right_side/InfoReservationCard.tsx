@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { API_Test } from './../../constatnts/apiTestText';
 import AccomodationCard from './AccomodationCard';
-import { InfoReservationCardContent } from '../../constatnts/PostResevationText.ts';
+import { InfoReservationCardContent } from '../../constatnts/postResevationText.ts';
 import { getPrice } from '../../utils/getPrice.ts';
 
 interface InfoReservationCardProps {
