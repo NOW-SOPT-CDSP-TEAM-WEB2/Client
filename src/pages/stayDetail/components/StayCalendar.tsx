@@ -29,8 +29,8 @@ const StayCalendar = (props: StayCaledarProps) => {
           {finalDateInKor2}
         </StayDate>
         <OutputCalendarWrapper>
-          <OutputCalendar startDate={startDate} type="start" />
-          <OutputCalendar endDate={endDate} type="end" />
+          <OutputCalendar startDate={startDate} />
+          <OutputCalendar endDate={endDate} />
         </OutputCalendarWrapper>
       </CalendarTextBox>
       <IconBox>

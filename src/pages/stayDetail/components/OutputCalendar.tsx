@@ -6,16 +6,14 @@ import styled from 'styled-components';
 interface OutputCalendarProps {
   startDate?: Date;
   endDate?: Date;
-  type: string;
 }
 
 const OutputCalendar = (props: OutputCalendarProps) => {
-  const { startDate, endDate, type } = props;
+  const { startDate, endDate } = props;
 
   return (
     <div>
       <StyleCalendar
-        selected={(startDate, endDate)}
         calendarType="gregory"
         view="month"
         // selectRange={true}
