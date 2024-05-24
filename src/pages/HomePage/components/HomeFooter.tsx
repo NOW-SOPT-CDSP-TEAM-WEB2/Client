@@ -83,7 +83,9 @@ const FooterCarouselItem = styled.li`
   gap: 0.8rem;
 `;
 
-const FooterCarouselImg = styled.img``;
+const FooterCarouselImg = styled.img`
+  cursor: default;
+`;
 
 const FooterCarouselInfo = styled.div`
   display: flex;

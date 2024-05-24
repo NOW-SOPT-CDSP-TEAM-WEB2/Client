@@ -8,11 +8,12 @@ import { styled } from 'styled-components';
 import { NextArrow, PrevArrow } from './CustonArrows';
 
 interface CarouselProps {
-  roomImageList: string;
+  roomImageList: string[];
+  type: string;
 }
 
 const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
-  const { roomImageList } = props;
+  const { roomImageList, type } = props;
   const [slideState, setSlideState] = useState({
     activeSlide: 0,
     activeSlide2: 0,
@@ -55,7 +56,7 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
   return (
     <Carouselcontainer onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
       <Slider {...settings}>
-        {roomImageList && roomImageList.map((src, index) => <CarouselImg key={index} src={src} />)}
+        {roomImageList && roomImageList.map((src, index) => <CarouselImg $type={type} key={index} src={src} />)}
       </Slider>
     </Carouselcontainer>
   );
@@ -63,11 +64,13 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
 
 export default Carousel;
 
-const Carouselcontainer = styled.div``;
+const Carouselcontainer = styled.div`
+  cursor: pointer;
+`;
 
-const CarouselImg = styled.img`
-  width: 23.7rem;
-  height: 22.2rem;
+const CarouselImg = styled.img<{ $type: string }>`
+  width: ${({ $type }) => ($type === 'home' ? '23.7rem' : '26.3rem')};
+  height: ${({ $type }) => ($type === 'home' ? '22.2rem' : '24.7rem')};
 
   border-radius: 10px;
 `;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { API_Test } from './../../constatnts/apiTestText';
 import AccomodationCard from './AccomodationCard';
-import { InfoReservationCardContent } from '../../constatnts/postResevationText';
+import { InfoReservationCardContent } from '../../constatnts/PostResevationText.ts';
 import { getPrice } from '../../utils/getPrice.ts';
 
 interface InfoReservationCardProps {
@@ -117,6 +117,6 @@ const PriceTotalUnderLineLabel = styled.p`
 `;
 
 const AdditionalTxt = styled.p`
-  padding: 2rem 0 0.8rem 0; /* 3rem 0 0.8rem 0 */
+  padding: 2rem 0 0.8rem 0;
   ${({ theme }) => theme.fonts.body03_middle};
 `;

@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { ArrowLeftBlackICon } from '../../../../assets/svgs';
-import { PostContent } from '../../constatnts/postResevationText.ts';
+import { ArrowLeftBlackICon } from '../../../../assets/svgs/index.tsx';
+import { PostContent } from '../../constatnts/PostResevationText.ts';
 
 const PostReservationHeader = () => {
   const navigate = useNavigate();

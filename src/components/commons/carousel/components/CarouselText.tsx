@@ -9,12 +9,13 @@ interface CarouselTextProps {
   recommendedDates: string;
   guestReview: string;
   roomPrice: number;
+  type: string;
 }
 
 const CarouselText = (props: CarouselTextProps) => {
-  const { roomlocation, currentDistance, roomRating, recommendedDates, guestReview, roomPrice } = props;
+  const { roomlocation, currentDistance, roomRating, recommendedDates, guestReview, roomPrice, type } = props;
   return (
-    <CarouselTextWrapper>
+    <CarouselTextWrapper $type={type}>
       <TextTitleWrapper>
         <TextTitle>{roomlocation}</TextTitle>
         <TextRate>
@@ -38,10 +39,10 @@ const CarouselText = (props: CarouselTextProps) => {
 
 export default CarouselText;
 
-const CarouselTextWrapper = styled.div`
+const CarouselTextWrapper = styled.div<{ $type: string }>`
   display: flex;
   flex-direction: column;
-  width: 23.7rem;
+  width: ${({ $type }) => ($type === 'home' ? '23.7rem' : '26.2rem')};
 `;
 
 export const TextTitleWrapper = styled.div`

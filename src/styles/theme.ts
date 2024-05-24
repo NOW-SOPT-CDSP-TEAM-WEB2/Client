@@ -38,6 +38,13 @@ const FONT = ({ family, weight, size, height, letterSpacing }: Font): string => 
 };
 
 const fonts = {
+  heading00: FONT({
+    family: 'Pretendard',
+    size: 7.4,
+    weight: 600,
+    height: '100',
+    letterSpacing: -3,
+  }),
   heading01: FONT({
     family: 'Pretendard',
     size: 2.4,

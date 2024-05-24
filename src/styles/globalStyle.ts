@@ -32,7 +32,6 @@ const GlobalStyle = styled.createGlobalStyle`
   }
 
   body {
-    /* position: relative; */
     display: flex;
     justify-content: center;
     width: 100%;

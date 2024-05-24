@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import { LeftCircleBtn, RightCircleBtn } from '../../../../assets/svgs';
 
@@ -9,23 +10,27 @@ type ArrowProps = {
 };
 
 export const NextArrow: React.FC<ArrowProps> = ({ className, style, onClick }) => (
-  <div
+  <Arrow
     className={`${className}`}
     style={{
       ...style,
     }}
     onClick={onClick}>
     <RightCircleBtn />
-  </div>
+  </Arrow>
 );
 
 export const PrevArrow: React.FC<ArrowProps> = ({ className, style, onClick }) => (
-  <div
+  <Arrow
     className={`${className}`}
     style={{
       ...style,
     }}
     onClick={onClick}>
     <LeftCircleBtn />
-  </div>
+  </Arrow>
 );
+
+const Arrow = styled.div`
+  cursor: default;
+`;

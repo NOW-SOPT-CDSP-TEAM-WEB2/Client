@@ -1,15 +1,17 @@
+/* eslint-disable simple-import-sort/imports */
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Footer from './../../components/commons/footer/Footer';
-import { DefaultHeader } from './../../components/commons/Header';
-import PostReservationHeader from './components/header/PostReservationHeader';
+import PostReservationHeader from './components/header/postReservationHeader.tsx';
 import WrapLeftComponents from './components/left_side/WrapLeftComponents';
 import InfoReservationCard from './components/right_side/InfoReservationCard';
 import { API_Test } from './constatnts/apiTestText.ts';
 import { postReserveInfo } from './hooks/postReservation';
 import { useExtractDate } from './hooks/useExtractDate';
+import { postReserveInfo } from './utils/postReserveInfo';
+import { DefaultHeader } from '../../components/commons/header/Header.tsx';
 
 export interface inputValType {
   checkInDate: string;
@@ -37,7 +39,7 @@ const PostReservationPage = () => {
     const res = await postReserveInfo(inputVal, roomId);
     console.log(res);
     if (res) {
-      if (confirm(res?.data.message)) navigate('/home');
+      if (confirm(res?.data.message)) navigate('/');
     }
   };
 
