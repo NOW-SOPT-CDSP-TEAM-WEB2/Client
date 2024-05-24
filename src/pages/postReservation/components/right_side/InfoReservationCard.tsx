@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 import AccomodationCard from './AccomodationCard';
-import { InfoReservationCardContent } from '../../constatnts/PostResevationText.ts';
+import { InfoReservationCardContent } from '../../constatnts/postResevationText.ts';
 import { postReservationDataType } from '../../types/postReservationDataType.ts';
 import { getPrice } from '../../utils/getPrice.ts';
 

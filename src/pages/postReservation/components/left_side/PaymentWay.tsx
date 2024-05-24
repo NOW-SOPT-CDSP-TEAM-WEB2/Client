@@ -8,7 +8,7 @@ import {
   NaverPayIcon,
   VisaIcon,
 } from '../../../../assets/svgs';
-import { PaymentContent } from '../../constatnts/PostResevationText.ts';
+import { PaymentContent } from '../../constatnts/postResevationText.ts';
 
 const PaymentWay = () => {
   return (
