@@ -1,34 +1,35 @@
 /* eslint-disable simple-import-sort/imports */
 import styled from 'styled-components';
 
-import { API_Test } from './../../constatnts/apiTestText';
 import AccomodationCard from './AccomodationCard';
 import { InfoReservationCardContent } from '../../constatnts/PostResevationText.ts';
+import { postReservationDataType } from '../../types/postReservationDataType.ts';
 import { getPrice } from '../../utils/getPrice.ts';
 
 interface InfoReservationCardProps {
-  price: number;
+  locationVal: postReservationDataType;
   daysDifference: number;
 }
 
 const InfoReservationCard = (props: InfoReservationCardProps) => {
-  const { price, daysDifference } = props;
-  const { detailPrice, commissionFee, totalPrice } = getPrice(price, daysDifference);
+  const { locationVal, daysDifference } = props;
+  const { detailPrice, commissionFee, totalPrice } = getPrice(locationVal.roomPrice, daysDifference);
 
   return (
     <>
       <InfoReservationCardWrapper>
         <AccomodationCard
-          roomName={API_Test.roomName}
-          description={'농장 체험 숙소'}
-          isSuperHost={API_Test.isSuperHost}
-          roomRating={API_Test.roomRating}
+          roomName={locationVal.roomName}
+          description={locationVal.roomName}
+          isSuperHost={locationVal.isSuperHost}
+          roomRating={locationVal.roomRating}
+          roomThumb={locationVal.roomThumb}
         />
         <PriceInfoWrapper>
           <PriceTitle>{InfoReservationCardContent.title}</PriceTitle>
           <PriceWrapper>
             <PriceLabel>
-              ₩{price.toLocaleString()} X {daysDifference}박
+              ₩{locationVal.roomPrice.toLocaleString()} X {daysDifference}박
             </PriceLabel>
             <PriceLabel>₩{detailPrice.toLocaleString()}</PriceLabel>
           </PriceWrapper>
