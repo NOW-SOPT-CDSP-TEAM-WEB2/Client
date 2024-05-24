@@ -41,6 +41,12 @@ const PostReservationPage = () => {
     convertToYYYYMMDD(location.state.startDate),
     convertToYYYYMMDD(location.state.endDate)
   );
+  const [inputVal, setInputVal] = useState({
+    checkInDate: '',
+    checkOutDate: '',
+    headCount: 1,
+    messageToHost: '',
+  });
 
   useEffect(() => {
     const convertedInDate = convertToYYYYMMDD(location.state.startDate);
@@ -57,14 +63,14 @@ const PostReservationPage = () => {
       checkOutDate: convertedOutDate,
       roomThumb: location.state.roomThumb,
     });
-  }, [location.state.roomName, location.state.endDate, location.state.roomThumb]);
 
-  const [inputVal, setInputVal] = useState({
-    checkInDate: locationVal.checkInDate,
-    checkOutDate: locationVal.checkOutDate,
-    headCount: 1,
-    messageToHost: '',
-  });
+    setInputVal({
+      checkInDate: convertedInDate,
+      checkOutDate: convertedOutDate,
+      headCount: 1,
+      messageToHost: '',
+    });
+  }, [location.state.roomName, location.state.endDate, location.state.roomThumb]);
 
   const handlePost = async () => {
     const res = await postReserveInfo(inputVal, location.state.roomDetail.roomId);

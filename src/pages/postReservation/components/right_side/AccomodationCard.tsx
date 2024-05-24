@@ -12,11 +12,10 @@ interface AccomodationCardProps {
 
 const AccomodationInfoCard = (props: AccomodationCardProps) => {
   const { roomName, description, isSuperHost, roomRating, roomThumb } = props;
-  console.log(roomThumb);
+
   return (
     <>
       <Accomodationwrapper>
-        {/* <PostReservationHousingCard /> */}
         <AccomodationImg src={roomThumb} />
         <AccomodationTextWrapper>
           <AccomodationName>{roomName}</AccomodationName>
