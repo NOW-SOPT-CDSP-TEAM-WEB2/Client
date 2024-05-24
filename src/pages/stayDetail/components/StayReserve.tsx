@@ -28,7 +28,7 @@ const StayReserve = (props: StayReserveProps) => {
 
   const getDateDifference = getStayDate(startDate, endDate);
 
-  const { totalPrice, stayFee } = getStayFee(roomPrice, getDateDifference);
+  const { totalPrice, stayFee, totalPayPrice } = getStayFee(roomPrice, getDateDifference);
   const freeCancelDate = freeCancelationDate(startDate);
 
   return (
@@ -66,7 +66,7 @@ const StayReserve = (props: StayReserveProps) => {
           <PriceConfirmText>예약 확정 전에는 요금이 청구되지 않습니다.</PriceConfirmText>
           <PriceCalTextBox>
             <PriceCalText>
-              {getDateDifference ? (
+              {endDate ? (
                 <>
                   ₩{roomPrice.toLocaleString()} x {getDateDifference}박
                 </>
@@ -74,15 +74,15 @@ const StayReserve = (props: StayReserveProps) => {
                 <>₩{roomPrice.toLocaleString()} x 박</>
               )}
             </PriceCalText>{' '}
-            <PriceSpan>₩{roomPrice.toLocaleString()}</PriceSpan>
+            <PriceSpan>{endDate ? <>₩{totalPrice.toLocaleString()}</> : <>₩</>}</PriceSpan>
           </PriceCalTextBox>
           <PriceCalTextBox>
             <PriceCalText>에어비앤비 서비스 수수료</PriceCalText>
-            <PriceSpan>{stayFee ? <>₩{stayFee.toLocaleString()}</> : <>₩ 원</>}</PriceSpan>
+            <PriceSpan>{endDate ? <>₩{stayFee.toLocaleString()}</> : <>₩</>}</PriceSpan>
           </PriceCalTextBox>
           <TotlaTextBox>
             <TotalText>총 합계</TotalText>
-            <TotalNum>{totalPrice ? <>₩{totalPrice.toLocaleString()}</> : <>₩ 원</>}</TotalNum>
+            <TotalNum>{endDate ? <>₩{totalPayPrice.toLocaleString()}</> : <>₩</>}</TotalNum>
           </TotlaTextBox>
         </PriceBox>
         <FreeCancelation>

@@ -4,13 +4,14 @@ import Calendar from 'react-calendar';
 import styled from 'styled-components';
 
 interface OutputCalendarProps {
-  startDate?: Date;
-  endDate?: Date;
+  startDate: Date;
+  endDate: Date;
   type: string;
+  activeStartDate?: Date;
 }
 
 const OutputCalendar = (props: OutputCalendarProps) => {
-  const { startDate, endDate, type } = props;
+  const { startDate, endDate, type, activeStartDate } = props;
 
   return (
     <div>
@@ -18,7 +19,8 @@ const OutputCalendar = (props: OutputCalendarProps) => {
         selected={(startDate, endDate)}
         calendarType="gregory"
         view="month"
-        // selectRange={true}
+        selectRange={true}
+        activeStartDate={activeStartDate}
         prev2Label={null}
         next2Label={null}
         showNeighboringMonth={false}
@@ -76,15 +78,18 @@ export const StyleCalendar = styled(Calendar)`
     padding: 0;
   }
 
-  /* .react-calendar__month-view__weekdays__weekday__aria-label {
+  .react-calendar__month-view__weekdays__weekday__aria-label {
     text-decoration: none;
     text-decoration-line: none;
   }
-
+  .react-calendar__month-view__weekdays__weekday {
+    text-decoration: none;
+    text-decoration-line: none !important;
+  }
   .react-calendar__month-view__weekdays__weekday--weekend {
     text-decoration: none;
     text-decoration-line: none;
-  } */
+  }
 
   //평일 날짜 텍스트 스타일
   .react-calendar__month-view__days {

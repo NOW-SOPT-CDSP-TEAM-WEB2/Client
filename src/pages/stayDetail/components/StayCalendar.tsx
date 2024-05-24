@@ -7,7 +7,7 @@ import formatDateWithDots from '../utils/getDateInKor';
 import OutputCalendar from './OutputCalendar';
 
 interface StayCaledarProps {
-  startDate: Date;
+  startDate: Date | null;
   endDate: Date;
   roomLocation: string;
   roomDetail: roomDetailType;
@@ -30,7 +30,7 @@ const StayCalendar = (props: StayCaledarProps) => {
         </StayDate>
         <OutputCalendarWrapper>
           <OutputCalendar startDate={startDate} type="start" />
-          <OutputCalendar endDate={endDate} type="end" />
+          <OutputCalendar endDate={endDate} type="end" activeStartDate={new Date(2024, 5, 1)} />
         </OutputCalendarWrapper>
       </CalendarTextBox>
       <IconBox>

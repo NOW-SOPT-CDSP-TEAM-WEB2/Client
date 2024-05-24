@@ -68,8 +68,12 @@ const SubImgWrapper = styled.span`
 const SubImg = styled.img`
   width: 20.6rem;
   height: 17.8rem;
+
   &:nth-child(2) {
     border-radius: 0 1rem 0 0;
+  }
+  &:nth-child(3) {
+    border-radius: 0 0 0 0;
   }
   &:nth-child(4) {
     border-radius: 0 0 1rem 0;

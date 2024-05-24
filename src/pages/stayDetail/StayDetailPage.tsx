@@ -13,8 +13,8 @@ import StayRule from './components/StayRule';
 import { getStayDetailType } from './types/getStayDetailType';
 
 const StayDetailPage = () => {
-  const [startDate, setStartDate] = useState<Date>(new Date());
-  const [endDate, setEndDate] = useState<Date>(new Date());
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
   const [stayInfo, setStayInfo] = useState<getStayDetailType>({
     roomImageList: [''],
     roomLocation: '',
