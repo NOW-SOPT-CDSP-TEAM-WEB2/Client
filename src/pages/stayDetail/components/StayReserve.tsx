@@ -19,17 +19,29 @@ interface StayReserveProps {
   setEndDate: (date: Date) => void;
   roomPrice: number;
   roomDetail: roomDetailType;
+  isSuperHost: boolean;
 }
 
 const StayReserve = (props: StayReserveProps) => {
   const { roomId } = useParams();
   const navigate = useNavigate();
-  const { startDate, endDate, setStartDate, setEndDate, roomPrice, roomDetail } = props;
+  const { startDate, endDate, setStartDate, setEndDate, roomPrice, roomDetail, isSuperHost } = props;
 
   const getDateDifference = getStayDate(startDate, endDate);
 
   const { totalPrice, stayFee, totalPayPrice } = getStayFee(roomPrice, getDateDifference);
   const freeCancelDate = freeCancelationDate(startDate);
+
+  const onClickReservation = () => {
+    navigate(`/postReservation/${roomId}`, {
+      state: {
+        startDate: startDate,
+        roomPrice: roomPrice,
+        roomDetail: roomDetail,
+        isSuperHost: isSuperHost,
+      },
+    });
+  };
 
   return (
     <StayReservePage>
@@ -60,7 +72,7 @@ const StayReserve = (props: StayReserveProps) => {
             </GuestNumerText>
             <ArrowBelowIc />
           </GuestNumberBox>
-          <ReserveBtn onClick={() => navigate(`/postReservation/${roomId}`)}>예약하기</ReserveBtn>
+          <ReserveBtn onClick={onClickReservation}>예약하기</ReserveBtn>
         </ReserveBox>
         <PriceBox>
           <PriceConfirmText>예약 확정 전에는 요금이 청구되지 않습니다.</PriceConfirmText>
