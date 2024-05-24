@@ -67,6 +67,7 @@ const LnbChipWrapper = styled.div<{ $isScroll: boolean }>`
       ? css`
           position: fixed;
           top: 6rem;
+          z-index: 100;
 
           background-color: ${({ theme }) => theme.colors.white};
         `

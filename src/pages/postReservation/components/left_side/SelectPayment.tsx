@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 import { getPrice } from './../../utils/getPrice';
-import { SelectPaymentContent } from '../../constatnts/PostResevationText';
+import { SelectPaymentContent } from '../../constatnts/postResevationText';
 
 interface SelectPaymentProps {
   price: number;
