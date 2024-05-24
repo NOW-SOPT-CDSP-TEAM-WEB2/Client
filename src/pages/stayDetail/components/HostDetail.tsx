@@ -9,7 +9,15 @@ import {
   StarHotelDetailIcon,
 } from '../../../assets/svgs';
 
-const HostDetail = () => {
+interface HostDetailPrpos {
+  hostName: string;
+  isSuperHost: boolean;
+  roomRating: number;
+  yearsOfHosting: number;
+}
+
+const HostDetail = (props: HostDetailPrpos) => {
+  const { hostName, isSuperHost, roomRating, yearsOfHosting } = props;
   return (
     <HostDetailWrapper>
       <Title>호스트 소개</Title>
@@ -19,18 +27,16 @@ const HostDetail = () => {
           <HostProfileContainer>
             <HostProfile>
               <HostProfileIcon />
-              <HostName>Kiwoo</HostName>
-              {/* 서버값에 따라 렌더링 필요 */}
+              <HostName>{hostName}</HostName>
               <SuperHostDiv>
                 <HostMarkIcon />
-                <SuperHostText>슈퍼호스트</SuperHostText>
+                {isSuperHost ? <SuperHostText>슈퍼호스트</SuperHostText> : <SuperHostText />}
               </SuperHostDiv>
             </HostProfile>
             <HostDetailInfoContainer>
               <HostDetailInfo>
                 <Label>후기</Label>
                 <LabelContent>
-                  {/* 서버값 연결 */}
                   <ReviewNum>84</ReviewNum>
                   <Label>개</Label>
                 </LabelContent>
@@ -38,16 +44,14 @@ const HostDetail = () => {
               <HostDetailInfo>
                 <Label>평점</Label>
                 <LabelContent>
-                  {/* 서버값 연결 */}
-                  <ReviewNum>4.94</ReviewNum>
+                  <ReviewNum>{roomRating}</ReviewNum>
                   <StarHotelDetailIcon />
                 </LabelContent>
               </HostDetailInfo>
               <HostDetailInfo>
                 <Label>호스팅 경력</Label>
                 <LabelContent>
-                  {/* 서버값 연결 */}
-                  <ReviewNum>2</ReviewNum>
+                  <ReviewNum>{yearsOfHosting}</ReviewNum>
                   <Label>년</Label>
                 </LabelContent>
               </HostDetailInfo>
@@ -56,12 +60,19 @@ const HostDetail = () => {
           <HostInfoDetailIcon />
         </HostLeftDiv>
         <HostRightDiv>
-          {/* 서버값으로 바꾸기 */}
-          <SuperHost>`$Kiwoo 님은 슈퍼호스트입니다.`</SuperHost>
-          <SuperHostDetail>
-            슈퍼호스트는 풍부한 경험과 높은 평점을 자랑하며 게스트가 숙소에서 편안히 머무를 수 있도록 최선을 다하는
-            호스트입니다.
-          </SuperHostDetail>
+          {isSuperHost ? (
+            <>
+              {' '}
+              <SuperHost>{hostName} 님은 슈퍼호스트입니다.</SuperHost>
+              <SuperHostDetail>
+                슈퍼호스트는 풍부한 경험과 높은 평점을 자랑하며 게스트가 숙소에서 편안히 머무를 수 있도록 최선을 다하는
+                호스트입니다.
+              </SuperHostDetail>
+            </>
+          ) : (
+            <></>
+          )}
+
           <ShareHostIc />
           <Divider />
           <PayWarnIc />

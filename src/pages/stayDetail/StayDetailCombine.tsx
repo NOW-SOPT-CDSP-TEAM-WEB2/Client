@@ -38,7 +38,12 @@ const StayDetailCombine = () => {
         <StayDetailPage stayInfo={stayInfo} setStayInfo={setStayInfo} />
         <Review />
         <Location lat={stayInfo.latitude} lng={stayInfo.longitude} />
-        <HostDetail />
+        <HostDetail
+          hostName={stayInfo.roomDetail.hostName}
+          isSuperHost={stayInfo.isSuperHost}
+          roomRating={stayInfo.roomRating}
+          yearsOfHosting={stayInfo.roomDetail.yearsOfHosting}
+        />
       </StayDetailWrapper>
     </Layout>
   );
