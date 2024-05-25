@@ -15,7 +15,7 @@ const StayMap = (props: StayMapProps) => {
         position={{ lat: lat, lng: lng }}
         image={{
           // src: '/src/assets/images/btn_ic_circle_pin_amall.png',
-          src: '/public/images/btn_ic_circle_pin_amall.svg',
+          src: '/public/images/btn_ic_circle_pin_amall.png',
           size: {
             width: 50,
             height: 50,
