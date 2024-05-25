@@ -14,7 +14,7 @@ const StayMap = (props: StayMapProps) => {
       <MapMarker
         position={{ lat: lat, lng: lng }}
         image={{
-          src: './src/assets/svgs/btn_ic_circle_pin_amall.svg',
+          src: '/src/assets/svgs/btn_ic_circle_pin_amall.svg',
           size: {
             width: 50,
             height: 50,
