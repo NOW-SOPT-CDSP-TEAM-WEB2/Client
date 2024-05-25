@@ -38,7 +38,8 @@ const StayLocationMap = (props: StayLocationMapProps) => {
           key={`${position.latlng}-${idx}`}
           position={position.latlng}
           image={{
-            src: './src/assets/images/btn_ic_circle_pin_amall.png',
+            // src: './src/assets/images/btn_ic_circle_pin_amall.png',
+            src: '/images/btn_ic_circle_pin_amall.svg',
             size: {
               width: 50,
               height: 50,
