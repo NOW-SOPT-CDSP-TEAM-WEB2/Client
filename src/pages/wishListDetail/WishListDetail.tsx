@@ -22,7 +22,6 @@ export interface latlngType {
 const WishListDetail = () => {
   const navigate = useNavigate();
   const [wishList, setWishList] = useState<wishListApiDataType[]>([]);
-  const [latLngList, setLatLngList] = useState<latlngType[]>([]);
 
   const getWishListData = async () => {
     try {
@@ -34,22 +33,9 @@ const WishListDetail = () => {
     }
   };
 
-  const convertLatLng = (roomData: wishListApiDataType[]) => {
-    return roomData.map((item) => ({
-      latlng: { lat: item.latitude, lng: item.longitude },
-    }));
-  };
-
   useEffect(() => {
     getWishListData();
   }, []);
-
-  useEffect(() => {
-    if (wishList.length !== 0) {
-      const convertedWishLocList = convertLatLng(wishList);
-      setLatLngList(convertedWishLocList);
-    }
-  }, [wishList]);
 
   const onClickBack = () => {
     navigate('/wishList');
@@ -73,7 +59,7 @@ const WishListDetail = () => {
         <CarouselWrapper wishList={wishList} />
         <WishMapContainer>
           <WishLocTitle>위시 위치</WishLocTitle>
-          <StayLocationMap latlngList={latLngList} />
+          <StayLocationMap wishList={wishList} />
         </WishMapContainer>
       </WishListDetailWrapper>
       <Footer />

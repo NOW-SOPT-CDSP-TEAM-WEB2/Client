@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import {
@@ -12,6 +13,7 @@ import {
   Star8Icon,
 } from '../../../assets/svgs';
 import { roomDetailType, roomInfoType } from '../types/getStayDetailType';
+import { convertNewlinesToBreaks } from '../utils/convertNewLineToBreak';
 
 interface StayInfoProps {
   roomLocation: string;
@@ -24,6 +26,12 @@ interface StayInfoProps {
 const StayInfo = (props: StayInfoProps) => {
   const { roomLocation, roomInfo, roomRate, roomDetail, isSuperHost } = props;
   const rate = roomRate;
+  const [convertedText, setConvertedText] = useState('');
+
+  useEffect(() => {
+    const convertText = convertNewlinesToBreaks(roomDetail.description);
+    setConvertedText(convertText);
+  }, [roomDetail.description]);
 
   return (
     <StayInfoPage>
@@ -132,7 +140,7 @@ const StayInfo = (props: StayInfoProps) => {
         </CanlenderArea>
       </InfoKeyWordWrapper>
       <DescriptionWrapper>
-        <DescriptionText>{roomDetail.description}</DescriptionText>
+        <DescriptionText>{convertedText}</DescriptionText>
         <ViewMoreSpan>
           <ViewMoreText>더보기</ViewMoreText>
           <ArrowRightIcon />
@@ -376,8 +384,6 @@ const DescriptionWrapper = styled.div`
 
 const DescriptionText = styled.div`
   padding-right: 5rem;
-
-  white-space: pre-line;
 
   ${({ theme }) => theme.fonts.body02_middle};
 `;
